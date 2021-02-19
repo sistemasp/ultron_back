@@ -1,0 +1,46 @@
+import { ConsultaI } from "./consulta.interface";
+import { PacienteI } from "./paciente.interface";
+import { EmpleadoI } from "./empleado.interface";
+import { SucursalI } from "./sucursal.interface";
+import { StatusI } from "./status.interface";
+import { ServicioI } from "./servicio.interface";
+import { PagoI } from "./pago.interface";
+import { ProductoI } from "./producto.interface";
+import { FrecuenciaI } from "./frecuencia.interface";
+import { TipoCitaI } from "./tipo-cita.interface";
+import { FacturaI } from "./factura.interface";
+import { Document } from "mongoose";
+
+export interface EsteticaI extends Document {
+    create_date: Date;
+    hora_aplicacion: Date;
+    fecha_hora: Date;
+    consultaId: String;
+    paciente: PacienteI;
+    dermatologo: EmpleadoI;
+    quien_agenda: EmpleadoI;
+    quien_confirma: EmpleadoI;
+    tipo_cita: TipoCitaI;
+    pago_dermatologo: String;
+    sucursal: SucursalI;
+    consecutivo: Number;
+    pagado: Boolean;
+    precio: String;
+    total: String;
+    materiales: [];
+    toxinas_rellenos: [];
+    status: StatusI;
+    servicio: ServicioI;
+    pagos: PagoI[];
+    factura: FacturaI;
+    hora_llegada: String;
+    hora_atencion: String;
+    hora_salida: String;
+    producto: ProductoI;
+    frecuencia: FrecuenciaI;
+    total_aplicacion: String;
+    porcentaje_descuento_clinica: String;
+    has_descuento_dermatologo: Boolean;
+    descuento_clinica: String;
+    descuento_dermatologo: String;
+}
