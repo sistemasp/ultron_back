@@ -4,4 +4,5 @@ export interface StatusI extends Document {
     nombre : String;
     color : String;
     confirmacion: Boolean;
+    visible: Boolean;
 }

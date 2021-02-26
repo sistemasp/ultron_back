@@ -16,6 +16,12 @@ export class StatusController {
         return this.statusService.showAllStatus();
     }
 
+    @Get('visibles')
+    showAllStatusVisibles() : Promise<StatusI[]> {
+        console.log(new Date(), this.TAG, "showAllStatusVisibles");
+        return this.statusService.showAllStatusVisibles();
+    }
+
     @Get(':id')
     findStatusById(@Param('id') idStatus: string): Promise<StatusI> {
         console.log(new Date(), this.TAG, "findStatusById");

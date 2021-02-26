@@ -16,6 +16,15 @@ export class StatusService {
     }
 
     /**
+     * Muestra todos los status de la BD visibles
+     */
+    async showAllStatusVisibles(): Promise<StatusI[]> {
+        return await this.statusModel.find({
+            visible: true
+        });
+    }
+
+    /**
      * Busca solo un status mediante su ID en la BD
      * @param idStatus 
      */
