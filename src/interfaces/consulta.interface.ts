@@ -10,6 +10,7 @@ import { MedioI } from "./medio.interface";
 import { ProductoI } from "./producto.interface";
 import { FacturaI } from "./factura.interface";
 import { Document } from "mongoose";
+import { FormaPagoI } from "./forma-pago.interface";
 
 export interface ConsultaI extends Document {
     create_date: Date;
@@ -46,4 +47,5 @@ export interface ConsultaI extends Document {
     has_descuento_dermatologo: Boolean;
     descuento_clinica: String;
     descuento_dermatologo: String;
+    forma_pago: FormaPagoI;
 }

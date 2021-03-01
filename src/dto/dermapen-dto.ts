@@ -10,6 +10,7 @@ import { ProductoDto } from "./producto-dto";
 import { FrecuenciaDto } from "./frecuencia-dto";
 import { FacturaDto } from "./factura-dto";
 import { Document } from "mongoose";
+import { FormaPagoDto } from "./forma-pago-dto";
 
 export class DermapenDto extends Document {
     readonly create_date: Date;
@@ -50,4 +51,5 @@ export class DermapenDto extends Document {
     readonly has_descuento_dermatologo: Boolean;
     readonly descuento_clinica: String;
     readonly descuento_dermatologo: String;
+    readonly forma_pago: FormaPagoDto;
 }

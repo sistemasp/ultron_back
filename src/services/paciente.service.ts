@@ -26,13 +26,14 @@ export class PacienteService {
                 {nombres: { $regex: exp }},
                 {apellidos: { $regex: exp  }},
                 {telefono: { $regex: exp }},
+                {email: { $regex: exp }},
                 {fecha_nacimiento: { $regex: exp }}
             ]
         } : {}).populate('sexo')
             .limit(Number(per_page))
             .skip(Number(page - 1) * Number(per_page))
             .sort('-create_date')
-            .select('nombres apellidos telefono sexo fecha_nacimiento');
+            .select('nombres apellidos telefono email sexo fecha_nacimiento');            
         const response = {
             ad: {},
             data: patients,

@@ -125,6 +125,7 @@ export class ConsultaService {
             .populate('promovendedor')
             .populate('servicio')
             .populate('dermatologo')
+            .populate('forma_pago')
             .populate('quien_confirma_asistencia')
             .populate('quien_confirma_llamada')
             .populate('tipo_cita')

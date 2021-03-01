@@ -10,6 +10,7 @@ export const PacienteSchema = new Schema({
     fecha_nacimiento: { type: String },
     direccion: { type: String },
     telefono: { type: String },
+    email: { type: String },
     sexo: { type: constMongoose.ObjectId, ref: 'Sexo' },
     ocupacion: { type: String },
     alerta_medica: Boolean,

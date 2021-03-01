@@ -11,6 +11,7 @@ import { FrecuenciaI } from "./frecuencia.interface";
 import { TipoCitaI } from "./tipo-cita.interface";
 import { FacturaI } from "./factura.interface";
 import { Document } from "mongoose";
+import { FormaPagoI } from "./forma-pago.interface";
 
 export interface CirugiaI extends Document {
     create_date: Date;
@@ -48,4 +49,5 @@ export interface CirugiaI extends Document {
     has_descuento_dermatologo: Boolean;
     descuento_clinica: String;
     descuento_dermatologo: String;
+    forma_pago: FormaPagoI;
 }

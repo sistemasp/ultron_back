@@ -211,6 +211,7 @@ export class EsteticaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('quien_agenda')
+            .populate('forma_pago')
             .populate('promovendedor')
             .populate('servicio')
             .populate('dermatologo')

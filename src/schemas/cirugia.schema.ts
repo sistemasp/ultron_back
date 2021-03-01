@@ -39,4 +39,5 @@ export const CirugiaSchema = new Schema({
     has_descuento_dermatologo: { type: Boolean, default: false },
     descuento_clinica: { type: String },
     descuento_dermatologo: { type: String },
+    forma_pago: { type: constMongoose.ObjectId, ref: 'FormaPago' },
 });

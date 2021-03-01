@@ -121,6 +121,7 @@ export class AparatologiaService {
             .populate('servicio')
             .populate('areas')
             .populate('sucursal')
+            .populate('forma_pago')
             .populate('quien_agenda')
             .populate('promovendedor')
             .populate('cosmetologa')

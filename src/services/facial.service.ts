@@ -142,6 +142,7 @@ export class FacialService {
             .populate('areas')
             .populate('sucursal')
             .populate('quien_agenda')
+            .populate('forma_pago')
             .populate('promovendedor')
             .populate('cosmetologa')
             .populate('dermatologo')

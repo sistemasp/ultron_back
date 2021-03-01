@@ -8,6 +8,7 @@ export interface PacienteI extends Document {
     fecha_nacimiento: string;
     direccion: string;
     telefono: string;
+    email: string;
     sexo: SexoI;
     ocupacion: string;
     alerta_medica: boolean;

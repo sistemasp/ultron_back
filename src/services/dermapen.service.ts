@@ -116,6 +116,7 @@ export class DermapenService {
             .populate('sucursal')
             .populate('quien_agenda')
             .populate('promovendedor')
+            .populate('forma_pago')
             .populate('cosmetologa')
             .populate('dermatologo')
             .populate('quien_confirma_asistencia')

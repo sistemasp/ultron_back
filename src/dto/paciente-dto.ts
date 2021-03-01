@@ -8,6 +8,7 @@ export class PacienteDto extends Document {
     readonly fecha_nacimiento : string;
     readonly direccion : string;
     readonly telefono : string;
+    readonly email : string;
     readonly sexo : SexoDto;
     readonly ocupacion : string;
     readonly alerta_medica : boolean;

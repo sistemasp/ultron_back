@@ -12,6 +12,7 @@ import { ProductoI } from "./producto.interface";
 import { FrecuenciaI } from "./frecuencia.interface";
 import { FacturaI } from "./factura.interface";
 import { Document } from "mongoose";
+import { FormaPagoI } from "./forma-pago.interface";
 
 export interface AparatologiaI extends Document {
     create_date: Date;
@@ -52,4 +53,5 @@ export interface AparatologiaI extends Document {
     has_descuento_dermatologo: Boolean;
     descuento_clinica: String;
     descuento_dermatologo: String;
+    forma_pago: FormaPagoI;
 }
