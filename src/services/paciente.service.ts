@@ -19,9 +19,8 @@ export class PacienteService {
      * Muestra todos los pacientes de la BD
      */
     async remotePatients(per_page, page, search): Promise<{}> {
-        const total = await this.pacienteModel.countDocuments({});
-        const exp = `(?imxs)${search}(?-imxs)`;
-        const patients = await this.pacienteModel.find(search !== '' ? {
+        const exp = `(?imxs)${search/*.includes('*') ? '' : search*/ }(?-imxs)`;
+        const query = {
             $or: [
                 {nombres: { $regex: exp }},
                 {apellidos: { $regex: exp  }},
@@ -29,11 +28,14 @@ export class PacienteService {
                 {email: { $regex: exp }},
                 {fecha_nacimiento: { $regex: exp }}
             ]
-        } : {}).populate('sexo')
+        };
+        const total = await this.pacienteModel.countDocuments(query);
+        const patients = await this.pacienteModel.find(search !== '' ? query : {})
+            .populate('sexo')
             .limit(Number(per_page))
             .skip(Number(page - 1) * Number(per_page))
             .sort('-create_date')
-            .select('nombres apellidos telefono email sexo fecha_nacimiento');            
+            .select('nombres apellidos telefono email sexo fecha_nacimiento');
         const response = {
             ad: {},
             data: patients,

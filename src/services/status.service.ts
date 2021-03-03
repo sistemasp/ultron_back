@@ -21,7 +21,7 @@ export class StatusService {
     async showAllStatusVisibles(): Promise<StatusI[]> {
         return await this.statusModel.find({
             visible: true
-        });
+        }).sort('nombre');
     }
 
     /**
