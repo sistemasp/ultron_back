@@ -131,6 +131,7 @@ export class ConsultaService {
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
+            .populate('producto')
             .populate('frecuencia')
             .populate('status');
     }

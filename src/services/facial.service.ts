@@ -151,6 +151,7 @@ export class FacialService {
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
+            .populate('frecuencia')
             .populate('status');
     }
 

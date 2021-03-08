@@ -6,14 +6,17 @@ export class PacienteDto extends Document {
     readonly nombres : string;
     readonly apellidos : string;
     readonly fecha_nacimiento : string;
-    readonly direccion : string;
     readonly telefono : string;
     readonly email : string;
     readonly sexo : SexoDto;
     readonly ocupacion : string;
     readonly alerta_medica : boolean;
-    readonly estado : string;
-    readonly municipio : string;
-    readonly colonia : string;
-    readonly cp : string;
+    readonly domicilio: String;
+    readonly numero_exterior: String;
+    readonly numero_interior: String;
+    readonly colonia: String;
+    readonly ciudad: String;
+    readonly municipio: String;
+    readonly estado: String;
+    readonly codigo_postal: String;
 }

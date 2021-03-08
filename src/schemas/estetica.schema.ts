@@ -36,4 +36,5 @@ export const EsteticaSchema = new Schema({
     descuento_clinica: { type: String },
     descuento_dermatologo: { type: String },
     forma_pago: { type: constMongoose.ObjectId, ref: 'FormaPago' },
+    medio: { type: constMongoose.ObjectId, ref: 'Medio' },
 });

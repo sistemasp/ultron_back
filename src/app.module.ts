@@ -24,6 +24,7 @@ import { FormaPagoController } from './controllers/forma-pago.controller';
 import { FrecuenciaController } from './controllers/frecuencia.controller';
 import { HorarioController } from './controllers/horario.controller';
 import { IngresoController } from './controllers/ingreso.controller';
+import { LaboratorioController } from './controllers/laboratorio.controller';
 import { MaterialEsteticaController } from './controllers/material-estetica.controller';
 import { MaterialController } from './controllers/material.controller';
 import { MedioController } from './controllers/medio.controller';
@@ -31,6 +32,7 @@ import { PacienteController } from './controllers/paciente.controller';
 import { PagoDermatologoController } from './controllers/pago-dermatologo.controller';
 import { PagoPatologoController } from './controllers/pago-patologo.controller';
 import { PagoController } from './controllers/pago.controller';
+import { ProductoComercialController } from './controllers/producto-comercial.controller';
 import { ProductoController } from './controllers/producto.controller';
 import { RazonSocialController } from './controllers/razon-social.controller';
 import { RolController } from './controllers/rol.controller';
@@ -72,6 +74,7 @@ import { FormaPagoSchema } from './schemas/forma-pago.schema';
 import { FrecuenciaSchema } from './schemas/frecuencia.schema';
 import { HorarioSchema } from './schemas/horario.schema';
 import { IngresoSchema } from './schemas/ingreso.schema';
+import { LaboratorioSchema } from './schemas/laboratorio.schema';
 import { MaterialEsteticaSchema } from './schemas/material-estetica.schema';
 import { MaterialSchema } from './schemas/material.schema';
 import { MedioSchema } from './schemas/medio.schema';
@@ -79,6 +82,7 @@ import { PacienteSchema } from './schemas/paciente.schema';
 import { PagoDermatologoSchema } from './schemas/pago-dermatologo.schema';
 import { PagoPatologoSchema } from './schemas/pago-patologo.schema';
 import { PagoSchema } from './schemas/pago.schema';
+import { ProductoComercialSchema } from './schemas/producto-comercial.schema';
 import { ProductoSchema } from './schemas/producto.schema';
 import { RazonSocialSchema } from './schemas/razon-social.schema';
 import { RolSchema } from './schemas/rol.schema';
@@ -119,6 +123,7 @@ import { FormaPagoService } from './services/forma-pago.service';
 import { FrecuenciaService } from './services/frecuencia.service';
 import { HorarioService } from './services/horario.service';
 import { IngresoService } from './services/ingreso.service';
+import { LaboratorioService } from './services/laboratorio.service';
 import { MaterialEsteticaService } from './services/material-estetica.service';
 import { MaterialService } from './services/material.service';
 import { MedioService } from './services/medio.service';
@@ -126,6 +131,7 @@ import { PacienteService } from './services/paciente.service';
 import { PagoDermatologoService } from './services/pago-dermatologo.service';
 import { PagoPatologoService } from './services/pago-patologo.service';
 import { PagoService } from './services/pago.service';
+import { ProductoComercialService } from './services/producto-comercial.service';
 import { ProductoService } from './services/producto.service';
 import { RazonSocialService } from './services/razon-social.service';
 import { RolService } from './services/rol.service';
@@ -173,6 +179,7 @@ import { AppGateway } from './web_sockets/app.gateway';
       { name: 'Frecuencia', schema: FrecuenciaSchema },
       { name: 'Horario', schema: HorarioSchema },
       { name: 'Ingreso', schema: IngresoSchema },
+      { name: 'Laboratorio', schema: LaboratorioSchema },
       { name: 'MaterialEstetica', schema: MaterialEsteticaSchema },
       { name: 'Material', schema: MaterialSchema },
       { name: 'Medio', schema: MedioSchema },
@@ -181,6 +188,7 @@ import { AppGateway } from './web_sockets/app.gateway';
       { name: 'PagoDermatologo', schema: PagoDermatologoSchema },
       { name: 'PagoPatologo', schema: PagoPatologoSchema },
       { name: 'Producto', schema: ProductoSchema },
+      { name: 'ProductoComercial', schema: ProductoComercialSchema },
       { name: 'RazonSocial', schema: RazonSocialSchema },
       { name: 'Rol', schema: RolSchema },
       { name: 'SalaCirugia', schema: SalaCirugiaSchema },
@@ -223,6 +231,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     FrecuenciaController,
     HorarioController,
     IngresoController,
+    LaboratorioController,
     MaterialEsteticaController,
     MaterialController,
     MedioController,
@@ -231,6 +240,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     PagoDermatologoController,
     PagoPatologoController,
     ProductoController,
+    ProductoComercialController,
     RazonSocialController,
     RolController,
     SalaCirugiaController,
@@ -273,6 +283,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     FrecuenciaService,
     HorarioService,
     IngresoService,
+    LaboratorioService,
     MaterialEsteticaService,
     MaterialService,
     MedioService,
@@ -281,6 +292,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     PagoDermatologoService,
     PagoPatologoService,
     ProductoService,
+    ProductoComercialService,
     RazonSocialService,
     RolService,
     SalaCirugiaService,
@@ -297,7 +309,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     TratamientoPrecioService,
     UsoCfdiService,
     // WEB SOCKETS
-    // AppGateway,
+    AppGateway,
   ],
 })
 export class AppModule { }
