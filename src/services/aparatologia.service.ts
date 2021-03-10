@@ -130,6 +130,7 @@ export class AparatologiaService {
             .populate('quien_confirma_llamada')
             .populate('tipo_cita')
             .populate('medio')
+            .populate('frecuencia')
             .populate('pagos')
             .populate('status');
     }

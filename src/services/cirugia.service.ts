@@ -69,6 +69,7 @@ export class CirugiaService {
             .populate('medio')
             .populate('pagos')
             .populate('frecuencia')
+            .populate('producto')
             .populate('status');
     }
 

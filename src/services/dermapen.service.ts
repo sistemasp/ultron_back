@@ -124,6 +124,8 @@ export class DermapenService {
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
+            .populate('frecuencia')
+            .populate('producto')
             .populate('status');
     }
 
