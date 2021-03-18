@@ -19,7 +19,7 @@ export class PacienteService {
      * Muestra todos los pacientes de la BD
      */
     async remotePatients(per_page, page, search): Promise<{}> {
-        const exp = `(?imxs)${search/*.includes('*') ? '' : search*/ }(?-imxs)`;
+        const exp = `(?imxs)${search.split(' ').join('.')}(?-imxs)`;
         const query = {
             $or: [
                 {nombres: { $regex: exp }},
