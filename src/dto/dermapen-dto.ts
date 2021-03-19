@@ -36,6 +36,7 @@ export class DermapenDto extends Document {
     readonly observaciones: String;
     readonly sucursal: SucursalDto;
     readonly promovendedor: EmpleadoDto;
+    readonly cosmetologa: EmpleadoDto;
     readonly hora_llegada: String;
     readonly hora_atencion: String;
     readonly hora_salida: String;

@@ -20,6 +20,8 @@ export interface EsteticaI extends Document {
     consultaId: String;
     paciente: PacienteI;
     dermatologo: EmpleadoI;
+    promovendedor: EmpleadoI;
+    cosmetologa: EmpleadoI;
     quien_agenda: EmpleadoI;
     quien_confirma: EmpleadoI;
     tipo_cita: TipoCitaI;
@@ -38,7 +40,7 @@ export interface EsteticaI extends Document {
     hora_llegada: String;
     hora_atencion: String;
     hora_salida: String;
-    producto: ProductoI;
+    producto: ProductoI[];
     frecuencia: FrecuenciaI;
     total_aplicacion: String;
     porcentaje_descuento_clinica: String;

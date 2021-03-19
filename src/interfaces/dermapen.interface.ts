@@ -36,6 +36,7 @@ export interface DermapenI extends Document {
     observaciones: String;
     sucursal: SucursalI;
     promovendedor: EmpleadoI;
+    cosmetologa: EmpleadoI;
     hora_llegada: String;
     hora_atencion: String;
     hora_salida: String;

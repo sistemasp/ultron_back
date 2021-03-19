@@ -21,6 +21,8 @@ export class EsteticaDto extends Document {
     readonly consultaId: String;
     readonly paciente: PacienteDto;
     readonly dermatologo: EmpleadoDto;
+    readonly promovendedor: EmpleadoDto;
+    readonly cosmetologa: EmpleadoDto;
     readonly quien_agenda: EmpleadoDto;
     readonly quien_confirma: EmpleadoDto;
     readonly tipo_cita: TipoCitaDto;
@@ -38,7 +40,7 @@ export class EsteticaDto extends Document {
     readonly hora_llegada: String;
     readonly hora_atencion: String;
     readonly hora_salida: String;
-    readonly producto: ProductoDto;
+    readonly producto: ProductoDto[];
     readonly frecuencia: FrecuenciaDto;
     readonly total_aplicacion: String;
     readonly porcentaje_descuento_clinica: String;

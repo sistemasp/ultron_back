@@ -27,6 +27,7 @@ export const DermapenSchema = new Schema({
     observaciones: { type: String },
     sucursal: { type: constMongoose.ObjectId, ref: 'Sucursal' },
     promovendedor: { type: constMongoose.ObjectId, ref: 'Empleado' },
+    cosmetologa: { type: constMongoose.ObjectId, ref: 'Empleado' },
     hora_llegada: { type: String },
     hora_atencion: { type: String },
     hora_salida: { type: String },
