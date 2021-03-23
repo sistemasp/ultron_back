@@ -435,10 +435,10 @@ export class FacialService {
      */
     async createFacial(facial: FacialI): Promise<FacialI> {
         const currentDate = new Date();
-        const consecutivo = await this.consecutivoModel.find({
+        /*const consecutivo = await this.consecutivoModel.find({
             sucursal: facial.sucursal,
         });
-        facial.consecutivo = consecutivo.length;
+        facial.consecutivo = consecutivo.length;*/
         facial.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newDate = new this.facialModel(facial);

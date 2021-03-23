@@ -156,11 +156,13 @@ export class EsteticaService {
      * @param estetica 
      */
     async createEstetica(estetica: EsteticaI): Promise<EsteticaI> {
-        estetica.create_date = new Date();
-        const consecutivo = await this.consecutivoModel.find({
+        const currentDate = new Date();
+        /*const consecutivo = await this.consecutivoModel.find({
             sucursal: estetica.sucursal,
         });
-        estetica.consecutivo = consecutivo.length;
+        estetica.consecutivo = consecutivo.length;*/
+        estetica.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
+            currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newEstetica = new this.esteticaModel(estetica);
         return await newEstetica.save();
     }

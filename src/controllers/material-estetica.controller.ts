@@ -16,6 +16,19 @@ export class MaterialEsteticaController {
         return this.materialEsteticaService.showAllMaterialEsteticas();
     }
 
+    
+    @Get('producto/:productosIds')
+    showMaterialEsteticasByProducto(@Param('productosIds') productosIds: [String]) : Promise<MaterialEsteticaI[]> {
+        console.log(productosIds);
+        const query = productosIds.map(productosId => {
+            return productosId;
+        });
+        console.log(query);
+
+        console.log(new Date(), this.TAG, "showMaterialEsteticasByProducto");
+        return this.materialEsteticaService.showMaterialEsteticasByProducto(productosIds);
+    }
+
     @Get(':id')
     findMaterialEsteticaById(@Param('id') idMaterialEstetica: string): Promise<MaterialEsteticaI> {
         console.log(new Date(), this.TAG, "findMaterialEsteticaById");

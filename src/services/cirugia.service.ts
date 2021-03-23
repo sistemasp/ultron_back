@@ -277,11 +277,13 @@ export class CirugiaService {
      * @param cirugia 
      */
     async createCirugia(cirugia: CirugiaI): Promise<CirugiaI> {
-        cirugia.create_date = new Date();
-        const consecutivo = await this.consecutivoModel.find({
+        const currentDate = new Date();
+        /*const consecutivo = await this.consecutivoModel.find({
             sucursal: cirugia.sucursal,
         });
-        cirugia.consecutivo = consecutivo.length;
+        cirugia.consecutivo = consecutivo.length;*/
+        cirugia.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
+            currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newCirugia = new this.cirugiaModel(cirugia);
         return await newCirugia.save();
     }

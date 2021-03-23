@@ -429,10 +429,10 @@ export class AparatologiaService {
      */
     async createDate(aparatologia: AparatologiaI): Promise<AparatologiaI> {
         const currentDate = new Date();
-        const consecutivo = await this.consecutivoModel.find({
+        /*const consecutivo = await this.consecutivoModel.find({
             sucursal: aparatologia.sucursal,
         });
-        aparatologia.consecutivo = consecutivo.length;
+        aparatologia.consecutivo = consecutivo.length;*/
         aparatologia.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newDate = new this.aparatologiaModel(aparatologia);

@@ -18,7 +18,7 @@ export interface CirugiaI extends Document {
     create_date: Date;
     hora_aplicacion: Date;
     fecha_hora: Date;
-    consulta: ConsultaI;
+    consultaId: String;
     paciente: PacienteI;
     dermatologo: EmpleadoI;
     quien_agenda: EmpleadoI;

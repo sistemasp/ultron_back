@@ -20,7 +20,7 @@ export class CirugiaDto extends Document {
     readonly fecha_hora: Date;
     readonly pagado: Boolean;
     readonly status: StatusDto;
-    readonly consulta: ConsultaDto;
+    readonly consultaId: String;
     readonly paciente: PacienteDto;
     readonly dermatologo: EmpleadoDto;
     readonly patologo: EmpleadoDto;

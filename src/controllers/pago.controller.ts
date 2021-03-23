@@ -37,8 +37,6 @@ export class PagoController {
     @Get('pagos/:pagosIds')
     findPagoByIds(@Param('pagosIds') pagosIds: string): Promise<PagoI[]> {
         console.log(new Date(), this.TAG, "findPagoByIds");
-        console.log(new Date(), this.TAG, pagosIds);
-
         return this.pagoService.findPagoByIds(pagosIds);
     }
 

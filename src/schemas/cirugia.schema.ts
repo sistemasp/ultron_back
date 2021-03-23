@@ -7,7 +7,7 @@ export const CirugiaSchema = new Schema({
     create_date: { type: Date },
     hora_aplicacion: { type: Date },
     fecha_hora: { type: Date },
-    consulta: { type: constMongoose.ObjectId, ref: 'Consulta' },
+    consultaId: { type: String },
     paciente: { type: constMongoose.ObjectId, ref: 'Paciente' },
     dermatologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     quien_agenda: { type: constMongoose.ObjectId, ref: 'Empleado' },

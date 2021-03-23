@@ -6,7 +6,7 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class MaterialEsteticaService {
 
-    constructor(@InjectModel('MaterialEstetica') private readonly materialEsteticaModel : Model<MaterialEsteticaI>) {}
+    constructor(@InjectModel('MaterialEstetica') private readonly materialEsteticaModel: Model<MaterialEsteticaI>) { }
 
     /**
      * Muestra todos los materials de la BD
@@ -16,11 +16,27 @@ export class MaterialEsteticaService {
     }
 
     /**
+     * Muestra todos los materials de la BD del mismo produto
+     */
+    async showMaterialEsteticasByProducto(productosIds): Promise<MaterialEsteticaI[]> {
+        console.log(productosIds);
+
+        return await this.materialEsteticaModel.find(
+            {
+
+                producto: { $in: productosIds },
+                is_active: true
+            }
+        ).sort('nombre')
+            .populate('producto');
+    }
+
+    /**
      * Busca solo un material mediante su ID en la BD
      * @param idMaterialEstetica 
      */
     async findMaterialEsteticaById(idMaterialEstetica: string): Promise<MaterialEsteticaI> {
-        return await this.materialEsteticaModel.findOne( { _id: idMaterialEstetica } );
+        return await this.materialEsteticaModel.findOne({ _id: idMaterialEstetica });
     }
 
     /**
@@ -28,7 +44,7 @@ export class MaterialEsteticaService {
      * @param idMaterialEstetica 
      */
     async findMaterialEsteticaByEmployeeNumber(employeeNumber: string): Promise<MaterialEsteticaI> {
-        return await this.materialEsteticaModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.materialEsteticaModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +69,7 @@ export class MaterialEsteticaService {
      * Busca un material por su ID y lo elimina de la BD
      * @param idMaterialEstetica 
      */
-    async deleteMaterialEstetica(idMaterialEstetica: string ): Promise<MaterialEsteticaI> {
+    async deleteMaterialEstetica(idMaterialEstetica: string): Promise<MaterialEsteticaI> {
         return await this.materialEsteticaModel.findOneAndDelete({ _id: idMaterialEstetica });
     }
 
