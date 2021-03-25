@@ -19,12 +19,9 @@ export class MaterialEsteticaService {
      * Muestra todos los materials de la BD del mismo produto
      */
     async showMaterialEsteticasByProducto(productosIds): Promise<MaterialEsteticaI[]> {
-        console.log(productosIds);
-
         return await this.materialEsteticaModel.find(
             {
-
-                producto: { $in: productosIds },
+                producto: { $in: productosIds.split(',') },
                 is_active: true
             }
         ).sort('nombre')
