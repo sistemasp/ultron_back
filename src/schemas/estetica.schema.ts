@@ -22,6 +22,7 @@ export const EsteticaSchema = new Schema({
     precio: { type: String },
     total: { type: String },
     pago_dermatologo: { type: String },
+    observaciones: { type: String },
     materiales: [],
     toxinas_rellenos: [],
     status: { type: constMongoose.ObjectId, ref: 'Status' },

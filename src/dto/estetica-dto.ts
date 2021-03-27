@@ -29,6 +29,7 @@ export class EsteticaDto extends Document {
     readonly sucursal: SucursalDto;
     readonly consecutivo: Number;
     readonly precio: String;
+    readonly observaciones: String;
     readonly total: String;
     readonly pago_dermatologo: String;
     readonly materiales: [];

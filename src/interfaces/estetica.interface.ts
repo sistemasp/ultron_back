@@ -37,6 +37,7 @@ export interface EsteticaI extends Document {
     servicio: ServicioI;
     pagos: PagoI[];
     factura: FacturaI;
+    observaciones: String;
     hora_llegada: String;
     hora_atencion: String;
     hora_salida: String;
