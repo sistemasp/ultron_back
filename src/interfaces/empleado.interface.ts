@@ -19,4 +19,5 @@ export interface EmpleadoI extends Document {
     porcentaje_reconsulta: String;
     esquema: EsquemaI;
     is_active: Boolean;
+    super_admin: Boolean;
 }

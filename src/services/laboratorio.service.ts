@@ -6,13 +6,13 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class LaboratorioService {
 
-    constructor(@InjectModel('Laboratorio') private readonly laboratorioModel : Model<LaboratorioI>) {}
+    constructor(@InjectModel('Laboratorio') private readonly laboratorioModel: Model<LaboratorioI>) { }
 
     /**
      * Muestra todos los laboratorios de la BD
      */
     async showAllLaboratorios(): Promise<LaboratorioI[]> {
-        return await this.laboratorioModel.find().sort('nombre');
+        return await this.laboratorioModel.find({ is_active: true }).sort('nombre');
     }
 
     /**
@@ -20,7 +20,7 @@ export class LaboratorioService {
      * @param idLaboratorio 
      */
     async findLaboratorioById(idLaboratorio: string): Promise<LaboratorioI> {
-        return await this.laboratorioModel.findOne( { _id: idLaboratorio } );
+        return await this.laboratorioModel.findOne({ _id: idLaboratorio });
     }
 
     /**
@@ -28,7 +28,7 @@ export class LaboratorioService {
      * @param idLaboratorio 
      */
     async findLaboratorioByEmployeeNumber(employeeNumber: string): Promise<LaboratorioI> {
-        return await this.laboratorioModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.laboratorioModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +53,7 @@ export class LaboratorioService {
      * Busca un laboratorio por su ID y lo elimina de la BD
      * @param idLaboratorio 
      */
-    async deleteLaboratorio(idLaboratorio: string ): Promise<LaboratorioI> {
+    async deleteLaboratorio(idLaboratorio: string): Promise<LaboratorioI> {
         return await this.laboratorioModel.findOneAndDelete({ _id: idLaboratorio });
     }
 

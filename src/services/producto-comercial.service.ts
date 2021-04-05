@@ -6,13 +6,15 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class ProductoComercialService {
 
-    constructor(@InjectModel('ProductoComercial') private readonly productoComercialModel : Model<ProductoComercialI>) {}
+    constructor(@InjectModel('ProductoComercial') private readonly productoComercialModel: Model<ProductoComercialI>) { }
 
     /**
      * Muestra todos los productoComercials de la BD
      */
     async showAllProductoComercials(): Promise<ProductoComercialI[]> {
-        return await this.productoComercialModel.find().sort('nombre');
+        return await this.productoComercialModel.find({ is_active: true })
+            .sort('nombre')
+            .populate('laboratorio');
     }
 
     /**
@@ -20,7 +22,7 @@ export class ProductoComercialService {
      * @param idProductoComercial 
      */
     async findProductoComercialById(idProductoComercial: string): Promise<ProductoComercialI> {
-        return await this.productoComercialModel.findOne( { _id: idProductoComercial } );
+        return await this.productoComercialModel.findOne({ _id: idProductoComercial });
     }
 
     /**
@@ -28,7 +30,7 @@ export class ProductoComercialService {
      * @param idProductoComercial 
      */
     async findProductoComercialByEmployeeNumber(employeeNumber: string): Promise<ProductoComercialI> {
-        return await this.productoComercialModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.productoComercialModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +55,7 @@ export class ProductoComercialService {
      * Busca un productoComercial por su ID y lo elimina de la BD
      * @param idProductoComercial 
      */
-    async deleteProductoComercial(idProductoComercial: string ): Promise<ProductoComercialI> {
+    async deleteProductoComercial(idProductoComercial: string): Promise<ProductoComercialI> {
         return await this.productoComercialModel.findOneAndDelete({ _id: idProductoComercial });
     }
 

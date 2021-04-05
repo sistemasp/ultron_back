@@ -7,6 +7,7 @@ import { BancoController } from './controllers/banco.controller';
 import { BiopsiaController } from './controllers/biopsia.controller';
 import { CabinaController } from './controllers/cabina.controller';
 import { CancelacionController } from './controllers/cancelacion.controller';
+import { CatalogoController } from './controllers/catalogo.controller';
 import { CirugiaController } from './controllers/cirugia.controller';
 import { ClaveSupervisorController } from './controllers/clave-supervisor.controller';
 import { ConsecutivoController } from './controllers/consecutivo.controller';
@@ -57,6 +58,7 @@ import { BancoSchema } from './schemas/banco.schema';
 import { BiopsiaSchema } from './schemas/biopsia.schema';
 import { CabinaSchema } from './schemas/cabina.schema';
 import { CancelacionSchema } from './schemas/cancelacion.schema';
+import { CatalogoSchema } from './schemas/catalogo.schema';
 import { CirugiaSchema } from './schemas/cirugia.schema';
 import { ClaveSupervisorSchema } from './schemas/clave-supervisor.schema';
 import { ConsecutivoSchema } from './schemas/consecutivo.schema';
@@ -106,6 +108,7 @@ import { BancoService } from './services/banco.service';
 import { BiopsiaService } from './services/biosia.service';
 import { CabinaService } from './services/cabina.service';
 import { CancelacionService } from './services/cancelacion.service';
+import { CatalogoService } from './services/catalogo.service';
 import { CirugiaService } from './services/cirugia.service';
 import { ClaveSupervisorService } from './services/clave-supervisor.service';
 import { ConsecutivoService } from './services/consecutivo.service';
@@ -162,6 +165,7 @@ import { AppGateway } from './web_sockets/app.gateway';
       { name: 'Biopsia', schema: BiopsiaSchema },
       { name: 'Cabina', schema: CabinaSchema },
       { name: 'Cancelacion', schema: CancelacionSchema },
+      { name: 'Catalogo', schema: CatalogoSchema },
       { name: 'Cirugia', schema: CirugiaSchema },
       { name: 'ClaveSupervisor', schema: ClaveSupervisorSchema },
       { name: 'Consecutivo', schema: ConsecutivoSchema },
@@ -214,6 +218,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     BiopsiaController,
     CabinaController,
     CancelacionController,
+    CatalogoController,
     CirugiaController,
     ClaveSupervisorController,
     ConsecutivoController,
@@ -266,6 +271,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     BiopsiaService,
     CabinaService,
     CancelacionService,
+    CatalogoService,
     CirugiaService,
     ClaveSupervisorService,
     ConsecutivoService,

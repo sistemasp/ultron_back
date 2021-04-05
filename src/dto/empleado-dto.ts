@@ -19,4 +19,5 @@ export class EmpleadoDto extends Document {
     readonly porcentaje_reconsulta: String;
     readonly esquema: EsquemaDto;
     readonly is_active: Boolean;
+    readonly super_admin: Boolean;
 }

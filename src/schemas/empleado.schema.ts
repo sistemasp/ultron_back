@@ -20,4 +20,5 @@ export const EmpleadoSchema = new Schema({
     porcentaje_reconsulta: { type: String },
     esquema: { type: constMongoose.ObjectId, ref: 'Esquema' },
     is_active: { type: Boolean, default: true },
+    super_admin: { type: Boolean, default: false },
 });
