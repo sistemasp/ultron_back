@@ -1,5 +1,6 @@
 import { Document } from "mongoose";
 
 export class AcidoDto extends Document {
-    readonly nombre : String;
+    readonly nombre: String;
+    readonly is_active: Boolean;
 }

@@ -22,6 +22,12 @@ export class ProductoComercialController {
         return this.productoComercialService.findProductoComercialById(idProductoComercial);
     }
 
+    @Get('laboratorio/:idLaboratorio')
+    showProductoComercialByLaboratorioId(@Param('idLaboratorio') idLaboratorio: string): Promise<ProductoComercialI[]> {
+        console.log(new Date(), this.TAG, "showProductoComercialByLaboratorioId");
+        return this.productoComercialService.showProductoComercialByLaboratorioId(idLaboratorio);
+    }
+
     @Post()
     createProductoComercial(@Body() productoComercialDto: ProductoComercialDto): Promise<ProductoComercialI> {
         console.log(new Date(), this.TAG, "createProductoComercial");

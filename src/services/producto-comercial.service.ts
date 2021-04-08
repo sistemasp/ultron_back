@@ -29,8 +29,11 @@ export class ProductoComercialService {
      * Busca solo un productoComercial mediante su numero de empleado en la BD
      * @param idProductoComercial 
      */
-    async findProductoComercialByEmployeeNumber(employeeNumber: string): Promise<ProductoComercialI> {
-        return await this.productoComercialModel.findOne({ numero_empleado: employeeNumber });
+    async showProductoComercialByLaboratorioId(laboratorioId): Promise<ProductoComercialI[]> {
+        return await this.productoComercialModel.find({ 
+            laboratorio: laboratorioId,
+            is_active: true,
+        });
     }
 
     /**

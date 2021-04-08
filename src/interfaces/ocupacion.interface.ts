@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-export interface AcidoI extends Document {
+export interface OcupacionI extends Document {
     nombre : String;
     is_active: Boolean;
 }

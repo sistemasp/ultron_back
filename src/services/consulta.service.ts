@@ -118,7 +118,7 @@ export class ConsultaService {
             {
                 fecha_hora: { $gte: startDate, $lte: endDate },
                 sucursal: sucursalId
-            }).sort('fecha_hora')
+            }).sort('create_date')
             .populate('paciente')
             .populate('sucursal')
             .populate('quien_agenda')

@@ -14,7 +14,6 @@ export class ConsultorioService {
     async showAllSurgeries(): Promise<ConsultorioI[]> {
         return await this.consultorioModel.find()
             .populate('dermatologo')
-            .populate('consulta')
             .populate('paciente');
     }
 
@@ -25,7 +24,6 @@ export class ConsultorioService {
     async findSurgeryById(idConsultorio: string): Promise<ConsultorioI> {
         return await this.consultorioModel.findOne({ _id: idConsultorio })
             .populate('dermatologo')
-            .populate('consulta')
             .populate('paciente');
     }
 
@@ -39,7 +37,6 @@ export class ConsultorioService {
                 sucursal: sucursalId
             })
             .populate('dermatologo')
-            .populate('consulta')
             .populate('paciente');
     }
 
@@ -54,7 +51,6 @@ export class ConsultorioService {
                 dermatologo: dermatologoId
             })
             .populate('dermatologo')
-            .populate('consulta')
             .populate('paciente');
     }
 
@@ -69,7 +65,6 @@ export class ConsultorioService {
                 dermatologo: { $ne: undefined }
             })
             .populate('dermatologo')
-            .populate('consulta')
             .populate('paciente');
     }
 
@@ -85,7 +80,6 @@ export class ConsultorioService {
                 disponible: true
             })
             .populate('dermatologo')
-            .populate('consulta')
             .populate('paciente');
     }
 

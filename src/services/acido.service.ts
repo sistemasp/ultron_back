@@ -6,13 +6,13 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class AcidoService {
 
-    constructor(@InjectModel('Acido') private readonly acidoModel : Model<AcidoI>) {}
+    constructor(@InjectModel('Acido') private readonly acidoModel: Model<AcidoI>) { }
 
     /**
      * Muestra todos los acidos de la BD
      */
     async showAllAcidos(): Promise<AcidoI[]> {
-        return await this.acidoModel.find().sort('nombre');
+        return await this.acidoModel.find({ is_active: true }).sort('nombre');
     }
 
     /**
@@ -20,7 +20,7 @@ export class AcidoService {
      * @param idAcido 
      */
     async findAcidoById(idAcido: string): Promise<AcidoI> {
-        return await this.acidoModel.findOne( { _id: idAcido } );
+        return await this.acidoModel.findOne({ _id: idAcido });
     }
 
     /**
@@ -28,7 +28,7 @@ export class AcidoService {
      * @param idAcido 
      */
     async findAcidoByEmployeeNumber(employeeNumber: string): Promise<AcidoI> {
-        return await this.acidoModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.acidoModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +53,7 @@ export class AcidoService {
      * Busca un acido por su ID y lo elimina de la BD
      * @param idAcido 
      */
-    async deleteAcido(idAcido: string ): Promise<AcidoI> {
+    async deleteAcido(idAcido: string): Promise<AcidoI> {
         return await this.acidoModel.findOneAndDelete({ _id: idAcido });
     }
 
