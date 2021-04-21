@@ -16,15 +16,20 @@ export class AppGateway implements OnGatewayInit, OnGatewayConnection, OnGateway
   private logger: Logger = new Logger('AppGateway');
 
   @SubscribeMessage('msgToServer')
-  handleMessage(client: Socket, payload: string): void {
-    console.log("SIII MENSAJE", client, payload);
+  handleMessage(client: Socket, payload: string) {
+    this.logger.log("SIII MENSAJE", payload);
+    this.server.emit('msgToClient', payload, client.id);
+  }
+
+  @SubscribeMessage('chat')
+  async onChat(client, message) {
+    this.logger.log("MES:", message);
+    const algo = { id: 127842}
     
-    this.server.emit('msgToClient', payload);
+    client.broadcast.emit('chat', message);
   }
 
   afterInit(server: Server) {
-    console.log("SIII INIT", server);
-
     this.logger.log('Init');
   }
 

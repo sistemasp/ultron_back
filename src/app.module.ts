@@ -17,6 +17,7 @@ import { CorteController } from './controllers/corte.controller';
 import { DermapenController } from './controllers/dermapen.controller';
 import { EgresoController } from './controllers/egreso.controller';
 import { EmpleadoController } from './controllers/empleado.controller';
+import { EspecialidadController } from './controllers/especialidad.controller';
 import { EsquemaController } from './controllers/esquema.controller';
 import { EsteticaController } from './controllers/estetica.controller';
 import { FacialController } from './controllers/facial.controller';
@@ -70,6 +71,7 @@ import { CorteSchema } from './schemas/corte.schema';
 import { DermapenSchema } from './schemas/dermapen.schema';
 import { EgresoSchema } from './schemas/egreso.schema';
 import { EmpleadoSchema } from './schemas/empleado.schema';
+import { EspecialidadSchema } from './schemas/especialidad.schema';
 import { EsquemaSchema } from './schemas/esquema.schema';
 import { EsteticaSchema } from './schemas/estetica.schema';
 import { FacialSchema } from './schemas/facial.schema';
@@ -122,6 +124,7 @@ import { CorteService } from './services/corte.service';
 import { DermapenService } from './services/dermapen.service';
 import { EgresoService } from './services/egreso.service';
 import { EmpleadoService } from './services/empleado.service';
+import { EspecialidadService } from './services/especialidad.service';
 import { EsquemaService } from './services/esquema.service';
 import { EsteticaService } from './services/estetica.service';
 import { FacialService } from './services/facial.service';
@@ -157,7 +160,6 @@ import { TipoTarjetaService } from './services/tipo-tarjeta.service';
 import { TratamientoPrecioService } from './services/tratamiento-precio.service';
 import { TratamientoService } from './services/tratamiento.service';
 import { UsoCfdiService } from './services/uso-cfdi.service';
-import { AppGateway } from './web_sockets/app.gateway';
 
 @Module({
   imports: [
@@ -181,6 +183,7 @@ import { AppGateway } from './web_sockets/app.gateway';
       { name: 'Dermapen', schema: DermapenSchema },
       { name: 'Egreso', schema: EgresoSchema },
       { name: 'Empleado', schema: EmpleadoSchema },
+      { name: 'Especialidad', schema: EspecialidadSchema },
       { name: 'Esquema', schema: EsquemaSchema },
       { name: 'Estetica', schema: EsteticaSchema },
       { name: 'Facial', schema: FacialSchema },
@@ -236,6 +239,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     DermapenController,
     EgresoController,
     EmpleadoController,
+    EspecialidadController,
     EsquemaController,
     EsteticaController,
     FacialController,
@@ -291,6 +295,7 @@ import { AppGateway } from './web_sockets/app.gateway';
     DermapenService,
     EgresoService,
     EmpleadoService,
+    EspecialidadService,
     EsquemaService,
     EsteticaService,
     FacialService,
@@ -327,7 +332,8 @@ import { AppGateway } from './web_sockets/app.gateway';
     TratamientoPrecioService,
     UsoCfdiService,
     // WEB SOCKETS
-    AppGateway,
+    //AppGateway,
+    //EventsGateway,
   ],
 })
 export class AppModule { }

@@ -12,7 +12,9 @@ export class TratamientoService {
      * Muestra todos los tratamientos de la BD
      */
     async showAllTreatments(): Promise<TratamientoI[]> {
-        return await this.tratamientoModel.find();
+        return await this.tratamientoModel
+            .find()
+            .populate('servicio');
     }
 
     /**
