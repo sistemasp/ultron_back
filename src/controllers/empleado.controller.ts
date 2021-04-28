@@ -19,6 +19,7 @@ export class EmpleadoController {
     @UseGuards(LocalAuthGuard)
     @Post('auth/login')
     async login(@Request() req) {
+        console.log(new Date(), this.TAG, "login");
         return this.authService.login(req.user);
     }
 
