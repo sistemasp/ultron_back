@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AcidoController } from './controllers/acido.controller';
 import { AparatologiaController } from './controllers/aparatolgia.controller';
@@ -16,7 +18,6 @@ import { ConsultorioController } from './controllers/consultorio.controller';
 import { CorteController } from './controllers/corte.controller';
 import { DermapenController } from './controllers/dermapen.controller';
 import { EgresoController } from './controllers/egreso.controller';
-import { EmpleadoController } from './controllers/empleado.controller';
 import { EspecialidadController } from './controllers/especialidad.controller';
 import { EsquemaController } from './controllers/esquema.controller';
 import { EsteticaController } from './controllers/estetica.controller';
@@ -123,7 +124,6 @@ import { ConsultorioService } from './services/consultorio.service';
 import { CorteService } from './services/corte.service';
 import { DermapenService } from './services/dermapen.service';
 import { EgresoService } from './services/egreso.service';
-import { EmpleadoService } from './services/empleado.service';
 import { EspecialidadService } from './services/especialidad.service';
 import { EsquemaService } from './services/esquema.service';
 import { EsteticaService } from './services/estetica.service';
@@ -160,10 +160,21 @@ import { TipoTarjetaService } from './services/tipo-tarjeta.service';
 import { TratamientoPrecioService } from './services/tratamiento-precio.service';
 import { TratamientoService } from './services/tratamiento.service';
 import { UsoCfdiService } from './services/uso-cfdi.service';
+import { EmpleadoController } from './controllers/empleado.controller';
+import { EmpleadoService } from './services/empleado.service';
+import { jwtConstants } from './constants';
+import { LocalStrategy } from './auth/strategies/local.strategy';
+import { JwtStrategy } from './auth/strategies/jwt.strategy';
+import { AuthService } from './auth/auth.service';
 
 @Module({
   imports: [
     EventsModule,
+    PassportModule,
+    JwtModule.register({
+      secret: jwtConstants.secret,
+      signOptions: { expiresIn: '34560s' },
+    }),
     MongooseModule.forRoot('mongodb://localhost/ultron', { useNewUrlParser: true }),
     MongooseModule.forFeature([
       { name: 'Acido', schema: AcidoSchema },
@@ -334,6 +345,10 @@ import { UsoCfdiService } from './services/uso-cfdi.service';
     // WEB SOCKETS
     //AppGateway,
     //EventsGateway,
+    // AUTH BY PASSPORT
+    AuthService,
+    LocalStrategy,
+    JwtStrategy,
   ],
 })
 export class AppModule { }
