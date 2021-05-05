@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards } from '@nestjs/common';
 import { EsteticaService } from './../services/estetica.service';
 import { EsteticaI } from 'src/interfaces/estetica.interface';
 import { EsteticaDto } from 'src/dto/estetica-dto';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Controller('estetica')
 export class EsteticaController {
@@ -10,24 +11,28 @@ export class EsteticaController {
 
     constructor(private readonly esteticaService: EsteticaService) { }
 
+    @UseGuards(JwtAuthGuard)
     @Get()
     showAllEsteticas(): Promise<EsteticaI[]> {
         console.log(new Date(), this.TAG, "showAllEsteticas");
         return this.esteticaService.showAllEsteticas();
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(':id')
     findEsteticaById(@Param('id') idEstetica: string): Promise<EsteticaI> {
         console.log(new Date(), this.TAG, "findEsteticaById");
         return this.esteticaService.findEsteticaById(idEstetica);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('consulta/:consultaId')
     findEsteticaByConsultaId(@Param('consultaId') consultaId: string): Promise<EsteticaI> {
         console.log(new Date(), this.TAG, "findEsteticaByConsultaId");
         return this.esteticaService.findEsteticaByConsultaId(consultaId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(':dia/:mes/:anio/sucursal/:sucursalId')
     findEsteticaByDateAndSucursal(@Param('dia') dia: string, @Param('mes') mes: string, @Param('anio') anio: string,
         @Param('sucursalId') sucursalId: string): Promise<EsteticaI[]> {
@@ -35,6 +40,7 @@ export class EsteticaController {
         return this.esteticaService.findEsteticaByDateAndSucursal(anio, mes, dia, sucursalId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(':dia/:mes/:anio/sucursal/:sucursalId/dermatologo/:dermatologoId')
     findEsteticasByPayOfDoctor(@Param('dia') dia: string, @Param('mes') mes: string, @Param('anio') anio: string,
         @Param('sucursalId') sucursalId: string, @Param('dermatologoId') dermatologoId: string): Promise<EsteticaI[]> {
@@ -42,6 +48,7 @@ export class EsteticaController {
         return this.esteticaService.findEsteticasByPayOfDoctor(anio, mes, dia, sucursalId, dermatologoId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(':dia/:mes/:anio/sucursal/:sucursalId/dermatologo/:dermatologoId/turno/:turno')
     findEsteticasByPayOfDoctorTurno(@Param('dia') dia: string, @Param('mes') mes: string, @Param('anio') anio: string,
         @Param('sucursalId') sucursalId: string, @Param('dermatologoId') dermatologoId: string, @Param('turno') turno: string,): Promise<EsteticaI[]> {
@@ -49,6 +56,7 @@ export class EsteticaController {
         return this.esteticaService.findEsteticasByPayOfDoctorTurno(anio, mes, dia, sucursalId, dermatologoId, turno);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
     findEsteticasByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
         @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
@@ -57,18 +65,21 @@ export class EsteticaController {
         return this.esteticaService.findEsteticasByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('sucursal/:sucursalId/asistio/:statusAsistioId')
     waitingList(@Param('sucursalId') sucursalId: string, @Param('statusAsistioId') statusAsistioId: string) : Promise<EsteticaI[]> {
         console.log(new Date(), this.TAG, "waitingList");
         return this.esteticaService.waitingList(sucursalId, statusAsistioId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('/historic/:pacienteId')
     findEsteticasHistoricByPaciente(@Param('pacienteId') pacienteId: string): Promise<EsteticaI[]> {
         console.log(new Date(), this.TAG, "findEsteticasHistoricByPaciente");
         return this.esteticaService.findEsteticasHistoricByPaciente(pacienteId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('sucursal/:sucursalId/dermatologo/:dermatologoId/atendido/:atendidoId/apertura/:hora_apertura/cierre/:hora_cierre')
     findEsteticasByPayOfDoctorHoraAplicacion(@Param('sucursalId') sucursalId: string, @Param('dermatologoId') dermatologoId: string,
         @Param('atendidoId') atendidoId: string, @Param('hora_apertura') hora_apertura: string,
@@ -77,6 +88,7 @@ export class EsteticaController {
         return this.esteticaService.findEsteticasByPayOfDoctorHoraAplicacion(sucursalId, dermatologoId, atendidoId, hora_apertura, hora_cierre);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('sucursal/:sucursalId/dermatologo/:dermatologoId/canceladocp/:canceladoCPId/apertura/:hora_apertura/cierre/:hora_cierre')
     findEsteticasByPayOfDoctorHoraAplicacionPA(@Param('sucursalId') sucursalId: string, @Param('dermatologoId') dermatologoId: string,
         @Param('canceladoCPId') canceladoCPId: string, @Param('hora_apertura') hora_apertura: string,
@@ -85,6 +97,7 @@ export class EsteticaController {
         return this.esteticaService.findEsteticasByPayOfDoctorHoraAplicacionPA(sucursalId, dermatologoId, canceladoCPId, hora_apertura, hora_cierre);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post()
     createEstetica(@Body() esteticaDto: EsteticaDto): Promise<EsteticaI> {
         console.log(new Date(), this.TAG, "createEstetica");
