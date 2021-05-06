@@ -24,8 +24,7 @@ export class CirugiaService {
      * @param idCirugia 
      */
     async findCirugiaById(idCirugia: string): Promise<CirugiaI> {
-        return await this.cirugiaModel.findOne({ _id: idCirugia })
-            .populate('consulta');
+        return await this.cirugiaModel.findOne({ _id: idCirugia });
     }
 
     /**
@@ -34,8 +33,7 @@ export class CirugiaService {
      */
     async findCirugiaByConsultaId(consultaId): Promise<CirugiaI> {
         return await this.cirugiaModel.findOne({ consulta: consultaId })
-            .populate('patologo')
-            .populate('consulta')
+            .populate('patologo');
     }
 
     /**
@@ -56,7 +54,6 @@ export class CirugiaService {
                 sucursal: sucursalId
             }).sort('consecutivo')
             .populate('paciente')
-            .populate('consulta')
             .populate('sucursal')
             .populate('quien_agenda')
             .populate('promovendedor')
@@ -163,7 +160,6 @@ export class CirugiaService {
             .populate('servicio')
             .populate('status')
             .populate('patologo')
-            .populate('consulta')
             .populate('producto')
             .populate('biopsias')
             .populate('pagos');
@@ -200,7 +196,6 @@ export class CirugiaService {
     async findCirugiasHistoricByPaciente(pacienteId): Promise<CirugiaI[]> {
         return await this.cirugiaModel.find({ paciente: pacienteId }).sort('create_date')
             .populate('paciente')
-            .populate('consulta')
             .populate('patologo')
             .populate('sucursal')
             .populate('quien_entrega')
