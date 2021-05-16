@@ -45,7 +45,7 @@ export class MedioService {
      * @param idMedio 
      * @param medio 
      */
-    async updateMedio(idMedio: string, medio: MedioI): Promise<MedioI> {
+    async updateMedio(idMedio: string, medio: MedioI): Promise<any> {
         return await this.medioModel.updateOne({ _id: idMedio }, medio);
     }
 

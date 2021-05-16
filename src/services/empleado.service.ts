@@ -80,7 +80,7 @@ export class EmpleadoService {
      * @param idEmpleado 
      * @param empleado 
      */
-    async updateEmployee(idEmpleado: string, empleado: EmpleadoI): Promise<EmpleadoI> {
+    async updateEmployee(idEmpleado: string, empleado: EmpleadoI): Promise<any> {
         return await this.empleadoModel.updateOne({ _id: idEmpleado }, empleado);
     }
 

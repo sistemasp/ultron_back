@@ -108,7 +108,7 @@ export class PagoService {
      * @param idPago 
      * @param pago 
      */
-    async updatePago(idPago: string, pago: PagoI): Promise<PagoI> {
+    async updatePago(idPago: string, pago: PagoI): Promise<any> {
         return await this.pagoModel.updateOne({ _id: idPago }, pago);
     }
 

@@ -123,7 +123,7 @@ export class IngresoService {
      * @param idIngreso 
      * @param ingreso 
      */
-    async updateIngreso(idIngreso: string, ingreso: IngresoI): Promise<IngresoI> {
+    async updateIngreso(idIngreso: string, ingreso: IngresoI): Promise<any> {
         return await this.ingresoModel.updateOne({ _id: idIngreso }, ingreso);
     }
 

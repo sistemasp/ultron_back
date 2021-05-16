@@ -30,7 +30,8 @@ export class AparatologiaService {
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
-            .populate('status');
+            .populate('status')
+            .limit(1000);
     }
 
     /**
@@ -445,7 +446,7 @@ export class AparatologiaService {
      * @param idAparatologia 
      * @param aparatologia 
      */
-    async updateDate(idAparatologia: string, aparatologia: AparatologiaI): Promise<AparatologiaI> {
+    async updateDate(idAparatologia: string, aparatologia: AparatologiaI): Promise<any> {
         return await this.aparatologiaModel.updateOne({ _id: idAparatologia }, aparatologia);
     }
 

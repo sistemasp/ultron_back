@@ -53,7 +53,7 @@ export class AreaService {
      * @param idArea 
      * @param area 
      */
-    async updateArea(idArea: string, area: AreaI): Promise<AreaI> {
+    async updateArea(idArea: string, area: AreaI): Promise<any> {
         return await this.areaModel.updateOne({ _id: idArea }, area);
     }
 

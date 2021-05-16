@@ -45,7 +45,7 @@ export class RazonSocialService {
      * @param idRazonSocial 
      * @param razonSocial 
      */
-    async updateRazonSocial(idRazonSocial: string, razonSocial: RazonSocialI): Promise<RazonSocialI> {
+    async updateRazonSocial(idRazonSocial: string, razonSocial: RazonSocialI): Promise<any> {
         return await this.razonSocialModel.updateOne({ _id: idRazonSocial }, razonSocial);
     }
 

@@ -89,7 +89,7 @@ export class BiopsiaService {
      * @param idBiopsia 
      * @param biopsia 
      */
-    async updateBiopsia(idBiopsia: string, biopsia: BiopsiaI): Promise<BiopsiaI> {
+    async updateBiopsia(idBiopsia: string, biopsia: BiopsiaI): Promise<any> {
         return await this.biopsiaModel.updateOne({ _id: idBiopsia }, biopsia);
     }
 

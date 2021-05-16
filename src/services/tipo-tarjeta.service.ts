@@ -45,7 +45,7 @@ export class TipoTarjetaService {
      * @param idTipoTarjeta 
      * @param tipoTarjeta 
      */
-    async updateTipoTarjeta(idTipoTarjeta: string, tipoTarjeta: TipoTarjetaI): Promise<TipoTarjetaI> {
+    async updateTipoTarjeta(idTipoTarjeta: string, tipoTarjeta: TipoTarjetaI): Promise<any> {
         return await this.tipoTarjetaModel.updateOne({ _id: idTipoTarjeta }, tipoTarjeta);
     }
 

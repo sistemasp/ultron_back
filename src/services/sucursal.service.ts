@@ -37,7 +37,7 @@ export class SucursalService {
      * @param idSucursal 
      * @param sucursal 
      */
-    async updateOffice(idSucursal: string, sucursal: SucursalI): Promise<SucursalI> {
+    async updateOffice(idSucursal: string, sucursal: SucursalI): Promise<any> {
         return await this.sucursalModel.updateOne({ _id: idSucursal }, sucursal);
     }
 

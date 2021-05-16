@@ -45,7 +45,7 @@ export class TipoEsteticaService {
      * @param idTipoEstetica 
      * @param tipoEstetica 
      */
-    async updateTipoEstetica(idTipoEstetica: string, tipoEstetica: TipoEsteticaI): Promise<TipoEsteticaI> {
+    async updateTipoEstetica(idTipoEstetica: string, tipoEstetica: TipoEsteticaI): Promise<any> {
         return await this.tipoEsteticaModel.updateOne({ _id: idTipoEstetica }, tipoEstetica);
     }
 

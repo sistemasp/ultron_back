@@ -54,7 +54,7 @@ export class StatusService {
      * @param idStatus 
      * @param status 
      */
-    async updateStatus(idStatus: string, status: StatusI): Promise<StatusI> {
+    async updateStatus(idStatus: string, status: StatusI): Promise<any> {
         return await this.statusModel.updateOne({ _id: idStatus }, status);
     }
 

@@ -45,7 +45,7 @@ export class SexoService {
      * @param idSexo 
      * @param sexo 
      */
-    async updateSexo(idSexo: string, sexo: SexoI): Promise<SexoI> {
+    async updateSexo(idSexo: string, sexo: SexoI): Promise<any> {
         return await this.sexoModel.updateOne({ _id: idSexo }, sexo);
     }
 

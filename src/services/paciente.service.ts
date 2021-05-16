@@ -78,7 +78,7 @@ export class PacienteService {
      * @param idPaciente 
      * @param paciente 
      */
-    async updatePatient(idPaciente: string, paciente: PacienteI): Promise<PacienteI> {
+    async updatePatient(idPaciente: string, paciente: PacienteI): Promise<any> {
         return await this.pacienteModel.updateOne({ _id: idPaciente }, paciente);
     }
 

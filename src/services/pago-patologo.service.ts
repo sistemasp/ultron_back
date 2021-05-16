@@ -353,7 +353,7 @@ export class PagoPatologoService {
      * @param idPagoPatologo 
      * @param pagoPatologo 
      */
-    async updatePagoPatologo(idPagoPatologo, pagoPatologo): Promise<PagoPatologoI> {
+    async updatePagoPatologo(idPagoPatologo, pagoPatologo): Promise<any> {
         return await this.pagoPatologoModel.updateOne({ _id: idPagoPatologo }, pagoPatologo);
     }
 

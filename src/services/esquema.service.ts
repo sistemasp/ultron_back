@@ -46,7 +46,7 @@ export class EsquemaService {
      * @param idEsquema 
      * @param esquema 
      */
-    async updateEsquema(idEsquema: string, esquema: EsquemaI): Promise<EsquemaI> {
+    async updateEsquema(idEsquema: string, esquema: EsquemaI): Promise<any> {
         return await this.esquemaModel.updateOne({ _id: idEsquema }, esquema);
     }
 

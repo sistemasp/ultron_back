@@ -45,7 +45,7 @@ export class LaboratorioService {
      * @param idLaboratorio 
      * @param laboratorio 
      */
-    async updateLaboratorio(idLaboratorio: string, laboratorio: LaboratorioI): Promise<LaboratorioI> {
+    async updateLaboratorio(idLaboratorio: string, laboratorio: LaboratorioI): Promise<any> {
         return await this.laboratorioModel.updateOne({ _id: idLaboratorio }, laboratorio);
     }
 

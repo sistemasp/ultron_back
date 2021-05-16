@@ -87,24 +87,26 @@ export class ConsultorioService {
      * Busca solo un consultorio mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeSurgeryByIdPaciente(consultorioId: string): Promise<ConsultorioI[]> {
+    async breakFreeSurgeryByIdPaciente(consultorioId: string): Promise<any[]> {
         console.log(consultorioId);
-        
+        /*
         return await this.consultorioModel.updateOne({ _id: consultorioId }, 
             {$unset: {
                 paciente: undefined,
                 consulta: undefined,
                 tipo_servicio: undefined,
                 servicio: undefined,
-            }});
+            }});*/
+            return null;
     }
 
     /**
      * Busca solo un consultorio mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeSurgeryByIdDermatologo(consultorioId: string): Promise<ConsultorioI[]> {
-        return await this.consultorioModel.updateOne({ _id: consultorioId }, {$unset: {dermatologo: undefined}});
+    async breakFreeSurgeryByIdDermatologo(consultorioId: string): Promise<any[]> {
+        //return await this.consultorioModel.updateOne({ _id: consultorioId }, {$unset: {dermatologo: undefined}});
+        return null;
     }
 
     /**
@@ -121,7 +123,7 @@ export class ConsultorioService {
      * @param idConsultorio 
      * @param consultorio 
      */
-    async updateSurgery(idConsultorio: string, consultorio: ConsultorioI): Promise<ConsultorioI> {
+    async updateSurgery(idConsultorio: string, consultorio: ConsultorioI): Promise<any> {
         return await this.consultorioModel.updateOne({ _id: idConsultorio }, consultorio);
     }
 

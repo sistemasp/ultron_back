@@ -54,7 +54,7 @@ export class ProductoService {
      * @param idProducto 
      * @param producto 
      */
-    async updateProducto(idProducto: string, producto: ProductoI): Promise<ProductoI> {
+    async updateProducto(idProducto: string, producto: ProductoI): Promise<any> {
         return await this.productoModel.updateOne({ _id: idProducto }, producto);
     }
 

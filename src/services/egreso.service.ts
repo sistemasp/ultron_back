@@ -106,7 +106,7 @@ export class EgresoService {
      * @param idEgreso 
      * @param egreso 
      */
-    async updateEgreso(idEgreso: string, egreso: EgresoI): Promise<EgresoI> {
+    async updateEgreso(idEgreso: string, egreso: EgresoI): Promise<any> {
         return await this.egresoModel.updateOne({ _id: idEgreso }, egreso);
     }
 

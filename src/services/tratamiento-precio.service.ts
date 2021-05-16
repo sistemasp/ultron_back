@@ -37,7 +37,7 @@ export class TratamientoPrecioService {
      * @param idTratamientoPrecio 
      * @param tratamientoPrecio 
      */
-    async updateTreatmentPrice(idTratamientoPrecio: string, tratamientoPrecio: TratamientoPrecioI): Promise<TratamientoPrecioI> {
+    async updateTreatmentPrice(idTratamientoPrecio: string, tratamientoPrecio: TratamientoPrecioI): Promise<any> {
         return await this.tratamientoPrecioModel.updateOne({ _id: idTratamientoPrecio }, tratamientoPrecio);
     }
 

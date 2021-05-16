@@ -55,7 +55,7 @@ export class RecetaService {
      * @param idReceta 
      * @param receta 
      */
-    async updateReceta(idReceta: string, receta: RecetaI): Promise<RecetaI> {
+    async updateReceta(idReceta: string, receta: RecetaI): Promise<any> {
         return await this.recetaModel.updateOne({ _id: idReceta }, receta);
     }
 

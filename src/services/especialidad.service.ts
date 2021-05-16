@@ -45,7 +45,7 @@ export class EspecialidadService {
      * @param idEspecialidad 
      * @param especialidad 
      */
-    async updateEspecialidad(idEspecialidad: string, especialidad: EspecialidadI): Promise<EspecialidadI> {
+    async updateEspecialidad(idEspecialidad: string, especialidad: EspecialidadI): Promise<any> {
         return await this.especialidadModel.updateOne({ _id: idEspecialidad }, especialidad);
     }
 

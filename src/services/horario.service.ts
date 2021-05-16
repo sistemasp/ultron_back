@@ -185,7 +185,7 @@ export class HorarioService {
      * @param idHorario 
      * @param horario 
      */
-    async updateSchedule(idHorario: string, horario: HorarioI): Promise<HorarioI> {
+    async updateSchedule(idHorario: string, horario: HorarioI): Promise<any> {
         return await this.horarioModel.updateOne({ _id: idHorario }, horario);
     }
 

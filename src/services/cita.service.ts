@@ -67,7 +67,7 @@ export class CitaService {
      * @param idCita 
      * @param cita 
      */
-    async updateCita(idCita: string, cita: CitaI): Promise<CitaI> {
+    async updateCita(idCita: string, cita: CitaI): Promise<any> {
         return await this.citaModel.updateOne({ _id: idCita }, cita);
     }
 

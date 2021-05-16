@@ -45,7 +45,7 @@ export class TipoCitaService {
      * @param idTipoCita 
      * @param tipoCita 
      */
-    async updateTipoCita(idTipoCita: string, tipoCita: TipoCitaI): Promise<TipoCitaI> {
+    async updateTipoCita(idTipoCita: string, tipoCita: TipoCitaI): Promise<any> {
         return await this.tipoCitaModel.updateOne({ _id: idTipoCita }, tipoCita);
     }
 

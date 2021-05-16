@@ -45,7 +45,7 @@ export class FrecuenciaService {
      * @param idFrecuencia 
      * @param frecuencia 
      */
-    async updateFrecuencia(idFrecuencia: string, frecuencia: FrecuenciaI): Promise<FrecuenciaI> {
+    async updateFrecuencia(idFrecuencia: string, frecuencia: FrecuenciaI): Promise<any> {
         return await this.frecuenciaModel.updateOne({ _id: idFrecuencia }, frecuencia);
     }
 

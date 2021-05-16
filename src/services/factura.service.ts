@@ -81,7 +81,7 @@ export class FacturaService {
      * @param idFactura 
      * @param factura 
      */
-    async updateFactura(idFactura: string, factura: FacturaI): Promise<FacturaI> {
+    async updateFactura(idFactura: string, factura: FacturaI): Promise<any> {
         return await this.facturaModel.updateOne({ _id: idFactura }, factura);
     }
 

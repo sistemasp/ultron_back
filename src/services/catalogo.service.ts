@@ -45,7 +45,7 @@ export class CatalogoService {
      * @param idCatalogo 
      * @param catalogo 
      */
-    async updateCatalogo(idCatalogo: string, catalogo: CatalogoI): Promise<CatalogoI> {
+    async updateCatalogo(idCatalogo: string, catalogo: CatalogoI): Promise<any> {
         return await this.catalogoModel.updateOne({ _id: idCatalogo }, catalogo);
     }
 

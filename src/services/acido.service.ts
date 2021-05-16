@@ -45,7 +45,7 @@ export class AcidoService {
      * @param idAcido 
      * @param acido 
      */
-    async updateAcido(idAcido: string, acido: AcidoI): Promise<AcidoI> {
+    async updateAcido(idAcido: string, acido: AcidoI): Promise<any> {
         return await this.acidoModel.updateOne({ _id: idAcido }, acido);
     }
 

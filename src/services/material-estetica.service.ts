@@ -58,7 +58,7 @@ export class MaterialEsteticaService {
      * @param idMaterialEstetica 
      * @param materialEstetica 
      */
-    async updateMaterialEstetica(idMaterialEstetica: string, materialEstetica: MaterialEsteticaI): Promise<MaterialEsteticaI> {
+    async updateMaterialEstetica(idMaterialEstetica: string, materialEstetica: MaterialEsteticaI): Promise<any> {
         return await this.materialEsteticaModel.updateOne({ _id: idMaterialEstetica }, materialEstetica);
     }
 

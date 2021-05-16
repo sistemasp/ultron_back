@@ -288,7 +288,7 @@ export class CirugiaService {
      * @param idCirugia 
      * @param cirugia 
      */
-    async updateCirugia(idCirugia: string, cirugia: CirugiaI): Promise<CirugiaI> {
+    async updateCirugia(idCirugia: string, cirugia: CirugiaI): Promise<any> {
         return await this.cirugiaModel.updateOne({ _id: idCirugia }, cirugia);
     }
 

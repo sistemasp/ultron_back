@@ -45,7 +45,7 @@ export class TipoIngresoService {
      * @param idTipoIngreso 
      * @param tipoIngreso 
      */
-    async updateTipoIngreso(idTipoIngreso: string, tipoIngreso: TipoIngresoI): Promise<TipoIngresoI> {
+    async updateTipoIngreso(idTipoIngreso: string, tipoIngreso: TipoIngresoI): Promise<any> {
         return await this.tipoIngresoModel.updateOne({ _id: idTipoIngreso }, tipoIngreso);
     }
 

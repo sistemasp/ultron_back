@@ -45,7 +45,7 @@ export class ConsecutivoService {
      * @param idConsecutivo 
      * @param consecutivo 
      */
-    async updateConsecutivo(idConsecutivo: string, consecutivo: ConsecutivoI): Promise<ConsecutivoI> {
+    async updateConsecutivo(idConsecutivo: string, consecutivo: ConsecutivoI): Promise<any> {
         return await this.consecutivoModel.updateOne({ _id: idConsecutivo }, consecutivo);
     }
 

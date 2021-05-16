@@ -45,7 +45,7 @@ export class UsoCfdiService {
      * @param idUsoCfdi 
      * @param usoCfdi 
      */
-    async updateUsoCfdi(idUsoCfdi: string, usoCfdi: UsoCfdiI): Promise<UsoCfdiI> {
+    async updateUsoCfdi(idUsoCfdi: string, usoCfdi: UsoCfdiI): Promise<any> {
         return await this.usoCfdiModel.updateOne({ _id: idUsoCfdi }, usoCfdi);
     }
 

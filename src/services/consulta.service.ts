@@ -422,7 +422,7 @@ export class ConsultaService {
      * @param idConsulta 
      * @param consulta 
      */
-    async updateConsult(idConsulta: string, consulta: ConsultaI): Promise<ConsultaI> {
+    async updateConsult(idConsulta: string, consulta: ConsultaI): Promise<any> {
         return await this.consultaModel.updateOne({ _id: idConsulta }, consulta);
     }
 

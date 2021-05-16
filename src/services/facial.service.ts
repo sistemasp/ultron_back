@@ -452,7 +452,7 @@ export class FacialService {
      * @param idFacial 
      * @param facial 
      */
-    async updateFacial(idFacial: string, facial: FacialI): Promise<FacialI> {
+    async updateFacial(idFacial: string, facial: FacialI): Promise<any> {
         return await this.facialModel.updateOne({ _id: idFacial }, facial);
     }
 

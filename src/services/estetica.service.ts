@@ -273,7 +273,7 @@ export class EsteticaService {
      * @param idEstetica 
      * @param estetica 
      */
-    async updateEstetica(idEstetica: string, estetica: EsteticaI): Promise<EsteticaI> {
+    async updateEstetica(idEstetica: string, estetica: EsteticaI): Promise<any> {
         return await this.esteticaModel.updateOne({ _id: idEstetica }, estetica);
     }
 

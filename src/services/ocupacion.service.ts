@@ -45,7 +45,7 @@ export class OcupacionService {
      * @param idOcupacion 
      * @param ocupacion 
      */
-    async updateOcupacion(idOcupacion: string, ocupacion: OcupacionI): Promise<OcupacionI> {
+    async updateOcupacion(idOcupacion: string, ocupacion: OcupacionI): Promise<any> {
         return await this.ocupacionModel.updateOne({ _id: idOcupacion }, ocupacion);
     }
 

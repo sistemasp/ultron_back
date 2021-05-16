@@ -97,7 +97,7 @@ export class CorteService {
      * @param idCorte 
      * @param corte 
      */
-    async updateCorte(idCorte: string, corte: CorteI): Promise<CorteI> {
+    async updateCorte(idCorte: string, corte: CorteI): Promise<any> {
         return await this.corteModel.updateOne({ _id: idCorte }, corte);
     }
 

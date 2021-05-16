@@ -425,7 +425,7 @@ export class DermapenService {
      * @param idDermapen 
      * @param dermapen 
      */
-    async updateDermapen(idDermapen: string, dermapen: DermapenI): Promise<DermapenI> {
+    async updateDermapen(idDermapen: string, dermapen: DermapenI): Promise<any> {
         return await this.dermapenModel.updateOne({ _id: idDermapen }, dermapen);
     }
 

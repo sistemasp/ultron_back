@@ -353,7 +353,7 @@ export class PagoDermatologoService {
      * @param idPagoDermatologo 
      * @param pagoDermatologo 
      */
-    async updatePagoDermatologo(idPagoDermatologo: string, pagoDermatologo: PagoDermatologoI): Promise<PagoDermatologoI> {
+    async updatePagoDermatologo(idPagoDermatologo: string, pagoDermatologo: PagoDermatologoI): Promise<any> {
         return await this.pagoDermatologoModel.updateOne({ _id: idPagoDermatologo }, pagoDermatologo);
     }
 

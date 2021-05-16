@@ -45,7 +45,7 @@ export class CancelacionService {
      * @param idCancelacion 
      * @param cancelacion 
      */
-    async updateCancelacion(idCancelacion: string, cancelacion: CancelacionI): Promise<CancelacionI> {
+    async updateCancelacion(idCancelacion: string, cancelacion: CancelacionI): Promise<any> {
         return await this.cancelacionModel.updateOne({ _id: idCancelacion }, cancelacion);
     }
 

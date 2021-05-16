@@ -45,7 +45,7 @@ export class FormaPagoService {
      * @param idFormaPago 
      * @param formaPago 
      */
-    async updateFormaPago(idFormaPago: string, formaPago: FormaPagoI): Promise<FormaPagoI> {
+    async updateFormaPago(idFormaPago: string, formaPago: FormaPagoI): Promise<any> {
         return await this.formaPagoModel.updateOne({ _id: idFormaPago }, formaPago);
     }
 

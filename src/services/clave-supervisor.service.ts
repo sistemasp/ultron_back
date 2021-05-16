@@ -58,7 +58,7 @@ export class ClaveSupervisorService {
      * @param idClaveSupervisor 
      * @param claveSupervisor 
      */
-    async updateClaveSupervisor(idClaveSupervisor: string, claveSupervisor: ClaveSupervisorI): Promise<ClaveSupervisorI> {
+    async updateClaveSupervisor(idClaveSupervisor: string, claveSupervisor: ClaveSupervisorI): Promise<any> {
         return await this.claveSupervisorModel.updateOne({ _id: idClaveSupervisor }, claveSupervisor);
     }
 

@@ -45,7 +45,7 @@ export class RolService {
      * @param idRol 
      * @param rol 
      */
-    async updateRol(idRol: string, rol: RolI): Promise<RolI> {
+    async updateRol(idRol: string, rol: RolI): Promise<any> {
         return await this.rolModel.updateOne({ _id: idRol }, rol);
     }
 

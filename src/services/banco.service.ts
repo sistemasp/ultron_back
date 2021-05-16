@@ -45,7 +45,7 @@ export class BancoService {
      * @param idBanco 
      * @param banco 
      */
-    async updateBanco(idBanco: string, banco: BancoI): Promise<BancoI> {
+    async updateBanco(idBanco: string, banco: BancoI): Promise<any> {
         return await this.bancoModel.updateOne({ _id: idBanco }, banco);
     }
 

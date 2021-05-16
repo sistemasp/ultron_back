@@ -45,7 +45,7 @@ export class MaterialService {
      * @param idMaterial 
      * @param material 
      */
-    async updateMaterial(idMaterial: string, material: MaterialI): Promise<MaterialI> {
+    async updateMaterial(idMaterial: string, material: MaterialI): Promise<any> {
         return await this.materialModel.updateOne({ _id: idMaterial }, material);
     }
 
