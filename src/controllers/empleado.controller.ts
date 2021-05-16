@@ -58,7 +58,7 @@ export class EmpleadoController {
         return this.empleadoService.findEmployeesByRolIdAvailable(idRol);
     }
 
-    @UseGuards(JwtAuthGuard)
+    //@UseGuards(JwtAuthGuard)
     @Post()
     createEmployee(@Body() empleadoDto: EmpleadoDto): Promise<EmpleadoI> {
         console.log(new Date(), this.TAG, "createEmployee");

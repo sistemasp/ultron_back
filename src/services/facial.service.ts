@@ -136,6 +136,7 @@ export class FacialService {
         endDate.setHours(23);
         endDate.setMinutes(59);
         endDate.setSeconds(59);
+        
         return await this.facialModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('fecha_hora')
             .populate('paciente')
             .populate('servicio')

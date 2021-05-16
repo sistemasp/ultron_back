@@ -166,6 +166,9 @@ import { jwtConstants } from './constants';
 import { LocalStrategy } from './auth/strategies/local.strategy';
 import { JwtStrategy } from './auth/strategies/jwt.strategy';
 import { AuthService } from './auth/auth.service';
+import { CitaSchema } from './schemas/cita.schema';
+import { CitaController } from './controllers/cita.controller';
+import { CitaService } from './services/cita.service';
 
 @Module({
   imports: [
@@ -186,6 +189,7 @@ import { AuthService } from './auth/auth.service';
       { name: 'Cancelacion', schema: CancelacionSchema },
       { name: 'Catalogo', schema: CatalogoSchema },
       { name: 'Cirugia', schema: CirugiaSchema },
+      { name: 'Cita', schema: CitaSchema },
       { name: 'ClaveSupervisor', schema: ClaveSupervisorSchema },
       { name: 'Consecutivo', schema: ConsecutivoSchema },
       { name: 'Consulta', schema: ConsultaSchema },
@@ -242,6 +246,7 @@ import { AuthService } from './auth/auth.service';
     CancelacionController,
     CatalogoController,
     CirugiaController,
+    CitaController,
     ClaveSupervisorController,
     ConsecutivoController,
     ConsultaController,
@@ -298,6 +303,7 @@ import { AuthService } from './auth/auth.service';
     CancelacionService,
     CatalogoService,
     CirugiaService,
+    CitaService,
     ClaveSupervisorService,
     ConsecutivoService,
     ConsultaService,
