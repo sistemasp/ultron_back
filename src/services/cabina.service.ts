@@ -75,8 +75,8 @@ export class CabinaService {
      * Busca solo un cabina mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeCabinaByIdPaciente(cabinaId: string): Promise<any[]> {
-        /*return await this.cabinaModel.updateOne({ _id: cabinaId }, 
+    async breakFreeCabinaByIdPaciente(cabinaId: string): Promise<any> {
+        return await this.cabinaModel.updateOne({ _id: cabinaId }, 
             {
                 $unset:{
                     paciente: undefined,
@@ -88,8 +88,7 @@ export class CabinaService {
                 $set:{
                     disponible: true,
                 }
-            });*/
-            return null;
+            });
     }
 
     /**

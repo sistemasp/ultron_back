@@ -87,17 +87,14 @@ export class ConsultorioService {
      * Busca solo un consultorio mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeSurgeryByIdPaciente(consultorioId: string): Promise<any[]> {
-        console.log(consultorioId);
-        /*
+    async breakFreeSurgeryByIdPaciente(consultorioId: string): Promise<any> {
         return await this.consultorioModel.updateOne({ _id: consultorioId }, 
             {$unset: {
                 paciente: undefined,
-                consulta: undefined,
+                consultaId: undefined,
                 tipo_servicio: undefined,
                 servicio: undefined,
-            }});*/
-            return null;
+            }});
     }
 
     /**

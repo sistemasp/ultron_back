@@ -76,8 +76,8 @@ export class SalaCirugiaService {
      * Busca solo un salaCirugia mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeSalaCirugiaByIdPaciente(salaCirugiaId): Promise<SalaCirugiaI[]> {
-        /*return await this.salaCirugiaModel.updateOne(
+    async breakFreeSalaCirugiaByIdPaciente(salaCirugiaId): Promise<any> {
+        return await this.salaCirugiaModel.updateOne(
             { _id: salaCirugiaId },
             {
                 $unset: {
@@ -91,8 +91,7 @@ export class SalaCirugiaService {
                     disponible: true,
                 }
             }
-        );*/
-        return null;
+        );
     }
 
     /**
