@@ -4,7 +4,7 @@ const constMongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 export const PagoPatologoSchema = new Schema({
-    create_date: { type: Date },
+    create_date: { type: Date, default: new Date() },
     fecha_pago: { type: Date },
     patologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     biopsias: [{ type: constMongoose.ObjectId, ref: 'Biopsia' }],

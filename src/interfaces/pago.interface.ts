@@ -10,6 +10,7 @@ import { IngresoI } from "./ingreso.interface";
 import { Document } from "mongoose";
 
 export interface PagoI extends Document {
+    create_date: Date;
     fecha_pago: Date;
     hora_aplicacion: Date;
     paciente: PacienteI;

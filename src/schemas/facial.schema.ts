@@ -4,7 +4,7 @@ const constMongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 export const FacialSchema = new Schema({
-    create_date: { type: Date },
+    create_date: { type: Date, default: new Date() },
     hora_aplicacion: { type: Date },
     fecha_hora: { type: Date },
     paciente: { type: constMongoose.ObjectId, ref: 'Paciente' },
@@ -36,7 +36,7 @@ export const FacialSchema = new Schema({
     pagado: { type: Boolean, default: false },
     pagos: [{ type: constMongoose.ObjectId, ref: 'Pago' }],
     consecutivo: { type: Number },
-    consulta: { type: constMongoose.ObjectId, ref: 'Consulta' },
+    consultaId: { type: String },
     producto: { type: constMongoose.ObjectId, ref: 'Producto' },
     frecuencia: { type: constMongoose.ObjectId, ref: 'Frecuencia' },
     porcentaje_descuento_clinica: { type: String },

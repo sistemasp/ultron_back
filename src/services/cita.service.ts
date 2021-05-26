@@ -54,6 +54,44 @@ export class CitaService {
     }
 
     /**
+     * Muestra todas las consultas de la BD que correspondan a una fecha_hora y una sucursal
+     */
+     async findDatesByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<CitaI[]> {
+        let startDate = new Date(anioi, mesi, diai);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(aniof, mesf, diaf);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        const consultas = await this.citaModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
+            .populate('paciente')
+            .populate('sucursal')
+            .populate('quien_agenda')
+            .populate('promovendedor')
+            .populate('dermatologo')
+            .populate('quien_confirma_asistencia')
+            .populate('quien_confirma_llamada')
+            .populate('tipo_cita')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate('medio')
+            .populate('pagos')
+            .populate('servicio')
+            .populate('frecuencia')
+            .populate('producto')
+            .populate('status');
+
+        return consultas;
+    }
+
+    /**
      * Genera un nuevo cita en la BD
      * @param cita 
      */

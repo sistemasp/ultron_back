@@ -46,7 +46,7 @@ export class AparatologiaDto extends Document {
     readonly factura: FacturaDto;
     readonly pagos: PagoDto[];
     readonly consecutivo: Number;
-    readonly consulta: ConsultaDto;
+    readonly consultaId: String;
     readonly producto: ProductoDto;
     readonly frecuencia: FrecuenciaDto;
     readonly porcentaje_descuento_clinica: String;

@@ -4,7 +4,7 @@ const constMongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 export const ConsultaSchema = new Schema({
-    create_date: { type: Date },
+    create_date: { type: Date, default: new Date() },
     hora_aplicacion: { type: Date },
     folio: { type: String },
     fecha_hora: { type: Date },

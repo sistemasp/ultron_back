@@ -4,7 +4,7 @@ const constMongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 export const PagoDermatologoSchema = new Schema({
-    create_date: { type: Date },
+    create_date: { type: Date, default: new Date() },
     fecha_pago: { type: Date },
     dermatologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     consultas: [{ type: constMongoose.ObjectId, ref: 'Consulta' }],

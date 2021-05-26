@@ -407,10 +407,10 @@ export class ConsultaService {
      */
     async createConsult(consulta: ConsultaI): Promise<ConsultaI> {
         const currentDate = new Date();
-        /*const consecutivo = await this.consecutivoModel.find({
+        const consecutivo = await this.consecutivoModel.find({
             sucursal: consulta.sucursal,
         });
-        consulta.consecutivo = consecutivo.length;*/
+        consulta.consecutivo = consecutivo.length;
         consulta.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newConsult = new this.consultaModel(consulta);

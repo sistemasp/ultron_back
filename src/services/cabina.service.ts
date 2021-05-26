@@ -95,9 +95,8 @@ export class CabinaService {
      * Busca solo un cabina mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeCabinaByIdDermatologo(cabinaId: string): Promise<any[]> {
-        return null;
-        //return await this.cabinaModel.updateOne({ _id: cabinaId }, {$unset: {dermatologo: undefined}});
+    async breakFreeCabinaByIdDermatologo(cabinaId: string): Promise<any> {
+        return await this.cabinaModel.updateOne({ _id: cabinaId }, {$unset: {dermatologo: undefined}});
     }
 
     /**

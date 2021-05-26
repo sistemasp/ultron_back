@@ -98,9 +98,8 @@ export class SalaCirugiaService {
      * Busca solo un salaCirugia mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeSalaCirugiaByIdDermatologo(salaCirugiaId: string): Promise<any[]> {
-        //return await this.salaCirugiaModel.updateOne({ _id: salaCirugiaId }, { $unset: { dermatologo: undefined } });
-        return null;
+    async breakFreeSalaCirugiaByIdDermatologo(salaCirugiaId: string): Promise<any> {
+        return await this.salaCirugiaModel.updateOne({ _id: salaCirugiaId }, { $unset: { dermatologo: undefined } });
     }
 
     /**

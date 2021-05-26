@@ -101,9 +101,8 @@ export class ConsultorioService {
      * Busca solo un consultorio mediante su ID de la sucursal en la BD
      * @param sucursalId 
      */
-    async breakFreeSurgeryByIdDermatologo(consultorioId: string): Promise<any[]> {
-        //return await this.consultorioModel.updateOne({ _id: consultorioId }, {$unset: {dermatologo: undefined}});
-        return null;
+    async breakFreeSurgeryByIdDermatologo(consultorioId: string): Promise<any> {
+        return await this.consultorioModel.updateOne({ _id: consultorioId }, {$unset: {dermatologo: undefined}});
     }
 
     /**

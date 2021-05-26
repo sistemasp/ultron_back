@@ -46,7 +46,7 @@ export interface AparatologiaI extends Document {
     factura: FacturaI;
     pagos: PagoI[];
     consecutivo: Number;
-    consulta: ConsultaI;
+    consultaId: String;
     producto: ProductoI;
     frecuencia: FrecuenciaI;
     porcentaje_descuento_clinica: String;

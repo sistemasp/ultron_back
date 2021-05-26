@@ -22,6 +22,13 @@ export class CitaController {
         return this.citaService.findCitaById(idCita);
     }
 
+    @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
+    findDatesByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
+        @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
+        @Param('sucursalId') sucursalId: string): Promise<CitaI[]> {
+        console.log(new Date(), this.TAG, "findDatesByRangeDateAndSucursal");
+        return this.citaService.findDatesByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
+    }
     
     @Get('servicio/:idSericio')
     findCitaByServicioId(@Param('idSericio') idSericio: string): Promise<CitaI[]> {

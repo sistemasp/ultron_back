@@ -4,7 +4,7 @@ const constMongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 export const IngresoSchema = new Schema({
-    create_date: { type: Date },
+    create_date: { type: Date, default: new Date() },
     hora_aplicacion: { type: Date, default: new Date() },
     turno: { type: String },
     recepcionista: { type: constMongoose.ObjectId, ref: 'Empleado' },

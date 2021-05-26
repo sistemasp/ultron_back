@@ -10,6 +10,7 @@ import { IngresoDto } from "./ingreso-dto";
 import { Document } from "mongoose";
 
 export class PagoDto extends Document {
+    readonly create_date: Date;
     readonly fecha_pago: Date;
     readonly hora_aplicacion: Date;
     readonly paciente: PacienteDto;
