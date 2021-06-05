@@ -1,6 +1,7 @@
 import { Document } from "mongoose";
 
 export class RazonSocialDto extends Document {
+    readonly create_date: Date;
     readonly rfc: String;
     readonly nombre_completo: String;
     readonly domicilio: String;

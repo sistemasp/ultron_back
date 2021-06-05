@@ -405,6 +405,8 @@ export class FacialService {
             .populate('paciente')
             .populate('sucursal')
             .populate('areas')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('tipo_cita')
             .populate('pagos');
     }
@@ -415,7 +417,6 @@ export class FacialService {
     async findFacialesByPayOfDoctorHoraAplicacionPA(sucursalId, dermatologoId, canceladoCPId, hora_apertura, hora_cierre): Promise<FacialI[]> {
         let startDate = new Date(hora_apertura);
         let endDate = new Date(hora_cierre);
-
         return await this.facialModel.find(
             {
                 hora_aplicacion: { $gte: startDate, $lte: endDate },
@@ -426,6 +427,8 @@ export class FacialService {
             .populate('paciente')
             .populate('sucursal')
             .populate('areas')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('tipo_cita')
             .populate('pagos');
     }

@@ -12,4 +12,5 @@ export class SucursalDto extends Document {
     readonly precio_sabado_matutino: string;
     readonly precio_sabado_vespertino: string;
     readonly precio_festivo: string;
+    readonly color : String;
 }

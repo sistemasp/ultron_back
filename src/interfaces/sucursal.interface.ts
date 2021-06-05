@@ -12,4 +12,5 @@ export interface SucursalI extends Document {
     precio_sabado_matutino: string;
     precio_sabado_vespertino: string;
     precio_festivo: string;
+    color : String;
 }

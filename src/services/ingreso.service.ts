@@ -68,7 +68,7 @@ export class IngresoService {
      */
     async showIngresosTodayBySucursalAndHoraAplicacion(sucursalId, hora_apertura, hora_cierre): Promise<IngresoI[]> {
         let startDate = new Date(hora_apertura);
-        let endDate = new Date(hora_cierre);
+        let endDate = new Date(hora_cierre);        
         return await this.ingresoModel.find({
             hora_aplicacion: { $gte: startDate, $lt: endDate },
             sucursal: sucursalId,

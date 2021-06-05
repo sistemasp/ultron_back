@@ -3,6 +3,7 @@ import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 export const RazonSocialSchema = new Schema({
+    create_date: { type: Date, default: new Date() },
     rfc : { type: String },
     nombre_completo : { type: String },
     domicilio : { type: String },

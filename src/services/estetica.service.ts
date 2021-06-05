@@ -129,6 +129,7 @@ export class EsteticaService {
                 })
             .populate('quien_agenda')
             .populate('dermatologo')
+            .populate('medio')
             .populate('tipo_cita')
             .populate('producto')
             .populate('pagos');
@@ -157,10 +158,10 @@ export class EsteticaService {
      */
     async createEstetica(estetica: EsteticaI): Promise<EsteticaI> {
         const currentDate = new Date();
-        /*const consecutivo = await this.consecutivoModel.find({
+        const consecutivo = await this.consecutivoModel.find({
             sucursal: estetica.sucursal,
         });
-        estetica.consecutivo = consecutivo.length;*/
+        estetica.consecutivo = consecutivo.length;
         estetica.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newEstetica = new this.esteticaModel(estetica);
@@ -245,6 +246,8 @@ export class EsteticaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('tipo_cita')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 
@@ -265,6 +268,8 @@ export class EsteticaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('tipo_cita')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 

@@ -256,6 +256,8 @@ export class ConsultaService {
             }).sort('consecutivo')
             .populate('paciente')
             .populate('sucursal')
+            .populate('producto')
+            .populate('forma_pago')
             .populate('pagos');
     }
 
@@ -276,6 +278,8 @@ export class ConsultaService {
             }).sort('consecutivo')
             .populate('paciente')
             .populate('sucursal')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 

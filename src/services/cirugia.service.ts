@@ -47,7 +47,7 @@ export class CirugiaService {
         let endDate = new Date(anio, mes, dia);
         endDate.setHours(23);
         endDate.setMinutes(59);
-        endDate.setSeconds(59);
+        endDate.setSeconds(59);        
         return await this.cirugiaModel.find(
             {
                 fecha_hora: { $gte: startDate, $lte: endDate },
@@ -162,6 +162,7 @@ export class CirugiaService {
             .populate('patologo')
             .populate('producto')
             .populate('biopsias')
+            .populate('medio')
             .populate('pagos');
     }
 
@@ -224,6 +225,8 @@ export class CirugiaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('tipo_cita')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 
@@ -244,6 +247,8 @@ export class CirugiaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('tipo_cita')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 
@@ -273,10 +278,10 @@ export class CirugiaService {
      */
     async createCirugia(cirugia: CirugiaI): Promise<CirugiaI> {
         const currentDate = new Date();
-        /*const consecutivo = await this.consecutivoModel.find({
+        const consecutivo = await this.consecutivoModel.find({
             sucursal: cirugia.sucursal,
         });
-        cirugia.consecutivo = consecutivo.length;*/
+        cirugia.consecutivo = consecutivo.length;
         cirugia.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newCirugia = new this.cirugiaModel(cirugia);

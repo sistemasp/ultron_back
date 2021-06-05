@@ -1,6 +1,7 @@
 import { Document } from "mongoose";
 
 export interface RazonSocialI extends Document {
+    create_date: Date;
     rfc: String;
     nombre_completo: String;
     domicilio: String;

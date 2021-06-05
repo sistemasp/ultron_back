@@ -409,10 +409,10 @@ export class DermapenService {
      */
     async createDermapen(dermapen: DermapenI): Promise<DermapenI> {
         const currentDate = new Date();
-        /*const consecutivo = await this.consecutivoModel.find({
+        const consecutivo = await this.consecutivoModel.find({
             sucursal: dermapen.sucursal,
         });
-        dermapen.consecutivo = consecutivo.length;*/
+        dermapen.consecutivo = consecutivo.length;
         dermapen.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newDate = new this.dermapenModel(dermapen);

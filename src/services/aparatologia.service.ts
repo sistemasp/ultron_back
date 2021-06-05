@@ -386,6 +386,7 @@ export class AparatologiaService {
             .populate('sucursal')
             .populate('areas')
             .populate('tipo_cita')
+            .populate('forma_pago')
             .populate('pagos');
     }
 
@@ -407,6 +408,7 @@ export class AparatologiaService {
             .populate('sucursal')
             .populate('areas')
             .populate('tipo_cita')
+            .populate('forma_pago')
             .populate('pagos');
     }
 

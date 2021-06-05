@@ -6,7 +6,7 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class RazonSocialService {
 
-    constructor(@InjectModel('RazonSocial') private readonly razonSocialModel : Model<RazonSocialI>) {}
+    constructor(@InjectModel('RazonSocial') private readonly razonSocialModel: Model<RazonSocialI>) { }
 
     /**
      * Muestra todos los razonSocials de la BD
@@ -16,11 +16,36 @@ export class RazonSocialService {
     }
 
     /**
+     * Muestra todos los pacientes de la BD
+     */
+    async remotePatients(per_page, page, search): Promise<{}> {
+        const exp = `(?imxs)${search.split(' ').join('.')}(?-imxs)`;
+        const query = {
+
+        };
+        const total = await this.razonSocialModel.countDocuments(query);
+        const razonSocials = await this.razonSocialModel.find(search !== '' ? query : {})
+            .limit(Number(per_page))
+            .skip(Number(page - 1) * Number(per_page))
+            .sort('-create_date')
+            .select('rfc nombre_completo domicilio numero_exterior numero_interior colonia ciudad municipio estado codigo_postal telefono email');
+        const response = {
+            ad: {},
+            data: razonSocials,
+            page: page,
+            per_page: per_page,
+            total: total,
+            total_pages: Number(total / per_page),
+        }
+        return response;
+    }
+
+    /**
      * Busca solo un razonSocial mediante su ID en la BD
      * @param idRazonSocial 
      */
     async findRazonSocialById(idRazonSocial: string): Promise<RazonSocialI> {
-        return await this.razonSocialModel.findOne( { _id: idRazonSocial } );
+        return await this.razonSocialModel.findOne({ _id: idRazonSocial });
     }
 
     /**
@@ -28,7 +53,7 @@ export class RazonSocialService {
      * @param idRazonSocial 
      */
     async findRazonSocialByEmployeeNumber(employeeNumber: string): Promise<RazonSocialI> {
-        return await this.razonSocialModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.razonSocialModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +78,7 @@ export class RazonSocialService {
      * Busca un razonSocial por su ID y lo elimina de la BD
      * @param idRazonSocial 
      */
-    async deleteRazonSocial(idRazonSocial: string ): Promise<RazonSocialI> {
+    async deleteRazonSocial(idRazonSocial: string): Promise<RazonSocialI> {
         return await this.razonSocialModel.findOneAndDelete({ _id: idRazonSocial });
     }
 
