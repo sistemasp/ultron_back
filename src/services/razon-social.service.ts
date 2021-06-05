@@ -12,7 +12,7 @@ export class RazonSocialService {
      * Muestra todos los razonSocials de la BD
      */
     async showAllRazonSocials(): Promise<RazonSocialI[]> {
-        return await this.razonSocialModel.find().sort('nombre');
+        return await this.razonSocialModel.find().sort('-create_date');
     }
 
     /**
