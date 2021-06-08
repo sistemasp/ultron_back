@@ -379,6 +379,8 @@ export class DermapenService {
             .populate('sucursal')
             .populate('areas')
             .populate('tipo_cita')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 
@@ -400,6 +402,8 @@ export class DermapenService {
             .populate('sucursal')
             .populate('areas')
             .populate('tipo_cita')
+            .populate('forma_pago')
+            .populate('producto')
             .populate('pagos');
     }
 
