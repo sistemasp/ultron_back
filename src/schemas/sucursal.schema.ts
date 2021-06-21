@@ -15,4 +15,6 @@ export const SucursalSchema = new Schema({
     precio_sabado_vespertino: { type: String },
     precio_festivo: { type: String },
     color : { type: String },
+    camillas : { type: String },
+    laseres : { type: String },
 });

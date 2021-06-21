@@ -137,11 +137,11 @@ export class AparatologiaController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('sucursal/:sucursalId/pendiente/:pendienteId')
+    @Get('sucursal/:sucursalId/pendiente/:pendienteId/:confirmadoId')
     showAllAparatologiasBySucursalPendiente(@Param('sucursalId') sucursalId: string,
-        @Param('pendienteId') pendienteId: string): Promise<AparatologiaI[]> {
+    @Param('pendienteId') pendienteId: string, @Param('confirmadoId') confirmadoId: string): Promise<AparatologiaI[]> {
         console.log(new Date(), this.TAG, "showAllAparatologiasBySucursalPendiente");
-        return this.aparatologiaService.showAllAparatologiasBySucursalPendiente(sucursalId, pendienteId);
+        return this.aparatologiaService.showAllAparatologiasBySucursalPendiente(sucursalId, pendienteId, confirmadoId);
     }
 
     @UseGuards(JwtAuthGuard)

@@ -137,11 +137,11 @@ export class FacialController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('sucursal/:sucursalId/pendiente/:pendienteId')
+    @Get('sucursal/:sucursalId/pendiente/:pendienteId/:confirmadoId')
     showAllFacialBySucursalPendiente(@Param('sucursalId') sucursalId: string,
-        @Param('pendienteId') pendienteId: string): Promise<FacialI[]> {
+        @Param('pendienteId') pendienteId: string, @Param('confirmadoId') confirmadoId: string): Promise<FacialI[]> {
         console.log(new Date(), this.TAG, "showAllFacialBySucursalPendiente");
-        return this.facialService.showAllFacialBySucursalPendiente(sucursalId, pendienteId);
+        return this.facialService.showAllFacialBySucursalPendiente(sucursalId, pendienteId, confirmadoId);
     }
 
     @UseGuards(JwtAuthGuard)

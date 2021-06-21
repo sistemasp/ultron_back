@@ -415,10 +415,14 @@ export class AparatologiaService {
     /**
      * Muestra todas las aparatologia de la BD con estatus pendiente
      */
-    async showAllAparatologiasBySucursalPendiente(sucursalId, pendienteId): Promise<AparatologiaI[]> {
+    async showAllAparatologiasBySucursalPendiente(sucursalId, pendienteId, confirmadoId): Promise<AparatologiaI[]> {
+        let startDate = new Date();
         return await this.aparatologiaModel.find({
-            sucursal: sucursalId, $or: [
+            sucursal: sucursalId,
+            fecha_hora: { $gte: startDate },
+            $or: [
                 { status: pendienteId },
+                { status: confirmadoId },
             ]
         }).sort('consecutivo')
             .populate('areas')

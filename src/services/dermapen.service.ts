@@ -421,7 +421,6 @@ export class DermapenService {
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newDate = new this.dermapenModel(dermapen);
         return await newDate.save();
-
     }
 
     /**

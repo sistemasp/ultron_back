@@ -33,11 +33,11 @@ export class ConsultaController {
     */
 
     @UseGuards(JwtAuthGuard)
-    @Get('sucursal/:sucursalId/pendiente/:pendienteId')
+    @Get('sucursal/:sucursalId/pendiente/:pendienteId/:confirmadoId')
     showAllConsultsBySucursalPendiente(@Param('sucursalId') sucursalId: string,
-        @Param('pendienteId') pendienteId: string): Promise<ConsultaI[]> {
+        @Param('pendienteId') pendienteId: string, @Param('confirmadoId') confirmadoId: string): Promise<ConsultaI[]> {
         console.log(new Date(), this.TAG, "showAllConsultsBySucursalPendiente");
-        return this.consultaService.showAllConsultsBySucursalPendiente(sucursalId, pendienteId);
+        return this.consultaService.showAllConsultsBySucursalPendiente(sucursalId, pendienteId, confirmadoId);
     }
 
     @UseGuards(JwtAuthGuard)

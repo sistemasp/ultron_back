@@ -5,5 +5,6 @@ const Schema = mongoose.Schema;
 export const StatusSchema = new Schema({
     nombre : { type: String },
     color : { type: String },
-    confirmacion : { type: Boolean, default: false }
+    confirmacion : { type: Boolean, default: false },
+    visible : { type: Boolean, default: false },
 });

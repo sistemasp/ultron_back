@@ -84,10 +84,14 @@ export class FacialService {
     /**
      * Muestra todos los faciales de la BD con estatus pendiente
      */
-    async showAllFacialBySucursalPendiente(sucursalId, pendienteId): Promise<FacialI[]> {
+    async showAllFacialBySucursalPendiente(sucursalId, pendienteId, confirmadoId): Promise<FacialI[]> {
+        let startDate = new Date();
         return await this.facialModel.find({
-            sucursal: sucursalId, $or: [
+            sucursal: sucursalId,
+            fecha_hora: { $gte: startDate },
+            $or: [
                 { status: pendienteId },
+                { status: confirmadoId },
             ]
         }).sort('consecutivo')
             .populate('areas')
@@ -136,7 +140,7 @@ export class FacialService {
         endDate.setHours(23);
         endDate.setMinutes(59);
         endDate.setSeconds(59);
-        
+
         return await this.facialModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('fecha_hora')
             .populate('paciente')
             .populate('servicio')

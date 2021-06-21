@@ -2,15 +2,17 @@ import { Document } from "mongoose";
 import { ServicioI } from "./servicio.interface";
 
 export interface SucursalI extends Document {
-    clave: string;
-    nombre: string;
-    direccion: string;
-    telefonos: string[];
+    clave: String;
+    nombre: String;
+    direccion: String;
+    telefonos: String[];
     servicios: ServicioI[];
-    precio_matutino: string;
-    precio_vespertino: string;
-    precio_sabado_matutino: string;
-    precio_sabado_vespertino: string;
-    precio_festivo: string;
+    precio_matutino: String;
+    precio_vespertino: String;
+    precio_sabado_matutino: String;
+    precio_sabado_vespertino: String;
+    precio_festivo: String;
     color : String;
+    camillas : String;
+    laseres : String;
 }
