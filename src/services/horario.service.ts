@@ -161,7 +161,7 @@ export class HorarioService {
     async findScheduleByDateAndSucursalAndService(anio, mes, dia, sucursalId, servicioId): Promise<HorarioI[]> {
         let citas = [];
         const sucursal = await this.sucursalService.findOfficeById(sucursalId);
-        console.log(sucursal);        
+        //console.log(sucursal);        
         switch (servicioId) {
             case '5eeb9aa63be25804b8386508': // CONSULTA
                 citas = await this.consultaService.findConsultsByDateAndSucursal(anio, mes, dia, sucursalId);
@@ -197,7 +197,7 @@ export class HorarioService {
             horarios = await this.schedulesToday(horarios, today.getHours().toString());
         }
         const response = await this.filterSchedulesAndService(horarios, citas, servicioId, sucursal);
-        return response;
+        return horarios;
     }
 
     /**
