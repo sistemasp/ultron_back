@@ -194,7 +194,7 @@ export class HorarioService {
         const today = new Date();
         const todayString = `${today.getFullYear()}-${Number(today.getMonth()) + 1}-${today.getDate()}`;
         if (todayString === `${anio}-${mes}-${dia}`) {
-            horarios = await this.schedulesToday(horarios, today.getHours().toString());
+            //horarios = await this.schedulesToday(horarios, today.getHours().toString());
         }
         const response = await this.filterSchedulesAndService(horarios, citas, servicioId, sucursal);
         return horarios;
