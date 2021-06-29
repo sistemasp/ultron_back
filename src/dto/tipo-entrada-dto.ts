@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
 
-export class TipoIngresoDto extends Document {
+export class TipoEntradaDto extends Document {
     readonly nombre : String;
 }

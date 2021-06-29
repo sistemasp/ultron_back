@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-export interface TipoEgresoI extends Document {
+export interface TipoSalidaI extends Document {
     nombre : String;
     confirmacion: Boolean;
 }

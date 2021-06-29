@@ -1,7 +1,7 @@
 import { Document } from "mongoose";
-import { EgresoDto } from "./egreso-dto";
+import { SalidaDto } from "./salida-dto";
 import { EmpleadoDto } from "./empleado-dto";
-import { IngresoDto } from "./ingreso-dto";
+import { EntradaDto } from "./entrada-dto";
 import { SucursalDto } from "./sucursal-dto";
 
 export class CorteDto extends Document {
@@ -9,9 +9,9 @@ export class CorteDto extends Document {
     readonly hora_apertura: Date;
     readonly hora_cierre: Date;
     readonly turno: String;
-    readonly ingresos: IngresoDto[];
-    readonly pagos_anticipados: IngresoDto[];
-    readonly egresos: EgresoDto[];
+    readonly entradas: EntradaDto[];
+    readonly pagos_anticipados: EntradaDto[];
+    readonly salidas: SalidaDto[];
     readonly recepcionista: EmpleadoDto;
     readonly sucursal: SucursalDto;
     readonly generado: Boolean;

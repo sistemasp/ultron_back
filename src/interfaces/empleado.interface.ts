@@ -10,7 +10,7 @@ export interface EmpleadoI extends Document {
     rol: RolI;
     color: String;
     cedula: String;
-    fecha_ingreso: Date;
+    fecha_entrada: Date;
     fecha_baja: Date;
     disponible: Boolean;
     pago_completo: Boolean;

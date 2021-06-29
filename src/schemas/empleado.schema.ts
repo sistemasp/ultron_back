@@ -11,7 +11,7 @@ export const EmpleadoSchema = new Schema({
     rol: { type: constMongoose.ObjectId, ref: 'Rol' },
     color: { type: String },
     cedula: { type: String },
-    fecha_ingreso: { type: Date },
+    fecha_entrada: { type: Date },
     fecha_baja: { type: Date },
     disponible: { type: Boolean, default: true },
     pago_completo: { type: Boolean, default: false },

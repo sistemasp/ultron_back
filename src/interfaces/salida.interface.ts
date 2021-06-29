@@ -1,10 +1,10 @@
 import { EmpleadoI } from "./empleado.interface";
 import { SucursalI } from "./sucursal.interface";
 import { FormaPagoI } from "./forma-pago.interface";
-import { TipoEgresoI } from "./tipo-egreso.interface";
+import { TipoSalidaI } from "./tipo-salida.interface";
 import { Document } from "mongoose";
 
-export interface EgresoI extends Document {
+export interface SalidaI extends Document {
     create_date: Date;
     hora_aplicacion: Date;
     turno: String;
@@ -13,7 +13,7 @@ export interface EgresoI extends Document {
     descripcion: String;
     cantidad: String;
     retencion: String;
-    tipo_egreso: TipoEgresoI;
+    tipo_salida: TipoSalidaI;
     sucursal: SucursalI;
     forma_pago: FormaPagoI;
 }

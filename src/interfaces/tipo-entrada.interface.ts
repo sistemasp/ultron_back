@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
 
-export interface TipoIngresoI extends Document {
+export interface TipoEntradaI extends Document {
     nombre : String;
 }

@@ -6,7 +6,7 @@ import { ServicioDto } from "./servicio-dto";
 import { BancoDto } from "./banco-dto";
 import { TipoTarjetaDto } from "./tipo-tarjeta-dto";
 import { FormaPagoDto } from "./forma-pago-dto";
-import { IngresoDto } from "./ingreso-dto";
+import { EntradaDto } from "./entrada-dto";
 import { Document } from "mongoose";
 
 export class PagoDto extends Document {
@@ -33,5 +33,5 @@ export class PagoDto extends Document {
     readonly tipo_servicio: ServicioDto;
     readonly servicio: String;
     readonly pago_anticipado: Boolean;
-    readonly ingreso: IngresoDto;
+    readonly entrada: EntradaDto;
 }

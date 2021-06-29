@@ -17,7 +17,7 @@ import { ConsultaController } from './controllers/consulta.controller';
 import { ConsultorioController } from './controllers/consultorio.controller';
 import { CorteController } from './controllers/corte.controller';
 import { DermapenController } from './controllers/dermapen.controller';
-import { EgresoController } from './controllers/egreso.controller';
+import { SalidaController } from './controllers/salida.controller';
 import { EspecialidadController } from './controllers/especialidad.controller';
 import { EsquemaController } from './controllers/esquema.controller';
 import { EsteticaController } from './controllers/estetica.controller';
@@ -26,7 +26,7 @@ import { FacturaController } from './controllers/factura.controller';
 import { FormaPagoController } from './controllers/forma-pago.controller';
 import { FrecuenciaController } from './controllers/frecuencia.controller';
 import { HorarioController } from './controllers/horario.controller';
-import { IngresoController } from './controllers/ingreso.controller';
+import { EntradaController } from './controllers/entrada.controller';
 import { LaboratorioController } from './controllers/laboratorio.controller';
 import { MaterialEsteticaController } from './controllers/material-estetica.controller';
 import { MaterialController } from './controllers/material.controller';
@@ -47,9 +47,9 @@ import { SexoController } from './controllers/sexo.controller';
 import { StatusController } from './controllers/status.controller';
 import { SucursalController } from './controllers/sucursal.controller';
 import { TipoCitaController } from './controllers/tipo-cita.controller';
-import { TipoEgresoController } from './controllers/tipo-egreso.controller';
+import { TipoSalidaController } from './controllers/tipo-salida.controller';
 import { TipoEsteticaController } from './controllers/tipo-estetica.controller';
-import { TipoIngresoController } from './controllers/tipo-ingreso.controller';
+import { TipoEntradaController } from './controllers/tipo-entrada.controller';
 import { TipoTarjetaController } from './controllers/tipo-tarjeta.controller';
 import { TratamientoPrecioController } from './controllers/tratamiento-precio.controller';
 import { TratamientoController } from './controllers/tratamiento.controller';
@@ -70,7 +70,7 @@ import { ConsultaSchema } from './schemas/consulta.schema';
 import { ConsultorioSchema } from './schemas/consultorio.schema';
 import { CorteSchema } from './schemas/corte.schema';
 import { DermapenSchema } from './schemas/dermapen.schema';
-import { EgresoSchema } from './schemas/egreso.schema';
+import { SalidaSchema } from './schemas/salida.schema';
 import { EmpleadoSchema } from './schemas/empleado.schema';
 import { EspecialidadSchema } from './schemas/especialidad.schema';
 import { EsquemaSchema } from './schemas/esquema.schema';
@@ -80,7 +80,7 @@ import { FacturaSchema } from './schemas/factura.schema';
 import { FormaPagoSchema } from './schemas/forma-pago.schema';
 import { FrecuenciaSchema } from './schemas/frecuencia.schema';
 import { HorarioSchema } from './schemas/horario.schema';
-import { IngresoSchema } from './schemas/ingreso.schema';
+import { EntradaSchema } from './schemas/entrada.schema';
 import { LaboratorioSchema } from './schemas/laboratorio.schema';
 import { MaterialEsteticaSchema } from './schemas/material-estetica.schema';
 import { MaterialSchema } from './schemas/material.schema';
@@ -101,9 +101,9 @@ import { SexoSchema } from './schemas/sexo.schema';
 import { StatusSchema } from './schemas/status.schema';
 import { SucursalSchema } from './schemas/sucursal.schema';
 import { TipoCitaSchema } from './schemas/tipo-cita.schema';
-import { TipoEgresoSchema } from './schemas/tipo-egreso.schema';
+import { TipoSalidaSchema } from './schemas/tipo-salida.schema';
 import { TipoEsteticaSchema } from './schemas/tipo-estetica.schema';
-import { TipoIngresoSchema } from './schemas/tipo-ingreso.schema';
+import { TipoEntradaSchema } from './schemas/tipo-entrada.schema';
 import { TipoTarjetaSchema } from './schemas/tipo-tarjeta.schema';
 import { TratamientoPrecioSchema } from './schemas/tratamiento-precio.schema';
 import { TratamientoSchema } from './schemas/tratamiento.schema';
@@ -123,7 +123,7 @@ import { ConsultaService } from './services/consulta.service';
 import { ConsultorioService } from './services/consultorio.service';
 import { CorteService } from './services/corte.service';
 import { DermapenService } from './services/dermapen.service';
-import { EgresoService } from './services/egreso.service';
+import { SalidaService } from './services/salida.service';
 import { EspecialidadService } from './services/especialidad.service';
 import { EsquemaService } from './services/esquema.service';
 import { EsteticaService } from './services/estetica.service';
@@ -132,7 +132,7 @@ import { FacturaService } from './services/factura.service';
 import { FormaPagoService } from './services/forma-pago.service';
 import { FrecuenciaService } from './services/frecuencia.service';
 import { HorarioService } from './services/horario.service';
-import { IngresoService } from './services/ingreso.service';
+import { EntradaService } from './services/entrada.service';
 import { LaboratorioService } from './services/laboratorio.service';
 import { MaterialEsteticaService } from './services/material-estetica.service';
 import { MaterialService } from './services/material.service';
@@ -153,9 +153,9 @@ import { SexoService } from './services/sexo.service';
 import { StatusService } from './services/status.service';
 import { SucursalService } from './services/sucursal.service';
 import { TipoCitaService } from './services/tipo-cita.service';
-import { TipoEgresoService } from './services/tipo-egreso.service';
+import { TipoSalidaService } from './services/tipo-salida.service';
 import { TipoEsteticaService } from './services/tipo-estetica.service';
-import { TipoIngresoService } from './services/tipo-ingreso.service';
+import { TipoEntradaService } from './services/tipo-entrada.service';
 import { TipoTarjetaService } from './services/tipo-tarjeta.service';
 import { TratamientoPrecioService } from './services/tratamiento-precio.service';
 import { TratamientoService } from './services/tratamiento.service';
@@ -196,7 +196,7 @@ import { CitaService } from './services/cita.service';
       { name: 'Consultorio', schema: ConsultorioSchema },
       { name: 'Corte', schema: CorteSchema },
       { name: 'Dermapen', schema: DermapenSchema },
-      { name: 'Egreso', schema: EgresoSchema },
+      { name: 'Salida', schema: SalidaSchema },
       { name: 'Empleado', schema: EmpleadoSchema },
       { name: 'Especialidad', schema: EspecialidadSchema },
       { name: 'Esquema', schema: EsquemaSchema },
@@ -206,7 +206,7 @@ import { CitaService } from './services/cita.service';
       { name: 'FormaPago', schema: FormaPagoSchema },
       { name: 'Frecuencia', schema: FrecuenciaSchema },
       { name: 'Horario', schema: HorarioSchema },
-      { name: 'Ingreso', schema: IngresoSchema },
+      { name: 'Entrada', schema: EntradaSchema },
       { name: 'Laboratorio', schema: LaboratorioSchema },
       { name: 'MaterialEstetica', schema: MaterialEsteticaSchema },
       { name: 'Material', schema: MaterialSchema },
@@ -227,9 +227,9 @@ import { CitaService } from './services/cita.service';
       { name: 'Status', schema: StatusSchema },
       { name: 'Sucursal', schema: SucursalSchema },
       { name: 'TipoCita', schema: TipoCitaSchema },
-      { name: 'TipoEgreso', schema: TipoEgresoSchema },
+      { name: 'TipoSalida', schema: TipoSalidaSchema },
       { name: 'TipoEstetica', schema: TipoEsteticaSchema },
-      { name: 'TipoIngreso', schema: TipoIngresoSchema },
+      { name: 'TipoEntrada', schema: TipoEntradaSchema },
       { name: 'TipoTarjeta', schema: TipoTarjetaSchema },
       { name: 'Tratamiento', schema: TratamientoSchema },
       { name: 'TratamientoPrecio', schema: TratamientoPrecioSchema },
@@ -253,7 +253,7 @@ import { CitaService } from './services/cita.service';
     ConsultorioController,
     CorteController,
     DermapenController,
-    EgresoController,
+    SalidaController,
     EmpleadoController,
     EspecialidadController,
     EsquemaController,
@@ -263,7 +263,7 @@ import { CitaService } from './services/cita.service';
     FormaPagoController,
     FrecuenciaController,
     HorarioController,
-    IngresoController,
+    EntradaController,
     LaboratorioController,
     MaterialEsteticaController,
     MaterialController,
@@ -284,9 +284,9 @@ import { CitaService } from './services/cita.service';
     StatusController,
     SucursalController,
     TipoCitaController,
-    TipoEgresoController,
+    TipoSalidaController,
     TipoEsteticaController,
-    TipoIngresoController,
+    TipoEntradaController,
     TipoTarjetaController,
     TratamientoController,
     TratamientoPrecioController,
@@ -310,7 +310,7 @@ import { CitaService } from './services/cita.service';
     ConsultorioService,
     CorteService,
     DermapenService,
-    EgresoService,
+    SalidaService,
     EmpleadoService,
     EspecialidadService,
     EsquemaService,
@@ -320,7 +320,7 @@ import { CitaService } from './services/cita.service';
     FormaPagoService,
     FrecuenciaService,
     HorarioService,
-    IngresoService,
+    EntradaService,
     LaboratorioService,
     MaterialEsteticaService,
     MaterialService,
@@ -341,9 +341,9 @@ import { CitaService } from './services/cita.service';
     StatusService,
     SucursalService,
     TipoCitaService,
-    TipoEgresoService,
+    TipoSalidaService,
     TipoEsteticaService,
-    TipoIngresoService,
+    TipoEntradaService,
     TipoTarjetaService,
     TratamientoService,
     TratamientoPrecioService,

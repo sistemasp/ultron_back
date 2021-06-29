@@ -1,7 +1,7 @@
 import { Document } from "mongoose";
-import { EgresoI } from "./egreso.interface";
+import { SalidaI } from "./salida.interface";
 import { EmpleadoI } from "./empleado.interface";
-import { IngresoI } from "./ingreso.interface";
+import { EntradaI } from "./entrada.interface";
 import { SucursalI } from "./sucursal.interface";
 
 export interface CorteI extends Document {
@@ -9,9 +9,9 @@ export interface CorteI extends Document {
     hora_apertura: Date;
     hora_cierre: Date;
     turno: String;
-    ingresos: IngresoI[];
-    pagos_anticipados: IngresoI[];
-    egresos: EgresoI[];
+    entradas: EntradaI[];
+    pagos_anticipados: EntradaI[];
+    salidas: SalidaI[];
     recepcionista: EmpleadoI;
     sucursal: SucursalI;
     generado: Boolean;

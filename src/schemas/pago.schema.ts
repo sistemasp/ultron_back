@@ -27,5 +27,5 @@ export const PagoSchema = new Schema({
     tipo_servicio: { type: constMongoose.ObjectId, ref: 'Servicio' },
     servicio: { type: String },
     pago_anticipado: { type: Boolean, default: false },
-    ingreso: { type: constMongoose.ObjectId, ref: 'Ingreso' },
+    entrada: { type: constMongoose.ObjectId, ref: 'Entrada' },
 });

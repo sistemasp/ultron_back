@@ -14,8 +14,8 @@ export class CorteService {
     async showAllCortes(): Promise<CorteI[]> {
         return await this.corteModel.find()
             .sort('create_date')
-            .populate('ingresos')
-            .populate('egresos')
+            .populate('entradas')
+            .populate('salidas')
             .populate('sucursal')
             .populate('recepcionista');
     }
@@ -46,8 +46,8 @@ export class CorteService {
             sucursal: sucursalId,
         })
             .sort('create_date')
-            .populate('ingresos')
-            .populate('egresos')
+            .populate('entradas')
+            .populate('salidas')
             .populate('sucursal')
             .populate('recepcionista');
     }
@@ -69,8 +69,8 @@ export class CorteService {
             sucursal: sucursalId
         })
         .sort('create_date')
-        .populate('ingresos')
-        .populate('egresos')
+        .populate('entradas')
+        .populate('salidas')
         .populate('sucursal')
         .populate('recepcionista');
     }

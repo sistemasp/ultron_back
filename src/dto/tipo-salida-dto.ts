@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-export class TipoEgresoDto extends Document {
+export class TipoSalidaDto extends Document {
     readonly nombre : String;
     readonly confirmacion: Boolean;
 }

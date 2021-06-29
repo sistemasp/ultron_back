@@ -6,7 +6,7 @@ import { ServicioI } from "./servicio.interface";
 import { BancoI } from "./banco.interface";
 import { TipoTarjetaI } from "./tipo-tarjeta.interface";
 import { FormaPagoI } from "./forma-pago.interface";
-import { IngresoI } from "./ingreso.interface";
+import { EntradaI } from "./entrada.interface";
 import { Document } from "mongoose";
 
 export interface PagoI extends Document {
@@ -33,5 +33,5 @@ export interface PagoI extends Document {
     tipo_servicio: ServicioI;
     servicio: String;
     pago_anticipado: Boolean;
-    ingreso: IngresoI;
+    entrada: EntradaI;
 }
