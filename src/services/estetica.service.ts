@@ -139,7 +139,7 @@ export class EsteticaService {
      * Muestra todo el historico de biopsias de una persona buscando por su numero de telefono
      */
     async findEsteticasHistoricByPaciente(pacienteId): Promise<EsteticaI[]> {
-        return await this.esteticaModel.find({ paciente: pacienteId }).sort('create_date')
+        return await this.esteticaModel.find({ paciente: pacienteId }).sort({ 'fecha_hora': -1 })
             .populate('paciente')
             .populate('patologo')
             .populate('sucursal')

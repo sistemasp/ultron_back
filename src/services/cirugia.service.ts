@@ -195,7 +195,7 @@ export class CirugiaService {
      * Muestra todo el historico de cirugias de una persona buscando por su numero de telefono
      */
     async findCirugiasHistoricByPaciente(pacienteId): Promise<CirugiaI[]> {
-        return await this.cirugiaModel.find({ paciente: pacienteId }).sort('create_date')
+        return await this.cirugiaModel.find({ paciente: pacienteId }).sort({ 'fecha_hora': -1 })
             .populate('paciente')
             .populate('patologo')
             .populate('sucursal')

@@ -274,7 +274,7 @@ export class FacialService {
      * Muestra todo el historico de una persona buscando por su numero de telefono
      */
     async findHistoricFacialByPaciente(pacienteId): Promise<FacialI[]> {
-        return await this.facialModel.find({ paciente: pacienteId }).sort('fecha_hora')
+        return await this.facialModel.find({ paciente: pacienteId }).sort({ 'fecha_hora': -1 })
             .populate('paciente')
             .populate('servicio')
             .populate('areas')

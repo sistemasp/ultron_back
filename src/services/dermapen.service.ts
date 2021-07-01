@@ -243,7 +243,7 @@ export class DermapenService {
      * Muestra todo el historico de una persona buscando por su numero de telefono
      */
     async findHistoricDermapenByPaciente(pacienteId): Promise<DermapenI[]> {
-        return await this.dermapenModel.find({ paciente: pacienteId }).sort('fecha_hora')
+        return await this.dermapenModel.find({ paciente: pacienteId }).sort({ 'fecha_hora': -1 })
             .populate('paciente')
             .populate('servicio')
             .populate('areas')
