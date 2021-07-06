@@ -132,6 +132,7 @@ export class EsteticaService {
             .populate('medio')
             .populate('tipo_cita')
             .populate('producto')
+            .populate('status')
             .populate('pagos');
     }
 
