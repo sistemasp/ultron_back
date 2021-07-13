@@ -22,6 +22,12 @@ export class CorteController {
         return this.corteService.findCorteById(idCorte);
     }
 
+    @Get('sucursal/:sucursalId/turnoactual')
+    findTurnoActualBySucursal(@Param('turno') turno: string, @Param('sucursalId') sucursalId: string): Promise<CorteI> {
+        console.log(new Date(), this.TAG, "findTurnoActualBySucursal");
+        return this.corteService.findTurnoActualBySucursal(sucursalId);
+    }
+
     @Get('sucursal/:sucursalId/today/turno/:turno')
     showCorteTodayBySucursalAndTurno(@Param('turno') turno: string, @Param('sucursalId') sucursalId: string): Promise<CorteI> {
         console.log(new Date(), this.TAG, "showCorteTodayBySucursalAndTurno");

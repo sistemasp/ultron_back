@@ -34,4 +34,5 @@ export interface PagoI extends Document {
     servicio: String;
     pago_anticipado: Boolean;
     entrada: EntradaI;
+    turno: String;
 }

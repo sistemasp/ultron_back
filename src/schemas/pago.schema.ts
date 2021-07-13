@@ -28,4 +28,5 @@ export const PagoSchema = new Schema({
     servicio: { type: String },
     pago_anticipado: { type: Boolean, default: false },
     entrada: { type: constMongoose.ObjectId, ref: 'Entrada' },
+    turno: { type: String },
 });

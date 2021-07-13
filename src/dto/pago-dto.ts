@@ -34,4 +34,6 @@ export class PagoDto extends Document {
     readonly servicio: String;
     readonly pago_anticipado: Boolean;
     readonly entrada: EntradaDto;
+    readonly turno: String;
+
 }
