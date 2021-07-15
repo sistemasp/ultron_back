@@ -47,7 +47,7 @@ export class CirugiaService {
         let endDate = new Date(anio, mes, dia);
         endDate.setHours(23);
         endDate.setMinutes(59);
-        endDate.setSeconds(59);        
+        endDate.setSeconds(59);
         return await this.cirugiaModel.find(
             {
                 fecha_hora: { $gte: startDate, $lte: endDate },
@@ -212,7 +212,7 @@ export class CirugiaService {
      * Muestra todas las cirugias de la BD que correspondan a un pagos de un dermatologo por horas
      */
     async findCirugiasByPayOfDoctorHoraAplicacion(sucursalId, dermatologoId, atendidoId, hora_apertura, hora_cierre): Promise<CirugiaI[]> {
-        let startDate = new Date(hora_apertura);
+        let startDate = new Date(hora_apertura);        
         let endDate = new Date(hora_cierre);
 
         return await this.cirugiaModel.find(
