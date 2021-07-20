@@ -169,6 +169,12 @@ import { AuthService } from './auth/auth.service';
 import { CitaSchema } from './schemas/cita.schema';
 import { CitaController } from './controllers/cita.controller';
 import { CitaService } from './services/cita.service';
+import { SesionAnticipadaSchema } from './schemas/sesion-anticipada.schema';
+import { SesionAnticipadaController } from './controllers/sesion-anticipada.controller';
+import { SesionAnticipadaService } from './services/sesion-anticipada.service';
+import { PagoAnticipadoSchema } from './schemas/pago-anticipado.schema';
+import { PagoAnticipadoController } from './controllers/pago-anticipado.controller';
+import { PagoAnticipadoService } from './services/pago-anticipado.service';
 
 @Module({
   imports: [
@@ -196,8 +202,8 @@ import { CitaService } from './services/cita.service';
       { name: 'Consultorio', schema: ConsultorioSchema },
       { name: 'Corte', schema: CorteSchema },
       { name: 'Dermapen', schema: DermapenSchema },
-      { name: 'Salida', schema: SalidaSchema },
       { name: 'Empleado', schema: EmpleadoSchema },
+      { name: 'Entrada', schema: EntradaSchema },
       { name: 'Especialidad', schema: EspecialidadSchema },
       { name: 'Esquema', schema: EsquemaSchema },
       { name: 'Estetica', schema: EsteticaSchema },
@@ -206,7 +212,6 @@ import { CitaService } from './services/cita.service';
       { name: 'FormaPago', schema: FormaPagoSchema },
       { name: 'Frecuencia', schema: FrecuenciaSchema },
       { name: 'Horario', schema: HorarioSchema },
-      { name: 'Entrada', schema: EntradaSchema },
       { name: 'Laboratorio', schema: LaboratorioSchema },
       { name: 'MaterialEstetica', schema: MaterialEsteticaSchema },
       { name: 'Material', schema: MaterialSchema },
@@ -214,6 +219,7 @@ import { CitaService } from './services/cita.service';
       { name: 'Ocupacion', schema: OcupacionSchema },
       { name: 'Paciente', schema: PacienteSchema },
       { name: 'Pago', schema: PagoSchema },
+      { name: 'PagoAnticipado', schema: PagoAnticipadoSchema },
       { name: 'PagoDermatologo', schema: PagoDermatologoSchema },
       { name: 'PagoPatologo', schema: PagoPatologoSchema },
       { name: 'Producto', schema: ProductoSchema },
@@ -222,6 +228,8 @@ import { CitaService } from './services/cita.service';
       { name: 'Receta', schema: RecetaSchema },
       { name: 'Rol', schema: RolSchema },
       { name: 'SalaCirugia', schema: SalaCirugiaSchema },
+      { name: 'Salida', schema: SalidaSchema },
+      { name: 'SesionAnticipada', schema: SesionAnticipadaSchema },
       { name: 'Servicio', schema: ServicioSchema },
       { name: 'Sexo', schema: SexoSchema },
       { name: 'Status', schema: StatusSchema },
@@ -253,8 +261,8 @@ import { CitaService } from './services/cita.service';
     ConsultorioController,
     CorteController,
     DermapenController,
-    SalidaController,
     EmpleadoController,
+    EntradaController,
     EspecialidadController,
     EsquemaController,
     EsteticaController,
@@ -263,7 +271,6 @@ import { CitaService } from './services/cita.service';
     FormaPagoController,
     FrecuenciaController,
     HorarioController,
-    EntradaController,
     LaboratorioController,
     MaterialEsteticaController,
     MaterialController,
@@ -271,6 +278,7 @@ import { CitaService } from './services/cita.service';
     OcupacionController,
     PacienteController,
     PagoController,
+    PagoAnticipadoController,
     PagoDermatologoController,
     PagoPatologoController,
     ProductoController,
@@ -279,7 +287,9 @@ import { CitaService } from './services/cita.service';
     RecetaController,
     RolController,
     SalaCirugiaController,
+    SalidaController,
     ServicioController,
+    SesionAnticipadaController,
     SexoController,
     StatusController,
     SucursalController,
@@ -310,8 +320,8 @@ import { CitaService } from './services/cita.service';
     ConsultorioService,
     CorteService,
     DermapenService,
-    SalidaService,
     EmpleadoService,
+    EntradaService,
     EspecialidadService,
     EsquemaService,
     EsteticaService,
@@ -320,7 +330,6 @@ import { CitaService } from './services/cita.service';
     FormaPagoService,
     FrecuenciaService,
     HorarioService,
-    EntradaService,
     LaboratorioService,
     MaterialEsteticaService,
     MaterialService,
@@ -328,6 +337,7 @@ import { CitaService } from './services/cita.service';
     OcupacionService,
     PacienteService,
     PagoService,
+    PagoAnticipadoService,
     PagoDermatologoService,
     PagoPatologoService,
     ProductoService,
@@ -336,7 +346,9 @@ import { CitaService } from './services/cita.service';
     RolService,
     RecetaService,
     SalaCirugiaService,
+    SalidaService,
     ServicioService,
+    SesionAnticipadaService,
     SexoService,
     StatusService,
     SucursalService,
