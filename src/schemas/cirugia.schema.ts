@@ -13,7 +13,6 @@ export const CirugiaSchema = new Schema({
     quien_agenda: { type: constMongoose.ObjectId, ref: 'Empleado' },
     quien_confirma: { type: constMongoose.ObjectId, ref: 'Empleado' },
     tipo_cita: { type: constMongoose.ObjectId, ref: 'TipoCita' },
-    patologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     sucursal: { type: constMongoose.ObjectId, ref: 'Sucursal' },
     status: { type: constMongoose.ObjectId, ref: 'Status' },
     consecutivo: { type: Number },

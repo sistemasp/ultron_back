@@ -23,7 +23,6 @@ export class CirugiaDto extends Document {
     readonly consultaId: String;
     readonly paciente: PacienteDto;
     readonly dermatologo: EmpleadoDto;
-    readonly patologo: EmpleadoDto;
     readonly sucursal: SucursalDto;
     readonly consecutivo: Number;
     readonly quien_agenda : EmpleadoDto;

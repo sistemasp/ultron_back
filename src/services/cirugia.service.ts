@@ -64,6 +64,7 @@ export class CirugiaService {
             .populate('quien_confirma_llamada')
             .populate('tipo_cita')
             .populate('medio')
+            .populate('biopsias')
             .populate('pagos')
             .populate('frecuencia')
             .populate('producto')
@@ -152,6 +153,13 @@ export class CirugiaService {
             .populate('tipo_cita')
             .populate(
                 {
+                    path: "biopsias",
+                    populate: {
+                        path: "patologo"
+                    }
+                })
+            .populate(
+                {
                     path: "factura",
                     populate: {
                         path: "razon_social"
@@ -159,9 +167,7 @@ export class CirugiaService {
                 })
             .populate('servicio')
             .populate('status')
-            .populate('patologo')
             .populate('producto')
-            .populate('biopsias')
             .populate('medio')
             .populate('pagos');
     }

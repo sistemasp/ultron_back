@@ -1,9 +1,7 @@
 import { Document } from "mongoose";
-import { AreaDto } from "./area-dto";
 import { PacienteDto } from "./paciente-dto";
 import { ServicioDto } from "./servicio-dto";
 import { SucursalDto } from "./sucursal-dto";
-import { TratamientoDto } from "./tratamiento-dto";
 
 export class SesionAnticipadaDto extends Document {
     readonly fecha_pago: Date;
@@ -11,8 +9,7 @@ export class SesionAnticipadaDto extends Document {
     readonly sucursal: SucursalDto;
     readonly paciente: PacienteDto;
     readonly servicio: ServicioDto;
-    readonly tratamiento: TratamientoDto;
-    readonly areas: AreaDto[];
+    readonly tratamientos: [];
     readonly precio: String;
     readonly total: String;
     readonly observaciones: String;

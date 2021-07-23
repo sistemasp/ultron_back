@@ -25,7 +25,6 @@ export interface CirugiaI extends Document {
     quien_confirma: EmpleadoI;
     tipo_cita: TipoCitaI;
     status: StatusI;
-    patologo: EmpleadoI;
     sucursal: SucursalI;
     consecutivo: Number;
     pagado: Boolean;

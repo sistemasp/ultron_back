@@ -9,7 +9,6 @@ export const SesionAnticipadaSchema = new Schema({
     sucursal: { type: constMongoose.ObjectId, ref: 'Sucursal' },
     paciente: { type: constMongoose.ObjectId, ref: 'Paciente' },
     servicio: { type: constMongoose.ObjectId, ref: 'Servicio' },
-    tratamiento: { type: constMongoose.ObjectId, ref: 'Tratamiento' },
-    areas: [{ type: constMongoose.ObjectId, ref: 'Area' }],
+    tratamientos:  [{}],
     observaciones: { type: String },
 });
