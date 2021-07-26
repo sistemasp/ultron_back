@@ -32,6 +32,37 @@ export class SesionAnticipadaService {
     }
 
     /**
+     * Muestra todas las Sesiones anticipadas por pacienteId de la BD
+     */
+    async showAllSesionesAnticipadasByPaciente(pacienteId): Promise<SesionAnticipadaI[]> {
+        let startDate = new Date();
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date();
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        return await this.sesionAnticipadaModel.find({
+            paciente: pacienteId,
+            fecha_pago: { $gte: startDate, $lte: endDate },
+            pagado: false,
+        }).sort('fecha_pago')
+            .populate(
+                {
+                    path: "paciente",
+                })
+            .populate(
+                {
+                    path: "servicio",
+                })
+            .populate(
+                {
+                    path: "sucursal",
+                });
+    }
+
+    /**
      * Genera un nuevo sesionAnticipada en la BD
      * @param sesionAnticipada 
      */

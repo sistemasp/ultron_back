@@ -26,6 +26,13 @@ export class SesionAnticipadaController {
     }
 
     @UseGuards(JwtAuthGuard)
+    @Get('paciente/:pacienteId')
+    showAllSesionesAnticipadasByPaciente(@Param('pacienteId') pacienteId: string) : Promise<SesionAnticipadaI[]> {
+        console.log(new Date(), this.TAG, "showAllSesionesAnticipadasByPaciente");
+        return this.sesionAnticipadaService.showAllSesionesAnticipadasByPaciente(pacienteId);
+    }
+
+    @UseGuards(JwtAuthGuard)
     @Post()
     createSesionAnticipada(@Body() sesionAnticipadaDto: SesionAnticipadaDto): Promise<SesionAnticipadaI> {
         console.log(new Date(), this.TAG, "createSesionAnticipada");

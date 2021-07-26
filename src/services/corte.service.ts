@@ -80,8 +80,6 @@ export class CorteService {
      */
      async findTurnoActualBySucursal(sucursalId): Promise<CorteI> {
         let currentDate = new Date();
-        console.log(currentDate);
-        
         const corte = await this.corteModel.find({
             sucursal: sucursalId
         })
