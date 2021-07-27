@@ -20,4 +20,5 @@ export interface SesionAnticipadaI extends Document {
     total: String;
     observaciones: String;
     pagado: Boolean;
+    numero_sesion: String;
 }

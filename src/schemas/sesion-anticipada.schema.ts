@@ -18,4 +18,5 @@ export const SesionAnticipadaSchema = new Schema({
     total: { type: String },
     observaciones: { type: String },
     pagado: { type: Boolean, default: false },
+    numero_sesion: { type: String },
 });

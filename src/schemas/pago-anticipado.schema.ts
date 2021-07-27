@@ -10,9 +10,10 @@ export const PagoAnticipadoSchema = new Schema({
     dermatologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     tipo_cita: { type: constMongoose.ObjectId, ref: 'TipoCita' },
     pagos: [{ type: constMongoose.ObjectId, ref: 'Pago' }],
-    sesionesAnticipadas: [{ type: constMongoose.ObjectId, ref: 'SesionAnticipada' }],
+    sesiones_anticipadas: [{ type: constMongoose.ObjectId, ref: 'SesionAnticipada' }],
     precio: { type: String },
     total: { type: String },
     factura: { type: Boolean, default: false },
     observaciones:{ type: String },
+    servicio: { type: constMongoose.ObjectId, ref: 'Servicio' },
 });

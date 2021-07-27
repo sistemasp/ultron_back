@@ -5,4 +5,5 @@ export class ServicioDto extends Document {
     readonly clave : String;
     readonly color : String;
     readonly is_active : Boolean;
+    readonly is_visible : Boolean;
 }

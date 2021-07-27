@@ -34,7 +34,7 @@ export class PagoAnticipadoService {
     /**
      * Muestra todos los pagoAnticipados de la BD
      */
-     async showAllPagoAnticipadosByPaciente(pacienteId): Promise<PagoAnticipadoI[]> {
+    async showAllPagoAnticipadosByPaciente(pacienteId): Promise<PagoAnticipadoI[]> {
         return await this.pagoAnticipadoModel.find({
             paciente: pacienteId
         }).sort('fecha_pago');
@@ -46,6 +46,30 @@ export class PagoAnticipadoService {
      */
     async createPagoAnticipado(pagoAnticipado: PagoAnticipadoI): Promise<PagoAnticipadoI> {
         const newPagoAnticipado = new this.pagoAnticipadoModel(pagoAnticipado);
+        newPagoAnticipado.populate(
+            {
+                path: "dermatologo",
+            })
+            .populate(
+                {
+                    path: "paciente",
+                })
+            .populate(
+                {
+                    path: "servicio",
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                })
+            .populate(
+                {
+                    path: "sucursal",
+                })
+            .populate(
+                {
+                    path: "tipo_cita",
+                }).execPopulate();
         return await newPagoAnticipado.save();
     }
 

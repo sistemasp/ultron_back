@@ -7,4 +7,5 @@ export const ServicioSchema = new Schema({
     clave : { type: String },
     color : { type: String },
     is_active: { type: Boolean, default: true },
+    is_visible: { type: Boolean, default: true },
 });

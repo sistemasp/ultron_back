@@ -5,4 +5,5 @@ export interface ServicioI extends Document {
     clave : String;
     color : String;
     is_active : Boolean;
+    is_visible : Boolean;
 }

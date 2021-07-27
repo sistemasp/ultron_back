@@ -12,7 +12,11 @@ export class ServicioService {
      * Muestra todos los servicios de la BD
      */
     async showAllServices(): Promise<ServicioI[]> {
-        return await this.servicioModel.find({ is_active: true }).sort('nombre');
+        return await this.servicioModel.find(
+            { 
+                is_active: true,
+                is_visible: true,
+            }).sort('nombre');
     }
 
     /**

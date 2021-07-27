@@ -20,4 +20,5 @@ export class SesionAnticipadaDto extends Document {
     readonly total: String;
     readonly observaciones: String;
     readonly pagado: Boolean;
+    readonly numero_sesion: String;
 }
