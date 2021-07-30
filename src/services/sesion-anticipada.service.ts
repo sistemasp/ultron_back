@@ -46,7 +46,10 @@ export class SesionAnticipadaService {
         return await this.sesionAnticipadaModel.find({
             paciente: pacienteId,
             pagado: true,
-        }).sort('fecha_pago')
+        }).sort({
+            fecha_asistencia: 1,
+            fecha_pago: -1
+        })
             .populate(
                 {
                     path: "dermatologo",
@@ -72,7 +75,7 @@ export class SesionAnticipadaService {
     /**
      * Muestra todas las Sesiones anticipadas por pacienteId de la BD del dia de hoy
      */
-     async showAllSesionesAnticipadasByPacienteToday(pacienteId): Promise<SesionAnticipadaI[]> {
+    async showAllSesionesAnticipadasByPacienteToday(pacienteId): Promise<SesionAnticipadaI[]> {
         let startDate = new Date();
         startDate.setHours(0);
         startDate.setMinutes(0);
@@ -85,7 +88,83 @@ export class SesionAnticipadaService {
             paciente: pacienteId,
             fecha_pago: { $gte: startDate, $lte: endDate },
             pagado: false,
-        }).sort('fecha_pago')
+        }).sort({
+            fecha_asistencia: 1,
+            fecha_pago: -1
+        })
+            .populate(
+                {
+                    path: "dermatologo",
+                })
+            .populate(
+                {
+                    path: "paciente",
+                })
+            .populate(
+                {
+                    path: "servicio",
+                })
+            .populate(
+                {
+                    path: "sucursal",
+                })
+            .populate(
+                {
+                    path: "tipo_cita",
+                });
+    }
+
+    /**
+     * Muestra todos los faciales de la BD que correspondan a un pagos de un dermatologo por horas
+     */
+    async findSesionesAnticipadasByPayOfDoctorFechaPago(sucursalId, dermatologoId, hora_apertura, hora_cierre): Promise<SesionAnticipadaI[]> {
+        let startDate = new Date(hora_apertura);
+        let endDate = new Date(hora_cierre);
+
+        return await this.sesionAnticipadaModel.find(
+            {
+                fecha_pago: { $gte: startDate, $lte: endDate },
+                sucursal: sucursalId,
+                dermatologo: dermatologoId,
+            }).sort({
+                fecha_pago: -1
+            })
+            .populate(
+                {
+                    path: "dermatologo",
+                })
+            .populate(
+                {
+                    path: "paciente",
+                })
+            .populate(
+                {
+                    path: "servicio",
+                })
+            .populate(
+                {
+                    path: "sucursal",
+                })
+            .populate(
+                {
+                    path: "tipo_cita",
+                });
+    }
+
+    /**
+     * Muestra todas las aparatologias de la BD que correspondan a una fecha y una sucursal
+     */
+    async findSesionAnticipadaByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<SesionAnticipadaI[]> {
+        let startDate = new Date(anioi, mesi, diai);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(aniof, mesf, diaf);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        return await this.sesionAnticipadaModel.find({ fecha_pago: { $gte: startDate, $lte: endDate }, sucursal: sucursalId })
+            .sort({ fecha_pago: -1 })
             .populate(
                 {
                     path: "dermatologo",

@@ -365,7 +365,13 @@ export class AparatologiaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('areas')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**
@@ -387,7 +393,13 @@ export class AparatologiaService {
             .populate('areas')
             .populate('tipo_cita')
             .populate('forma_pago')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**
@@ -409,7 +421,13 @@ export class AparatologiaService {
             .populate('areas')
             .populate('tipo_cita')
             .populate('forma_pago')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**

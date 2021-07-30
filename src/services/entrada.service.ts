@@ -72,7 +72,6 @@ export class EntradaService {
         return await this.entradaModel.find({
             hora_aplicacion: { $gte: startDate, $lt: endDate },
             sucursal: sucursalId,
-            pago_anticipado: false,
         })
         .sort('hora_aplicacion')
         .populate('recepcionista')

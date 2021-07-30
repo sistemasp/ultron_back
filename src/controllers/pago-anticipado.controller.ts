@@ -33,6 +33,23 @@ export class PagoAnticipadoController {
     }
     
     @UseGuards(JwtAuthGuard)
+    @Get('sucursal/:sucursalId/dermatologo/:dermatologoId/apertura/:hora_apertura/cierre/:hora_cierre')
+    findPagosAnticipadssByPayOfDoctorFechaPago(@Param('sucursalId') sucursalId: string, @Param('dermatologoId') dermatologoId: string,
+        @Param('hora_apertura') hora_apertura: string, @Param('hora_cierre') hora_cierre: string): Promise<PagoAnticipadoI[]> {
+        console.log(new Date(), this.TAG, "findPagosAnticipadssByPayOfDoctorFechaPago");
+        return this.pagoAnticipadoService.findPagosAnticipadssByPayOfDoctorFechaPago(sucursalId, dermatologoId, hora_apertura, hora_cierre);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
+    findPagoAnticipadoByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
+        @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
+        @Param('sucursalId') sucursalId: string): Promise<PagoAnticipadoI[]> {
+        console.log(new Date(), this.TAG, "findPagoAnticipadoByRangeDateAndSucursal");
+        return this.pagoAnticipadoService.findPagoAnticipadoByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
+    }
+
+    @UseGuards(JwtAuthGuard)
     @Post()
     createPagoAnticipado(@Body() pagoAnticipadoDto: PagoAnticipadoDto): Promise<PagoAnticipadoI> {
         console.log(new Date(), this.TAG, "createPagoAnticipado");

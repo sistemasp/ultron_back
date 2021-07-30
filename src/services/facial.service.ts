@@ -412,7 +412,13 @@ export class FacialService {
             .populate('forma_pago')
             .populate('producto')
             .populate('tipo_cita')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**

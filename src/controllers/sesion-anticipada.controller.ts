@@ -40,6 +40,23 @@ export class SesionAnticipadaController {
     }
 
     @UseGuards(JwtAuthGuard)
+    @Get('sucursal/:sucursalId/dermatologo/:dermatologoId/apertura/:hora_apertura/cierre/:hora_cierre')
+    findSesionesAnticipadasByPayOfDoctorFechaPago(@Param('sucursalId') sucursalId: string, @Param('dermatologoId') dermatologoId: string,
+        @Param('hora_apertura') hora_apertura: string, @Param('hora_cierre') hora_cierre: string): Promise<SesionAnticipadaI[]> {
+        console.log(new Date(), this.TAG, "findSesionesAnticipadasByPayOfDoctorFechaPago");
+        return this.sesionAnticipadaService.findSesionesAnticipadasByPayOfDoctorFechaPago(sucursalId, dermatologoId, hora_apertura, hora_cierre);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
+    findSesionAnticipadaByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
+        @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
+        @Param('sucursalId') sucursalId: string): Promise<SesionAnticipadaI[]> {
+        console.log(new Date(), this.TAG, "findSesionAnticipadaByRangeDateAndSucursal");
+        return this.sesionAnticipadaService.findSesionAnticipadaByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
+    }
+
+    @UseGuards(JwtAuthGuard)
     @Post()
     createSesionAnticipada(@Body() sesionAnticipadaDto: SesionAnticipadaDto): Promise<SesionAnticipadaI> {
         console.log(new Date(), this.TAG, "createSesionAnticipada");

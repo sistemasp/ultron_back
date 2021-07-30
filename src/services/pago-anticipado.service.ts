@@ -74,6 +74,144 @@ export class PagoAnticipadoService {
     }
 
     /**
+     * Muestra todos los faciales de la BD que correspondan a un pagos de un dermatologo por horas
+     */
+    async findPagosAnticipadssByPayOfDoctorFechaPago(sucursalId, dermatologoId, hora_apertura, hora_cierre): Promise<PagoAnticipadoI[]> {
+        let startDate = new Date(hora_apertura);
+        let endDate = new Date(hora_cierre);
+
+        return await this.pagoAnticipadoModel.find(
+            {
+                fecha_pago: { $gte: startDate, $lte: endDate },
+                sucursal: sucursalId,
+                dermatologo: dermatologoId,
+            }).sort({
+                fecha_pago: -1
+            })
+            .populate(
+                {
+                    path: "dermatologo",
+                })
+            .populate(
+                {
+                    path: "paciente",
+                })
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                })
+            .populate(
+                {
+                    path: "servicio",
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "tipo_cita"
+                    }
+                })
+            .populate(
+                {
+                    path: "sucursal",
+                })
+            .populate(
+                {
+                    path: "tipo_cita",
+                });
+    }
+
+    /**
+     * Muestra todas las aparatologias de la BD que correspondan a una fecha y una sucursal
+     */
+    async findPagoAnticipadoByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<PagoAnticipadoI[]> {
+        let startDate = new Date(anioi, mesi, diai);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(aniof, mesf, diaf);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        return await this.pagoAnticipadoModel.find({ fecha_pago: { $gte: startDate, $lte: endDate }, sucursal: sucursalId })
+            .sort({
+                fecha_pago: -1
+            })
+            .populate(
+                {
+                    path: "dermatologo",
+                })
+            .populate(
+                {
+                    path: "paciente",
+                })
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                })
+            .populate(
+                {
+                    path: "servicio",
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "pagos"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "tipo_cita"
+                    }
+                })
+            .populate(
+                {
+                    path: "sucursal",
+                })
+            .populate(
+                {
+                    path: "tipo_cita",
+                });
+    }
+
+    /**
      * Busca un pagoAnticipado por su Id para poder actualizarlo
      * @param idPagoAnticipado 
      * @param pagoAnticipado 
