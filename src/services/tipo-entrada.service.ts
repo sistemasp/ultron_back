@@ -6,13 +6,16 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class TipoEntradaService {
 
-    constructor(@InjectModel('TipoEntrada') private readonly tipoEntradaModel : Model<TipoEntradaI>) {}
+    constructor(@InjectModel('TipoEntrada') private readonly tipoEntradaModel: Model<TipoEntradaI>) { }
 
     /**
      * Muestra todos los tipoEntradas de la BD
      */
     async showAllTipoEntradas(): Promise<TipoEntradaI[]> {
-        return await this.tipoEntradaModel.find().sort('nombre');
+        return await this.tipoEntradaModel.find({
+            is_active: true,
+            is_visible: true,
+        }).sort('nombre');
     }
 
     /**
@@ -20,7 +23,7 @@ export class TipoEntradaService {
      * @param idTipoEntrada 
      */
     async findTipoEntradaById(idTipoEntrada: string): Promise<TipoEntradaI> {
-        return await this.tipoEntradaModel.findOne( { _id: idTipoEntrada } );
+        return await this.tipoEntradaModel.findOne({ _id: idTipoEntrada });
     }
 
     /**
@@ -28,7 +31,7 @@ export class TipoEntradaService {
      * @param idTipoEntrada 
      */
     async findTipoEntradaByEmployeeNumber(employeeNumber: string): Promise<TipoEntradaI> {
-        return await this.tipoEntradaModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.tipoEntradaModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +56,7 @@ export class TipoEntradaService {
      * Busca un tipoEntrada por su ID y lo elimina de la BD
      * @param idTipoEntrada 
      */
-    async deleteTipoEntrada(idTipoEntrada: string ): Promise<TipoEntradaI> {
+    async deleteTipoEntrada(idTipoEntrada: string): Promise<TipoEntradaI> {
         return await this.tipoEntradaModel.findOneAndDelete({ _id: idTipoEntrada });
     }
 

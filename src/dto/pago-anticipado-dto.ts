@@ -11,6 +11,7 @@ export class PagoAnticipadoDto extends Document {
     readonly fecha_pago: Date;
     readonly sucursal: SucursalDto;
     readonly paciente: PacienteDto;
+    readonly recepcionista: EmpleadoDto;
     readonly dermatologo: EmpleadoDto;
     readonly tipo_cita: TipoCitaDto;
     readonly pagos: PagoDto[];

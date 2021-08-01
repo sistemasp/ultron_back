@@ -177,6 +177,20 @@ export class PagoAnticipadoService {
                 {
                     path: "sesiones_anticipadas",
                     populate: {
+                        path: "dermatologo"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "frecuencia"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
                         path: "paciente"
                     }
                 })
@@ -192,6 +206,13 @@ export class PagoAnticipadoService {
                     path: "sesiones_anticipadas",
                     populate: {
                         path: "servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "sucursal"
                     }
                 })
             .populate(

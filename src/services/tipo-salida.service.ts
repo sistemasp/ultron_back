@@ -6,13 +6,16 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class TipoSalidaService {
 
-    constructor(@InjectModel('TipoSalida') private readonly tipoSalidaModel : Model<TipoSalidaI>) {}
+    constructor(@InjectModel('TipoSalida') private readonly tipoSalidaModel: Model<TipoSalidaI>) { }
 
     /**
      * Muestra todos los tipoSalidas de la BD
      */
     async showAllTipoSalidas(): Promise<TipoSalidaI[]> {
-        return await this.tipoSalidaModel.find().sort('nombre');
+        return await this.tipoSalidaModel.find({
+            is_active: true,
+            is_visible: true,
+        }).sort('nombre');
     }
 
     /**
@@ -20,7 +23,7 @@ export class TipoSalidaService {
      * @param idTipoSalida 
      */
     async findTipoSalidaById(idTipoSalida: string): Promise<TipoSalidaI> {
-        return await this.tipoSalidaModel.findOne( { _id: idTipoSalida } );
+        return await this.tipoSalidaModel.findOne({ _id: idTipoSalida });
     }
 
     /**
@@ -28,7 +31,7 @@ export class TipoSalidaService {
      * @param idTipoSalida 
      */
     async findTipoSalidaByEmployeeNumber(employeeNumber: string): Promise<TipoSalidaI> {
-        return await this.tipoSalidaModel.findOne( { numero_empleado: employeeNumber } );
+        return await this.tipoSalidaModel.findOne({ numero_empleado: employeeNumber });
     }
 
     /**
@@ -53,7 +56,7 @@ export class TipoSalidaService {
      * Busca un tipoSalida por su ID y lo elimina de la BD
      * @param idTipoSalida 
      */
-    async deleteTipoSalida(idTipoSalida: string ): Promise<TipoSalidaI> {
+    async deleteTipoSalida(idTipoSalida: string): Promise<TipoSalidaI> {
         return await this.tipoSalidaModel.findOneAndDelete({ _id: idTipoSalida });
     }
 

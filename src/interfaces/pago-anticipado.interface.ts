@@ -11,6 +11,7 @@ export interface PagoAnticipadoI extends Document {
     fecha_pago: Date;
     sucursal: SucursalI;
     paciente: PacienteI;
+    recepcionista: EmpleadoI;
     dermatologo: EmpleadoI;
     tipo_cita: TipoCitaI;
     pagos: PagoI[];
