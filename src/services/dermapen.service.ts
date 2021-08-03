@@ -358,7 +358,13 @@ export class DermapenService {
             .populate('paciente')
             .populate('sucursal')
             .populate('areas')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**

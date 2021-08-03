@@ -10,6 +10,7 @@ export const CirugiaSchema = new Schema({
     consultaId: { type: String },
     paciente: { type: constMongoose.ObjectId, ref: 'Paciente' },
     dermatologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
+    patologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     quien_agenda: { type: constMongoose.ObjectId, ref: 'Empleado' },
     quien_confirma: { type: constMongoose.ObjectId, ref: 'Empleado' },
     tipo_cita: { type: constMongoose.ObjectId, ref: 'TipoCita' },

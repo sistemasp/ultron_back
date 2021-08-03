@@ -21,6 +21,7 @@ export interface CirugiaI extends Document {
     consultaId: String;
     paciente: PacienteI;
     dermatologo: EmpleadoI;
+    patologo: EmpleadoI;
     quien_agenda: EmpleadoI;
     quien_confirma: EmpleadoI;
     tipo_cita: TipoCitaI;

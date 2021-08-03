@@ -255,7 +255,13 @@ export class EsteticaService {
             .populate('tipo_cita')
             .populate('forma_pago')
             .populate('producto')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**

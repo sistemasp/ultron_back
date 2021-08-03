@@ -233,7 +233,13 @@ export class CirugiaService {
             .populate('tipo_cita')
             .populate('forma_pago')
             .populate('producto')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**
@@ -264,7 +270,8 @@ export class CirugiaService {
     async findCirugiasByPayOfPatologoHoraAplicacion(sucursalId, patologoId, hora_apertura, hora_cierre): Promise<CirugiaI[]> {
         let startDate = new Date(hora_apertura);
         let endDate = new Date(hora_cierre);
-
+        console.log(startDate, endDate);
+        
         return await this.cirugiaModel.find(
             {
                 hora_aplicacion: { $gte: startDate, $lte: endDate },
