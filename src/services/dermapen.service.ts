@@ -124,6 +124,41 @@ export class DermapenService {
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "tipo_servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "uso_cfdi"
+                    }
+                })
             .populate('frecuencia')
             .populate('producto')
             .populate('status');
@@ -214,6 +249,48 @@ export class DermapenService {
         endDate.setSeconds(59);
         return await this.dermapenModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId, servicio: servicio }).sort('fecha_hora')
             .populate('servicio')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "tipo_servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "uso_cfdi"
+                    }
+                })
             .populate('status');
     }
 
@@ -387,7 +464,13 @@ export class DermapenService {
             .populate('tipo_cita')
             .populate('forma_pago')
             .populate('producto')
-            .populate('pagos');
+            .populate(
+                {
+                    path: "pagos",
+                    populate: {
+                        path: "forma_pago"
+                    }
+                });
     }
 
     /**

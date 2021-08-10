@@ -133,6 +133,41 @@ export class ConsultaService {
             .populate('quien_confirma_asistencia')
             .populate('quien_confirma_llamada')
             .populate('tipo_cita')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "tipo_servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "uso_cfdi"
+                    }
+                })
             .populate('medio')
             .populate('pagos')
             .populate('producto')

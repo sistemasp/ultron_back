@@ -153,6 +153,41 @@ export class FacialService {
             .populate('dermatologo')
             .populate('quien_confirma_asistencia')
             .populate('quien_confirma_llamada')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "tipo_servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "uso_cfdi"
+                    }
+                })
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
@@ -245,6 +280,41 @@ export class FacialService {
         endDate.setSeconds(59);
         return await this.facialModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId, servicio: servicio }).sort('fecha_hora')
             .populate('servicio')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "tipo_servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "uso_cfdi"
+                    }
+                })
             .populate('status');
     }
 

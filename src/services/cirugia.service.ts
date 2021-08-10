@@ -63,6 +63,41 @@ export class CirugiaService {
             .populate('quien_confirma_asistencia')
             .populate('quien_confirma_llamada')
             .populate('tipo_cita')
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "paciente"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "razon_social"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "tipo_servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "factura",
+                    populate: {
+                        path: "uso_cfdi"
+                    }
+                })
             .populate('medio')
             .populate('biopsias')
             .populate('pagos')
@@ -218,7 +253,7 @@ export class CirugiaService {
      * Muestra todas las cirugias de la BD que correspondan a un pagos de un dermatologo por horas
      */
     async findCirugiasByPayOfDoctorHoraAplicacion(sucursalId, dermatologoId, atendidoId, hora_apertura, hora_cierre): Promise<CirugiaI[]> {
-        let startDate = new Date(hora_apertura);        
+        let startDate = new Date(hora_apertura);
         let endDate = new Date(hora_cierre);
 
         return await this.cirugiaModel.find(
@@ -271,7 +306,7 @@ export class CirugiaService {
         let startDate = new Date(hora_apertura);
         let endDate = new Date(hora_cierre);
         console.log(startDate, endDate);
-        
+
         return await this.cirugiaModel.find(
             {
                 hora_aplicacion: { $gte: startDate, $lte: endDate },
