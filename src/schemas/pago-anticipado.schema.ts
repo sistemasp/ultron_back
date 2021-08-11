@@ -14,7 +14,7 @@ export const PagoAnticipadoSchema = new Schema({
     sesiones_anticipadas: [{ type: constMongoose.ObjectId, ref: 'SesionAnticipada' }],
     precio: { type: String },
     total: { type: String },
-    factura: { type: Boolean, default: false },
+    factura: { type: constMongoose.ObjectId, ref: 'Factura' },
     observaciones: { type: String },
     servicio: { type: constMongoose.ObjectId, ref: 'Servicio' },
 });

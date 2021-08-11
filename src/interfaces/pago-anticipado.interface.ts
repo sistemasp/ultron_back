@@ -1,5 +1,6 @@
 import { Document } from "mongoose";
 import { EmpleadoI } from "./empleado.interface";
+import { FacturaI } from "./factura.interface";
 import { PacienteI } from "./paciente.interface";
 import { PagoI } from "./pago.interface";
 import { ServicioI } from "./servicio.interface";
@@ -18,7 +19,7 @@ export interface PagoAnticipadoI extends Document {
     sesiones_anticipadas: SesionAnticipadaI[];
     precio: String;
     total: String;
-    factura: Boolean;
+    factura: FacturaI;
     observaciones: String;
     servicio: ServicioI;
 }

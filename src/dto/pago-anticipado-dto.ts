@@ -1,5 +1,6 @@
 import { Document } from "mongoose";
 import { EmpleadoDto } from "./empleado-dto";
+import { FacturaDto } from "./factura-dto";
 import { PacienteDto } from "./paciente-dto";
 import { PagoDto } from "./pago-dto";
 import { ServicioDto } from "./servicio-dto";
@@ -18,7 +19,7 @@ export class PagoAnticipadoDto extends Document {
     readonly sesiones_anticipadas: SesionAnticipadaDto[];
     readonly precio: String;
     readonly total: String;
-    readonly factura: Boolean;
+    readonly factura: FacturaDto;
     readonly observaciones: String;
     readonly servicio: ServicioDto;
 }
