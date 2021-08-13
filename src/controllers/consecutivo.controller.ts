@@ -22,6 +22,12 @@ export class ConsecutivoController {
         return this.consecutivoService.findConsecutivoById(idConsecutivo);
     }
 
+    @Get('sucursal/:sucursalId')
+    findConsecutivoBySucursal(@Param('sucursalId') sucursalId: string): Promise<ConsecutivoI[]> {
+        console.log(new Date(), this.TAG, "findConsecutivoBySucursal");
+        return this.consecutivoService.findConsecutivoBySucursal(sucursalId);
+    }
+
     @Post()
     createConsecutivo(@Body() consecutivoDto: ConsecutivoDto): Promise<ConsecutivoI> {
         console.log(new Date(), this.TAG, "createConsecutivo");

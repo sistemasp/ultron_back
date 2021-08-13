@@ -2,14 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { CirugiaI } from 'src/interfaces/cirugia.interface';
 import { InjectModel } from '@nestjs/mongoose';
-import { ConsecutivoI } from 'src/interfaces/consecutivo.interface';
 
 @Injectable()
 export class CirugiaService {
 
     constructor(
-        @InjectModel('Cirugia') private readonly cirugiaModel: Model<CirugiaI>,
-        @InjectModel('Consecutivo') private readonly consecutivoModel: Model<ConsecutivoI>) { }
+        @InjectModel('Cirugia') private readonly cirugiaModel: Model<CirugiaI> ) { }
 
     /**
      * Muestra todos los cirugias de la BD
@@ -326,10 +324,6 @@ export class CirugiaService {
      */
     async createCirugia(cirugia: CirugiaI): Promise<CirugiaI> {
         const currentDate = new Date();
-        const consecutivo = await this.consecutivoModel.find({
-            sucursal: cirugia.sucursal,
-        });
-        cirugia.consecutivo = consecutivo.length;
         cirugia.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newCirugia = new this.cirugiaModel(cirugia);

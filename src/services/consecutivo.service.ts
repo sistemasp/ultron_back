@@ -32,6 +32,14 @@ export class ConsecutivoService {
     }
 
     /**
+     * Busca solo un consecutivo mediante su numero de empleado en la BD
+     * @param idConsecutivo 
+     */
+    async findConsecutivoBySucursal(sucursal): Promise<ConsecutivoI[]> {
+        return await this.consecutivoModel.find( { sucursal: sucursal } );
+    }
+
+    /**
      * Genera un nuevo consecutivo en la BD
      * @param consecutivo 
      */

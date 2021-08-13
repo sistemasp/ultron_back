@@ -8,8 +8,8 @@ import { ConsecutivoI } from 'src/interfaces/consecutivo.interface';
 export class EsteticaService {
 
     constructor(
-        @InjectModel('Estetica') private readonly esteticaModel: Model<EsteticaI>,
-        @InjectModel('Consecutivo') private readonly consecutivoModel: Model<ConsecutivoI>) { }
+        @InjectModel('Estetica') private readonly esteticaModel: Model<EsteticaI>
+    ) { }
 
     /**
      * Muestra todos los esteticas de la BD
@@ -165,10 +165,6 @@ export class EsteticaService {
      */
     async createEstetica(estetica: EsteticaI): Promise<EsteticaI> {
         const currentDate = new Date();
-        const consecutivo = await this.consecutivoModel.find({
-            sucursal: estetica.sucursal,
-        });
-        estetica.consecutivo = consecutivo.length;
         estetica.create_date = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(),
             currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()));
         const newEstetica = new this.esteticaModel(estetica);

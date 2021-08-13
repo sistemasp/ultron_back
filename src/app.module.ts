@@ -112,7 +112,7 @@ import { AcidoService } from './services/acido.service';
 import { AparatologiaService } from './services/aparatologia.service';
 import { AreaService } from './services/area.service';
 import { BancoService } from './services/banco.service';
-import { BiopsiaService } from './services/biosia.service';
+import { BiopsiaService } from './services/biopsia.service';
 import { CabinaService } from './services/cabina.service';
 import { CancelacionService } from './services/cancelacion.service';
 import { CatalogoService } from './services/catalogo.service';

@@ -4,7 +4,6 @@ import { Model } from 'mongoose';
 import { ConsultaI } from 'src/interfaces/consulta.interface';
 import { HorarioI } from 'src/interfaces/horario.interface';
 import { AparatologiaService } from './aparatologia.service';
-import { BiopsiaService } from './biosia.service';
 import { CirugiaService } from './cirugia.service';
 import { CitaService } from './cita.service';
 import { ConsultaService } from './consulta.service';
@@ -19,7 +18,6 @@ export class HorarioService {
     constructor(@InjectModel('Horario') private readonly horarioModel: Model<HorarioI>,
         private readonly sucursalService: SucursalService,
         private readonly consultaService: ConsultaService,
-        private readonly biopsiaService: BiopsiaService,
         private readonly cirugiaService: CirugiaService,
         private readonly esteticaService: EsteticaService,
         private readonly dermapenService: DermapenService,

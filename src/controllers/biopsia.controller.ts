@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
-import { BiopsiaService } from './../services/biosia.service';
+import { BiopsiaService } from '../services/biopsia.service';
 import { BiopsiaI } from 'src/interfaces/biopsia.interface';
 import { BiopsiaDto } from 'src/dto/biopsia-dto';
 
