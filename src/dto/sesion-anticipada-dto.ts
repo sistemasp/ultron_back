@@ -27,4 +27,6 @@ export class SesionAnticipadaDto extends Document {
     readonly numero_sesion: String;
     readonly factura: FacturaDto;
     readonly pagos: PagoDto[];
+    readonly recepcionista: EmpleadoDto;
+    readonly consecutivo: Number;
 }

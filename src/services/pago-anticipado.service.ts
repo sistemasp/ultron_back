@@ -56,6 +56,13 @@ export class PagoAnticipadoService {
                 })
             .populate(
                 {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "recepcionista"
+                    }
+                })
+            .populate(
+                {
                     path: "servicio",
                 })
             .populate(
@@ -130,6 +137,13 @@ export class PagoAnticipadoService {
                 })
             .populate(
                 {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "recepcionista"
+                    }
+                })
+            .populate(
+                {
                     path: "sucursal",
                 })
             .populate(
@@ -140,6 +154,15 @@ export class PagoAnticipadoService {
 
     /**
      * Muestra todas las aparatologias de la BD que correspondan a una fecha y una sucursal
+     * 
+     * @param anioi 
+     * @param mesi 
+     * @param diai 
+     * @param aniof 
+     * @param mesf 
+     * @param diaf 
+     * @param sucursalId 
+     * @returns 
      */
     async findPagoAnticipadoByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<PagoAnticipadoI[]> {
         let startDate = new Date(anioi, mesi, diai);
@@ -152,7 +175,7 @@ export class PagoAnticipadoService {
         endDate.setSeconds(59);
         return await this.pagoAnticipadoModel.find({ fecha_pago: { $gte: startDate, $lte: endDate }, sucursal: sucursalId })
             .sort({
-                fecha_pago: -1
+                fecha_pago: 1
             })
             .populate(
                 {
@@ -199,6 +222,13 @@ export class PagoAnticipadoService {
                     path: "sesiones_anticipadas",
                     populate: {
                         path: "pagos"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "recepcionista"
                     }
                 })
             .populate(

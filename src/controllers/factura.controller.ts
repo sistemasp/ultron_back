@@ -30,7 +30,7 @@ export class FacturaController {
     findFacturasByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
         @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
         @Param('sucursalId') sucursalId: string) : Promise<FacturaI[]> {
-        console.log(new Date(), this.TAG, "findDatesByRangeDateAndSucursal");
+        console.log(new Date(), this.TAG, "findFacturasByRangeDateAndSucursal");
         return this.facturaService.findFacturasByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
     }
 

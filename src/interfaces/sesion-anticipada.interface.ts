@@ -27,4 +27,6 @@ export interface SesionAnticipadaI extends Document {
     numero_sesion: String;
     factura: FacturaI;
     pagos: PagoI[];
+    recepcionista: EmpleadoI;
+    consecutivo: Number;
 }
