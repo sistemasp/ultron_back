@@ -15,4 +15,5 @@ export const SalidaSchema = new Schema({
     tipo_salida: { type: constMongoose.ObjectId, ref: 'TipoSalida' },
     sucursal: { type: constMongoose.ObjectId, ref: 'Sucursal' },
     forma_pago: { type: constMongoose.ObjectId, ref: 'FormaPago' },
+    pago_dermatologo: { type: constMongoose.ObjectId, ref: 'PagoDermatologo' },
 });

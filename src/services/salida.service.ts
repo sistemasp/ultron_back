@@ -24,6 +24,14 @@ export class SalidaService {
     }
 
     /**
+     * Busca solo un salida mediante su ID en la BD
+     * @param pagoDermatologoId 
+     */
+     async findSalidaByPagoDermatologoId(pagoDermatologoId): Promise<SalidaI> {
+        return await this.salidaModel.findOne({ pago_dermatologo: pagoDermatologoId });
+    }
+
+    /**
      * Muestra todos los salidas del turno de la BD
      */
     async showSalidasTodayBySucursalAndTurno(sucursalId, turno): Promise<SalidaI[]> {

@@ -22,6 +22,12 @@ export class SalidaController {
         return this.salidaService.findSalidaById(idSalida);
     }
 
+    @Get('pagodermatologo/:pagoDermatologoId')
+    findSalidaByPagoDermatologoId(@Param('pagoDermatologoId') pagoDermatologoId: string): Promise<SalidaI> {
+        console.log(new Date(), this.TAG, "findSalidaByPagoDermatologoId");
+        return this.salidaService.findSalidaByPagoDermatologoId(pagoDermatologoId);
+    }
+
     @Get('sucursal/:sucursalId/today/turno/:turno')
     showSalidasTodayBySucursalAndTurno(@Param('turno') turno: string, @Param('sucursalId') sucursalId: string) : Promise<SalidaI[]> {
         console.log(new Date(), this.TAG, "showSalidasTodayBySucursalAndTurno");
