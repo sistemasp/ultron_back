@@ -303,7 +303,6 @@ export class CirugiaService {
     async findCirugiasByPayOfPatologoHoraAplicacion(sucursalId, patologoId, hora_apertura, hora_cierre): Promise<CirugiaI[]> {
         let startDate = new Date(hora_apertura);
         let endDate = new Date(hora_cierre);
-        console.log(startDate, endDate);
 
         return await this.cirugiaModel.find(
             {
