@@ -34,10 +34,17 @@ export class CorteController {
         return this.corteService.showCorteTodayBySucursalAndTurno(sucursalId, turno);
     }
 
+    @Get('sucursal/:sucursalId/anio/:anio/mes/:mes/dia/:dia/turno/:turno')
+    showCorteByDateSucursalAndTurno(@Param('turno') turno: string, @Param('sucursalId') sucursalId: string,
+        @Param('anio') anio: string, @Param('mes') mes: string, @Param('dia') dia: string): Promise<CorteI> {
+        console.log(new Date(), this.TAG, "showCorteByDateSucursalAndTurno");
+        return this.corteService.showCorteByDateSucursalAndTurno(sucursalId, anio, mes, dia, turno);
+    }
+
     @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
     findCortesByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
         @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
-        @Param('sucursalId') sucursalId: string) : Promise<CorteI[]> {
+        @Param('sucursalId') sucursalId: string): Promise<CorteI[]> {
         console.log(new Date(), this.TAG, "findCortesByRangeDateAndSucursal");
         return this.corteService.findCortesByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
     }

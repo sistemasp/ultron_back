@@ -173,7 +173,11 @@ export class PagoAnticipadoService {
         endDate.setHours(23);
         endDate.setMinutes(59);
         endDate.setSeconds(59);
-        return await this.pagoAnticipadoModel.find({ fecha_pago: { $gte: startDate, $lte: endDate }, sucursal: sucursalId })
+        return await this.pagoAnticipadoModel.find(
+            { 
+                fecha_pago: { $gte: startDate, $lte: endDate }, 
+                sucursal: sucursalId,
+            })
             .sort({
                 fecha_pago: 1
             })

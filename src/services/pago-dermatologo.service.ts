@@ -239,19 +239,21 @@ export class PagoDermatologoService {
         endDate.setHours(23);
         endDate.setMinutes(59);
         endDate.setSeconds(59);
-        return await this.pagoDermatologoModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
-            .populate('paciente')
+        return await this.pagoDermatologoModel.find({ fecha_pago: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('fecha_pago')
+            .populate(
+                {
+                    path: "dermatologo",
+                    populate: {
+                        path: "esquema"
+                    }
+                })
             .populate('sucursal')
-            .populate('quien_agenda')
-            .populate('promovendedor')
-            .populate('dermatologo')
-            .populate('quien_confirma_asistencia')
-            .populate('quien_confirma_llamada')
-            .populate('tipo_cita')
-            .populate('medio')
-            .populate('pagos')
-            .populate('frecuencia')
-            .populate('status');
+            .populate('esteticas')
+            .populate('aparatologias')
+            .populate('dermapens')
+            .populate('faciales')
+            .populate('cirugias')
+            .populate('consultas');
     }
 
     /**

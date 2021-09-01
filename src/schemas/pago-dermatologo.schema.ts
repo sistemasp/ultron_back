@@ -10,7 +10,7 @@ export const PagoDermatologoSchema = new Schema({
     consultas: [{ type: constMongoose.ObjectId, ref: 'Consulta' }],
     cirugias: [{ type: constMongoose.ObjectId, ref: 'Cirugia' }],
     faciales: [{ type: constMongoose.ObjectId, ref: 'Facial' }],
-    dermapens: [{ type: constMongoose.ObjectId, ref: 'Dermapens' }],
+    dermapens: [{ type: constMongoose.ObjectId, ref: 'Dermapen' }],
     aparatologias: [{ type: constMongoose.ObjectId, ref: 'Aparatologia' }],
     esteticas: [{ type: constMongoose.ObjectId, ref: 'Estetica' }],
     sucursal: { type: constMongoose.ObjectId, ref: 'Sucursal' },

@@ -83,6 +83,30 @@ export class EntradaService {
     }
 
     /**
+     * Muestra todas los entradas de la BD por fechas
+     */
+     async findEntradasByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<EntradaI[]> {
+        let startDate = new Date(anioi, mesi, diai);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(aniof, mesf, diaf);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);        
+        return await this.entradaModel.find({
+            hora_aplicacion: { $gte: startDate, $lt: endDate },
+            sucursal: sucursalId,
+        })
+        .sort('hora_aplicacion')
+        .populate('recepcionista')
+        .populate('tipo_entrada')
+        .populate('sucursal')
+        .populate('pago')
+        .populate('forma_pago');
+    }
+
+    /**
      * Muestra todos los entradas de la BD
      */
     async showEntradasTodayBySucursalAndHoraAplicacionPA(sucursalId, hora_apertura, hora_cierre): Promise<EntradaI[]> {

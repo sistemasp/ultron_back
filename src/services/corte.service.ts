@@ -53,6 +53,30 @@ export class CorteService {
     }
 
     /**
+     * Muestra todos los cortes del turno de la BD
+     */
+     async showCorteByDateSucursalAndTurno(sucursalId, anio, mes, dia, turno): Promise<CorteI> {
+        let startDate = new Date(anio, mes, dia);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(anio, mes, dia);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        return await this.corteModel.findOne({
+            create_date: { $gte: startDate, $lte: endDate },
+            turno: turno,
+            sucursal: sucursalId,
+        })
+            .sort('create_date')
+            .populate('entradas')
+            .populate('salidas')
+            .populate('sucursal')
+            .populate('recepcionista');
+    }
+
+    /**
      * Muestra todas las dermapens de la BD que correspondan a una fecha y una sucursal
      */
     async findCortesByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<CorteI[]> {

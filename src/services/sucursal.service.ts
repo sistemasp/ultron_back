@@ -6,13 +6,15 @@ import { SucursalI } from 'src/interfaces/sucursal.interface';
 @Injectable()
 export class SucursalService {
 
-    constructor(@InjectModel('Sucursal') private readonly sucursalModel : Model<SucursalI>) {}
+    constructor(@InjectModel('Sucursal') private readonly sucursalModel: Model<SucursalI>) { }
 
     /**
      * Muestra todos los sucursals de la BD
      */
     async showAllOffices(): Promise<SucursalI[]> {
-        return await this.sucursalModel.find().populate('servicios');
+        return await this.sucursalModel.find()
+            .sort({nombre: 1})
+            .populate('servicios');
     }
 
     /**
@@ -20,7 +22,7 @@ export class SucursalService {
      * @param idSucursal 
      */
     async findOfficeById(idSucursal: string): Promise<SucursalI> {
-        return await this.sucursalModel.findOne( { _id: idSucursal } ).populate('servicios');
+        return await this.sucursalModel.findOne({ _id: idSucursal }).populate('servicios');
     }
 
     /**
@@ -45,7 +47,7 @@ export class SucursalService {
      * Busca un sucursal por su ID y lo elimina de la BD
      * @param idSucursal
      */
-    async deleteOffice(idSucursal: string ): Promise<SucursalI> {
+    async deleteOffice(idSucursal: string): Promise<SucursalI> {
         return await this.sucursalModel.findOneAndDelete({ _id: idSucursal });
     }
 

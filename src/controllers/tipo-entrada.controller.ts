@@ -16,6 +16,12 @@ export class TipoEntradaController {
         return this.tipoEntradaService.showAllTipoEntradas();
     }
 
+    @Get('actives')
+    showActivesTipoEntradas() : Promise<TipoEntradaI[]> {
+        console.log(new Date(), this.TAG, "showActivesTipoEntradas");
+        return this.tipoEntradaService.showActivesTipoEntradas();
+    }    
+
     @Get(':id')
     findTipoEntradaById(@Param('id') idTipoEntrada: string): Promise<TipoEntradaI> {
         console.log(new Date(), this.TAG, "findTipoEntradaById");

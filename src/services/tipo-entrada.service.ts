@@ -19,6 +19,16 @@ export class TipoEntradaService {
     }
 
     /**
+     * Muestra todos los tipoEntradas activos de la BD
+     */
+     async showActivesTipoEntradas(): Promise<TipoEntradaI[]> {
+        return await this.tipoEntradaModel.find({
+            is_active: true,
+        }).sort('nombre');
+    }
+
+
+    /**
      * Busca solo un tipoEntrada mediante su ID en la BD
      * @param idTipoEntrada 
      */

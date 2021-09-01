@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards } from '@nestjs/common';
 import { EntradaService } from './../services/entrada.service';
 import { EntradaI } from 'src/interfaces/entrada.interface';
 import { EntradaDto } from 'src/dto/entrada-dto';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Controller('entrada')
 export class EntradaController {
@@ -46,6 +47,15 @@ export class EntradaController {
         @Param('hora_cierre') hora_cierre: string): Promise<EntradaI[]> {
         console.log(new Date(), this.TAG, "showEntradasTodayBySucursalAndHoraAplicacionPA");
         return this.entradaService.showEntradasTodayBySucursalAndHoraAplicacionPA(sucursalId, hora_apertura, hora_cierre);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
+    findEntradasByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
+        @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
+        @Param('sucursalId') sucursalId: string): Promise<EntradaI[]> {
+        console.log(new Date(), this.TAG, "findEntradasByRangeDateAndSucursal");
+        return this.entradaService.findEntradasByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
     }
 
     @Post()
