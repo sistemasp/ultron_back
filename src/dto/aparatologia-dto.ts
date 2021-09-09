@@ -54,4 +54,5 @@ export class AparatologiaDto extends Document {
     readonly descuento_clinica: String;
     readonly descuento_dermatologo: String;
     readonly forma_pago: FormaPagoDto;
+    readonly disparos: Number;
 }

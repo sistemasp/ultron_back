@@ -44,4 +44,5 @@ export const AparatologiaSchema = new Schema({
     descuento_clinica: { type: String },
     descuento_dermatologo: { type: String },
     forma_pago: { type: constMongoose.ObjectId, ref: 'FormaPago' },
+    disparos: { type: Number },
 });

@@ -54,4 +54,5 @@ export interface AparatologiaI extends Document {
     descuento_clinica: String;
     descuento_dermatologo: String;
     forma_pago: FormaPagoI;
+    disparos: Number;
 }
