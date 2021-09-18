@@ -116,12 +116,11 @@ export class ConsultaService {
         endDate.setHours(23);
         endDate.setMinutes(59);
         endDate.setSeconds(59);
-        const ord = (sucursalId === '5ea7014312e35836e33147de' || sucursalId === '5ff324c305809a0be3ad6f19') ? 1 : -1;
         return await this.consultaModel.find(
             {
                 fecha_hora: { $gte: startDate, $lte: endDate },
                 sucursal: sucursalId
-            }).sort({ 'fecha_hora': ord, 'create_date': ord })
+            }).sort((sucursalId === '5ea7014312e35836e33147de' || sucursalId === '5ff324c305809a0be3ad6f19') /* SI ES MANUEL ACUÑA O RUBEN DARIO */ ? { 'fecha_hora': 1, 'create_date': 1 } : { 'create_date': -1 } )
             .populate('paciente')
             .populate('sucursal')
             .populate('quien_agenda')
