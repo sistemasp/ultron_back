@@ -41,4 +41,5 @@ export const CirugiaSchema = new Schema({
     descuento_dermatologo: { type: String },
     forma_pago: { type: constMongoose.ObjectId, ref: 'FormaPago' },
     medio: { type: constMongoose.ObjectId, ref: 'Medio' },
+    turno: { type: String },
 });

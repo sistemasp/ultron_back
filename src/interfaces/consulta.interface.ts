@@ -48,4 +48,5 @@ export interface ConsultaI extends Document {
     descuento_clinica: String;
     descuento_dermatologo: String;
     forma_pago: FormaPagoI;
+    turno: String;
 }

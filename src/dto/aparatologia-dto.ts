@@ -55,4 +55,5 @@ export class AparatologiaDto extends Document {
     readonly descuento_dermatologo: String;
     readonly forma_pago: FormaPagoDto;
     readonly disparos: Number;
+    readonly turno: String;
 }

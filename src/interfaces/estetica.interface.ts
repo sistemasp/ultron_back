@@ -50,4 +50,5 @@ export interface EsteticaI extends Document {
     descuento_dermatologo: String;
     forma_pago: FormaPagoI;
     medio: MedioI;
+    turno: String;
 }

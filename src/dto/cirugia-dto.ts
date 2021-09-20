@@ -52,4 +52,5 @@ export class CirugiaDto extends Document {
     readonly descuento_dermatologo: String;
     readonly forma_pago: FormaPagoDto;
     readonly medio: MedioDto;
+    readonly turno: String;
 }
