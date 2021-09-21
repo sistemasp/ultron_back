@@ -89,8 +89,7 @@ export class SesionAnticipadaService {
             fecha_pago: { $gte: startDate, $lte: endDate },
             pagado: false,
         }).sort({
-            fecha_asistencia: 1,
-            fecha_pago: -1
+            fecha_pago: 1,
         })
             .populate(
                 {
