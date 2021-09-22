@@ -120,6 +120,7 @@ export class EsteticaService {
             .populate('sucursal')
             .populate('servicio')
             .populate('frecuencia')
+            .populate('cosmetologa')
             .populate(
                 {
                     path: "factura",
