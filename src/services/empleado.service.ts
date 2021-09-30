@@ -43,7 +43,7 @@ export class EmpleadoService {
      */
     async findEmployeesByRolId(idRol): Promise<EmpleadoI[]> {
         return await this.empleadoModel.find(
-            { 
+            {
                 rol: idRol,
                 is_active: true,
             })

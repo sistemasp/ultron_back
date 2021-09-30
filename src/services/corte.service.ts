@@ -103,7 +103,6 @@ export class CorteService {
      * Muestra el turno actual de una sucursal
      */
      async findTurnoActualBySucursal(sucursalId): Promise<CorteI> {
-        let currentDate = new Date();
         const corte = await this.corteModel.find({
             sucursal: sucursalId
         })
