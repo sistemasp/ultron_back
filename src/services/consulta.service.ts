@@ -387,6 +387,7 @@ export class ConsultaService {
             .populate('paciente')
             .populate('sucursal')
             .populate('servicio')
+            .populate('producto')
             .populate('dermatologo');
     }
 

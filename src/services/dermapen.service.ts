@@ -380,6 +380,7 @@ export class DermapenService {
             .populate('paciente')
             .populate('sucursal')
             .populate('servicio')
+            .populate('producto')
             .populate('dermatologo');
     }
 

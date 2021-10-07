@@ -226,6 +226,7 @@ export class CirugiaService {
             }).sort('hora_llegada')
             .populate('paciente')
             .populate('sucursal')
+            .populate('producto')
             .populate('servicio')
             .populate('dermatologo');
     }
