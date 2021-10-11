@@ -128,6 +128,7 @@ export class AparatologiaService {
             .populate('dermatologo')
             .populate('quien_confirma_asistencia')
             .populate('quien_confirma_llamada')
+            .populate('quien_realiza')
             .populate('tipo_cita')
             .populate(
                 {

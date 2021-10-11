@@ -39,6 +39,7 @@ export class FacialDto extends Document {
     readonly sucursal: SucursalDto;
     readonly promovendedor: EmpleadoDto;
     readonly cosmetologa: EmpleadoDto;
+    readonly quien_realiza: EmpleadoDto;
     readonly hora_llegada: String;
     readonly hora_atencion: String;
     readonly hora_salida: String;

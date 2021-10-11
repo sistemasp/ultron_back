@@ -467,6 +467,8 @@ export class ConsultaService {
      * @param consulta 
      */
     async updateConsult(idConsulta: string, consulta: ConsultaI): Promise<any> {
+        console.log(consulta);
+        
         return await this.consultaModel.updateOne({ _id: idConsulta }, consulta);
     }
 

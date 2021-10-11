@@ -39,6 +39,7 @@ export interface FacialI extends Document {
     sucursal: SucursalI;
     promovendedor: EmpleadoI;
     cosmetologa: EmpleadoI;
+    quien_realiza: EmpleadoI;
     hora_llegada: String;
     hora_atencion: String;
     hora_salida: String;
