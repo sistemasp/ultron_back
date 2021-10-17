@@ -123,7 +123,7 @@ export class CorteService {
      * Genera un nuevo corte en la BD
      * @param corte 
      */
-    async createCorte(corte: CorteI): Promise<CorteI> {
+    async createCorte(corte): Promise<CorteI> {
         const newCorte = new this.corteModel(corte);
         return await newCorte.save();
     }
@@ -133,7 +133,7 @@ export class CorteService {
      * @param idCorte 
      * @param corte 
      */
-    async updateCorte(idCorte: string, corte: CorteI): Promise<any> {
+    async updateCorte(idCorte: string, corte): Promise<any> {
         return await this.corteModel.updateOne({ _id: idCorte }, corte);
     }
 

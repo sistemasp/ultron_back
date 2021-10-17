@@ -14,7 +14,7 @@ import { Document } from "mongoose";
 import { FormaPagoDto } from "./forma-pago-dto";
 import { MedioDto } from "./medio-dto";
 
-export class CirugiaDto extends Document {
+export class CuracionDto extends Document {
     readonly create_date: Date;
     readonly hora_aplicacion: Date;
     readonly fecha_hora: Date;

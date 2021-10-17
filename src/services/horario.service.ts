@@ -4,9 +4,8 @@ import { Model } from 'mongoose';
 import { ConsultaI } from 'src/interfaces/consulta.interface';
 import { HorarioI } from 'src/interfaces/horario.interface';
 import { AparatologiaService } from './aparatologia.service';
-import { CirugiaService } from './cirugia.service';
-import { CitaService } from './cita.service';
 import { ConsultaService } from './consulta.service';
+import { CuracionService } from './curacion.service';
 import { DermapenService } from './dermapen.service';
 import { EsteticaService } from './estetica.service';
 import { FacialService } from './facial.service';
@@ -18,7 +17,7 @@ export class HorarioService {
     constructor(@InjectModel('Horario') private readonly horarioModel: Model<HorarioI>,
         private readonly sucursalService: SucursalService,
         private readonly consultaService: ConsultaService,
-        private readonly cirugiaService: CirugiaService,
+        private readonly curacionService: CuracionService,
         private readonly esteticaService: EsteticaService,
         private readonly dermapenService: DermapenService,
         private readonly facialService: FacialService,
@@ -170,7 +169,7 @@ export class HorarioService {
                 // citas = await this.consultaService.findConsultsByDateAndSucursal(anio, mes, dia, sucursalId)
                 break;
             case '5f3eae652ec2c95308213014': // CIRUGIA
-                citas = await this.cirugiaService.findCirugiaByDateAndSucursal(anio, mes, dia, sucursalId);
+                citas = await this.curacionService.findCuracionByDateAndSucursal(anio, mes, dia, sucursalId);
                 break;
             case '5f7c81d921189441bce8a8c5': // ESTETICA
                 citas = await this.esteticaService.findEsteticaByDateAndSucursal(anio, mes, dia, sucursalId);

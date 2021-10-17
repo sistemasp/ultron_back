@@ -175,6 +175,9 @@ import { SesionAnticipadaService } from './services/sesion-anticipada.service';
 import { PagoAnticipadoSchema } from './schemas/pago-anticipado.schema';
 import { PagoAnticipadoController } from './controllers/pago-anticipado.controller';
 import { PagoAnticipadoService } from './services/pago-anticipado.service';
+import { CuracionSchema } from './schemas/curacion.schema';
+import { CuracionController } from './controllers/curacion.controller';
+import { CuracionService } from './services/curacion.service';
 
 @Module({
   imports: [
@@ -201,6 +204,7 @@ import { PagoAnticipadoService } from './services/pago-anticipado.service';
       { name: 'Consulta', schema: ConsultaSchema },
       { name: 'Consultorio', schema: ConsultorioSchema },
       { name: 'Corte', schema: CorteSchema },
+      { name: 'Curacion', schema: CuracionSchema },
       { name: 'Dermapen', schema: DermapenSchema },
       { name: 'Empleado', schema: EmpleadoSchema },
       { name: 'Entrada', schema: EntradaSchema },
@@ -260,6 +264,7 @@ import { PagoAnticipadoService } from './services/pago-anticipado.service';
     ConsultaController,
     ConsultorioController,
     CorteController,
+    CuracionController,
     DermapenController,
     EmpleadoController,
     EntradaController,
@@ -319,6 +324,7 @@ import { PagoAnticipadoService } from './services/pago-anticipado.service';
     ConsultaService,
     ConsultorioService,
     CorteService,
+    CuracionService,
     DermapenService,
     EmpleadoService,
     EntradaService,

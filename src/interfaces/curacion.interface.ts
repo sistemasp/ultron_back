@@ -14,7 +14,7 @@ import { Document } from "mongoose";
 import { FormaPagoI } from "./forma-pago.interface";
 import { MedioI } from "./medio.interface";
 
-export interface CirugiaI extends Document {
+export interface CuracionI extends Document {
     create_date: Date;
     hora_aplicacion: Date;
     fecha_hora: Date;

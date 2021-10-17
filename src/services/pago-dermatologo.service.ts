@@ -344,7 +344,7 @@ export class PagoDermatologoService {
      * Genera un nuevo pagoDermatologo en la BD
      * @param pagoDermatologo 
      */
-    async createPagoDermatologo(pagoDermatologo: PagoDermatologoI): Promise<PagoDermatologoI> {
+    async createPagoDermatologo(pagoDermatologo): Promise<PagoDermatologoI> {
         pagoDermatologo.create_date = new Date();
         const newPagoDermatologo = new this.pagoDermatologoModel(pagoDermatologo);
         return await newPagoDermatologo.save();
@@ -355,7 +355,7 @@ export class PagoDermatologoService {
      * @param idPagoDermatologo 
      * @param pagoDermatologo 
      */
-    async updatePagoDermatologo(idPagoDermatologo: string, pagoDermatologo: PagoDermatologoI): Promise<any> {
+    async updatePagoDermatologo(idPagoDermatologo: string, pagoDermatologo): Promise<any> {
         return await this.pagoDermatologoModel.updateOne({ _id: idPagoDermatologo }, pagoDermatologo);
     }
 

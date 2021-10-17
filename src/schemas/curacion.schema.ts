@@ -3,7 +3,7 @@ import * as mongoose from 'mongoose';
 const constMongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-export const CirugiaSchema = new Schema({
+export const CuracionSchema = new Schema({
     create_date: { type: Date, default: new Date() },
     hora_aplicacion: { type: Date },
     fecha_hora: { type: Date },

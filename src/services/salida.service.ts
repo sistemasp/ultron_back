@@ -104,7 +104,7 @@ export class SalidaService {
      * Genera un nuevo salida en la BD
      * @param salida 
      */
-    async createSalida(salida: SalidaI): Promise<SalidaI> {
+    async createSalida(salida): Promise<SalidaI> {
         const newSalida = new this.salidaModel(salida);
         return await newSalida.save();
     }
@@ -114,7 +114,7 @@ export class SalidaService {
      * @param idSalida 
      * @param salida 
      */
-    async updateSalida(idSalida: string, salida: SalidaI): Promise<any> {
+    async updateSalida(idSalida: string, salida): Promise<any> {
         return await this.salidaModel.updateOne({ _id: idSalida }, salida);
     }
 

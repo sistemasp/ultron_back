@@ -1,6 +1,6 @@
 import { EmpleadoDto } from "./empleado-dto";
 import { ConsultaDto } from "./consulta-dto";
-import { CirugiaDto } from "./cirugia-dto";
+import { CuracionDto } from "./curacion-dto";
 import { EsteticaDto } from "./estetica-dto";
 import { FacialDto } from "./facial-dto";
 import { AparatologiaDto } from "./aparatologia-dto";
@@ -12,7 +12,7 @@ export class PagoDermatologoDto extends Document {
     readonly fecha_pago: Date;
     readonly dermatologo: EmpleadoDto;
     readonly consultas: ConsultaDto[];
-    readonly cirugias: CirugiaDto[];
+    readonly curaciones: CuracionDto[];
     readonly faciales: FacialDto[];
     readonly dermapens: DermapenDto[];
     readonly aparatologias: AparatologiaDto[];
