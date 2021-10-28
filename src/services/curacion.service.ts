@@ -315,6 +315,7 @@ export class CuracionService {
             .populate('paciente')
             .populate('sucursal')
             .populate('tipo_cita')
+            .populate('dermatologo')
             .populate('pagos');
     }
 
