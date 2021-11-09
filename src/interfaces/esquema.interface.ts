@@ -4,6 +4,7 @@ export interface EsquemaI extends Document {
     nombre: String;
     descripcion: String;
     porcentaje_consulta: String;
+    porcentaje_consulta_privada: String;
     porcentaje_cirugias: String;
     porcentaje_dermocosmetica: String;
     porcentaje_reconsulta: String;
