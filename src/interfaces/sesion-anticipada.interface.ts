@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { BiopsiaI } from "./biopsia.interface";
 import { EmpleadoI } from "./empleado.interface";
 import { FacturaI } from "./factura.interface";
 import { FrecuenciaI } from "./frecuencia.interface";
@@ -29,4 +30,6 @@ export interface SesionAnticipadaI extends Document {
     pagos: PagoI[];
     recepcionista: EmpleadoI;
     consecutivo: Number;
+    materiales: [];
+    biopsias: BiopsiaI[];
 }

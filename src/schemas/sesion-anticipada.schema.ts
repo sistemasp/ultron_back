@@ -24,4 +24,6 @@ export const SesionAnticipadaSchema = new Schema({
     pagos: [{ type: constMongoose.ObjectId, ref: 'Pago' }],
     recepcionista: { type: constMongoose.ObjectId, ref: 'Empleado' },
     consecutivo: { type: Number },
+    materiales: [],
+    biopsias: [{ type: constMongoose.ObjectId, ref: 'Biopsia' }],
 });

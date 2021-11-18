@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { BiopsiaDto } from "./biopsia-dto";
 import { EmpleadoDto } from "./empleado-dto";
 import { FacturaDto } from "./factura-dto";
 import { FrecuenciaDto } from "./frecuencia-dto";
@@ -29,4 +30,6 @@ export class SesionAnticipadaDto extends Document {
     readonly pagos: PagoDto[];
     readonly recepcionista: EmpleadoDto;
     readonly consecutivo: Number;
+    readonly materiales: [];
+    readonly biopsias: BiopsiaDto[];
 }
