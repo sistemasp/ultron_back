@@ -231,6 +231,7 @@ export class FacialService {
             .populate('pagos')
             .populate('medio')
             .populate('producto')
+            .populate('quien_realiza')
             .populate('status');
     }
 

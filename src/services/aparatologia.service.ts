@@ -205,6 +205,7 @@ export class AparatologiaService {
             .populate('tipo_cita')
             .populate('producto')
             .populate('pagos')
+            .populate('quien_realiza')
             .populate('medio')
             .populate('status');
     }
