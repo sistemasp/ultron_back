@@ -6,7 +6,7 @@ import { SucursalDto } from 'src/dto/sucursal-dto';
 @Controller('sucursal')
 export class SucursalController {
 
-    TAG = "ServicioController";
+    TAG = "SucursalController";
 
     constructor(private readonly sucursalService: SucursalService) {}
 

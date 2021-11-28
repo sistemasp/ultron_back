@@ -23,7 +23,7 @@ export class ConsecutivoController {
     }
 
     @Get('sucursal/:sucursalId')
-    findConsecutivoBySucursal(@Param('sucursalId') sucursalId: string): Promise<ConsecutivoI[]> {
+    findConsecutivoBySucursal(@Param('sucursalId') sucursalId: string): Promise<any> {
         console.log(new Date(), this.TAG, "findConsecutivoBySucursal");
         return this.consecutivoService.findConsecutivoBySucursal(sucursalId);
     }
