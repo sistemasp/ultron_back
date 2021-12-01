@@ -360,6 +360,7 @@ export class FacialService {
             .populate('tipo_cita')
             .populate('medio')
             .populate('pagos')
+            .populate('quien_realiza')
             .populate('status');
     }
 
