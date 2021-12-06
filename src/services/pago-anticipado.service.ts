@@ -37,7 +37,35 @@ export class PagoAnticipadoService {
     async showAllPagoAnticipadosByPaciente(pacienteId): Promise<PagoAnticipadoI[]> {
         return await this.pagoAnticipadoModel.find({
             paciente: pacienteId
-        }).sort('fecha_pago');
+        })
+            .populate('sucursal')
+            .populate('pagos')
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "sucursal"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "servicio"
+                    }
+                })
+            .populate(
+                {
+                    path: "sesiones_anticipadas",
+                    populate: {
+                        path: "pagos"
+                    }
+                })
+            .sort('fecha_pago');
     }
 
     /**
@@ -174,8 +202,8 @@ export class PagoAnticipadoService {
         endDate.setMinutes(59);
         endDate.setSeconds(59);
         return await this.pagoAnticipadoModel.find(
-            { 
-                fecha_pago: { $gte: startDate, $lte: endDate }, 
+            {
+                fecha_pago: { $gte: startDate, $lte: endDate },
                 sucursal: sucursalId,
             })
             .sort({
