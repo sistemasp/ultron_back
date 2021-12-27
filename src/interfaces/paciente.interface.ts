@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { EmpleadoI } from "./empleado.interface";
 import { SexoI } from "./sexo.interface";
 
 export interface PacienteI extends Document {
@@ -19,4 +20,5 @@ export interface PacienteI extends Document {
     municipio: String;
     estado: String;
     codigo_postal: String;
+    quien_captura: EmpleadoI;
 }

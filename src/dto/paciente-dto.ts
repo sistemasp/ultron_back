@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { EmpleadoDto } from "./empleado-dto";
 import { SexoDto } from "./sexo-dto";
 
 export class PacienteDto extends Document {
@@ -19,4 +20,5 @@ export class PacienteDto extends Document {
     readonly municipio: String;
     readonly estado: String;
     readonly codigo_postal: String;
+    readonly quien_captura: EmpleadoDto;
 }

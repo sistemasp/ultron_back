@@ -32,6 +32,7 @@ export class PacienteService {
         const total = await this.pacienteModel.countDocuments(query);
         const patients = await this.pacienteModel.find(search !== '' ? query : {})
             .populate('sexo')
+            .populate('quien_captura')
             .limit(Number(per_page))
             .skip(Number(page - 1) * Number(per_page))
             .sort('-create_date')
