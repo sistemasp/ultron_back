@@ -12,6 +12,6 @@ export const FacturaSchema = new Schema({
     ultimos_4_digitos : { type: String },
     cantidad : { type: String },
     sucursal : { type: constMongoose.ObjectId, ref: 'Sucursal'},
-    tipo_servicio: { type: constMongoose.ObjectId, ref: 'Servicio' },
+    tipo_servicio: { type: String },
     servicio: { type: String },
 });

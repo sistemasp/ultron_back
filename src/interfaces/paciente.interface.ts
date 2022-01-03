@@ -12,13 +12,13 @@ export interface PacienteI extends Document {
     sexo: SexoI;
     ocupacion: string;
     alerta_medica: boolean;
-    domicilio: String;
-    numero_exterior: String;
-    numero_interior: String;
-    colonia: String;
-    ciudad: String;
-    municipio: String;
-    estado: String;
-    codigo_postal: String;
+    domicilio: string;
+    numero_exterior: string;
+    numero_interior: string;
+    colonia: string;
+    ciudad: string;
+    municipio: string;
+    estado: string;
+    codigo_postal: string;
     quien_captura: EmpleadoI;
 }

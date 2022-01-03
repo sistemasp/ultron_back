@@ -15,6 +15,6 @@ export interface FacturaI extends Document {
     ultimos_4_digitos: String;
     cantidad: String;
     sucursal : SucursalI;
-    tipo_servicio: ServicioI;
+    tipo_servicio: String;
     servicio: String;
 }

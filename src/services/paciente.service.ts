@@ -22,21 +22,24 @@ export class PacienteService {
         const exp = `(?imxs)${search.split(' ').join('.')}(?-imxs)`;
         const query = {
             $or: [
-                {nombres: { $regex: exp }},
-                {apellidos: { $regex: exp  }},
-                {telefono: { $regex: exp }},
-                {email: { $regex: exp }},
-                {fecha_nacimiento: { $regex: exp }}
+                { nombres: { $regex: exp } },
+                { apellidos: { $regex: exp } },
+                { telefono: { $regex: exp } },
+                { email: { $regex: exp } },
+                { fecha_nacimiento: { $regex: exp } }
             ]
         };
         const total = await this.pacienteModel.countDocuments(query);
-        const patients = await this.pacienteModel.find(search !== '' ? query : {})
+
+        const busqueda = search !== '' ? query : {};
+
+        const patients = await this.pacienteModel.find(busqueda)
             .populate('sexo')
             .populate('quien_captura')
             .limit(Number(per_page))
             .skip(Number(page - 1) * Number(per_page))
             .sort('-create_date')
-            .select('nombres apellidos telefono email sexo fecha_nacimiento');
+            .select('nombres apellidos telefono email sexo fecha_nacimiento quien_captura');
         const response = {
             ad: {},
             data: patients,

@@ -15,6 +15,6 @@ export class FacturaDto extends Document {
     readonly ultimos_4_digitos : String;
     readonly cantidad : String;
     readonly sucursal : SucursalDto;
-    readonly tipo_servicio: ServicioDto;
+    readonly tipo_servicio: String;
     readonly servicio: String;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { PagoAnticipadoI } from 'src/interfaces/pago-anticipado.interface';
 import { InjectModel } from '@nestjs/mongoose';
+import { PagoAnticipadoDto } from 'src/dto/pago-anticipado-dto';
 
 @Injectable()
 export class PagoAnticipadoService {
@@ -72,7 +73,7 @@ export class PagoAnticipadoService {
      * Genera un nuevo pagoAnticipado en la BD
      * @param pagoAnticipado 
      */
-    async createPagoAnticipado(pagoAnticipado: PagoAnticipadoI): Promise<PagoAnticipadoI> {
+    async createPagoAnticipado(pagoAnticipado: PagoAnticipadoDto): Promise<PagoAnticipadoI> {
         const newPagoAnticipado = new this.pagoAnticipadoModel(pagoAnticipado);
         newPagoAnticipado.populate(
             {
@@ -334,8 +335,8 @@ export class PagoAnticipadoService {
      * @param idPagoAnticipado 
      * @param pagoAnticipado 
      */
-    async updatePagoAnticipado(idPagoAnticipado: string, pagoAnticipado: PagoAnticipadoI): Promise<any> {
-        return await this.pagoAnticipadoModel.updateOne({ _id: idPagoAnticipado }, pagoAnticipado);
+    async updatePagoAnticipado(idPagoAnticipado: string, pagoAnticipado: PagoAnticipadoDto): Promise<PagoAnticipadoI> {
+        return await this.pagoAnticipadoModel.findOneAndUpdate({ _id: idPagoAnticipado }, pagoAnticipado);
     }
 
     /**

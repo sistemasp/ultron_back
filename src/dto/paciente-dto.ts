@@ -12,13 +12,13 @@ export class PacienteDto extends Document {
     readonly sexo : SexoDto;
     readonly ocupacion : string;
     readonly alerta_medica : boolean;
-    readonly domicilio: String;
-    readonly numero_exterior: String;
-    readonly numero_interior: String;
-    readonly colonia: String;
-    readonly ciudad: String;
-    readonly municipio: String;
-    readonly estado: String;
-    readonly codigo_postal: String;
+    readonly domicilio: string;
+    readonly numero_exterior: string;
+    readonly numero_interior: string;
+    readonly colonia: string;
+    readonly ciudad: string;
+    readonly municipio: string;
+    readonly estado: string;
+    readonly codigo_postal: string;
     readonly quien_captura: EmpleadoDto;
 }

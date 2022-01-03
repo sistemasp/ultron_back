@@ -58,7 +58,7 @@ export class PagoAnticipadoController {
 
     @UseGuards(JwtAuthGuard)
     @Put(':id') 
-    updatePagoAnticipado(@Param('id') idPagoAnticipado: string, @Body() pagoAnticipadoDto: PagoAnticipadoDto): Promise<PagoAnticipadoI> {
+    updatePagoAnticipado(@Param('id') idPagoAnticipado: string, @Body() pagoAnticipadoDto: PagoAnticipadoDto): Promise<any> {
         console.log(new Date(), this.TAG, "updatePagoAnticipado");
         return this.pagoAnticipadoService.updatePagoAnticipado(idPagoAnticipado, pagoAnticipadoDto);
     }
