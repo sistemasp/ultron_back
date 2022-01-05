@@ -15,7 +15,7 @@ import { FormaPagoI } from "./forma-pago.interface";
 export interface ConsultaI extends Document {
     create_date: Date;
     hora_aplicacion: Date;
-    folio: String;
+    folio: string;
     fecha_hora: Date;
     paciente: PacienteI;
     dermatologo: EmpleadoI;
@@ -25,15 +25,15 @@ export interface ConsultaI extends Document {
     quien_confirma_llamada: EmpleadoI;
     quien_confirma_asistencia: EmpleadoI;
     status: StatusI;
-    motivos: String;
-    precio: String;
-    total: String;
-    pago_dermatologo: String;
-    hora_llegada: String;
-    hora_atencion: String;
-    hora_salida: String;
-    tiempo: String;
-    observaciones: String;
+    motivos: string;
+    precio: string;
+    total: string;
+    pago_dermatologo: string;
+    hora_llegada: string;
+    hora_atencion: string;
+    hora_salida: string;
+    tiempo: string;
+    observaciones: string;
     sucursal: SucursalI;
     promovendedor: EmpleadoI;
     pagado: Boolean;
@@ -43,10 +43,10 @@ export interface ConsultaI extends Document {
     frecuencia: FrecuenciaI;
     servicio: ServicioI;
     producto: ProductoI;
-    porcentaje_descuento_clinica: String;
+    porcentaje_descuento_clinica: string;
     has_descuento_dermatologo: Boolean;
-    descuento_clinica: String;
-    descuento_dermatologo: String;
+    descuento_clinica: string;
+    descuento_dermatologo: string;
     forma_pago: FormaPagoI;
-    turno: String;
+    turno: string;
 }

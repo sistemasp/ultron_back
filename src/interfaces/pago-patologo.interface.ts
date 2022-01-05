@@ -7,8 +7,8 @@ export interface PagoPatologoI extends Document {
     fecha_pago: Date;
     patologo: EmpleadoI;
     biopsias: BiopsiaI[];
-    turno: String;
-    retencion: String;
-    total: String;
+    turno: string;
+    retencion: string;
+    total: string;
     pagado: Boolean;
 }

@@ -17,8 +17,8 @@ export interface PagoDermatologoI extends Document {
     dermapens: DermapenI[];
     aparatologias: AparatologiaI[];
     esteticas: EsteticaI[];
-    turno: String;
-    retencion: String;
-    total: String;
+    turno: string;
+    retencion: string;
+    total: string;
     pagado: Boolean;
 }

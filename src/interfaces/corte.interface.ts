@@ -8,7 +8,7 @@ export interface CorteI extends Document {
     create_date: Date;
     hora_apertura: Date;
     hora_cierre: Date;
-    turno: String;
+    turno: string;
     entradas: EntradaI[];
     pagos_anticipados: EntradaI[];
     salidas: SalidaI[];

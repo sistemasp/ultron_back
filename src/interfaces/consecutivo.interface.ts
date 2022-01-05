@@ -6,7 +6,7 @@ import { SucursalI } from "./sucursal.interface";
 export interface ConsecutivoI extends Document {
     consecutivo: Number;
     tipo_servicio: ServicioI;
-    servicio: String;
+    servicio: string;
     sucursal : SucursalI;
     fecha_hora: Date;
     status: StatusI;

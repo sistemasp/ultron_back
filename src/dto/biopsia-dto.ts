@@ -13,12 +13,12 @@ export class BiopsiaDto extends Document {
     readonly paciente: PacienteDto;
     readonly sucursal: SucursalDto;
     readonly patologo: EmpleadoDto;
-    readonly con_pago: Boolean;
+    readonly con_pago: boolean;
     readonly fecha_entrega_patologo: Date;
     readonly quien_entrega: EmpleadoDto;
     readonly fecha_entrega_resultado: Date;
     readonly quien_recibe: EmpleadoDto;
-    readonly diagnostico: String;
+    readonly diagnostico: string;
     readonly status: StatusDto;
     readonly a_quien_se_entrega: EmpleadoDto;
     readonly fecha_entrega: Date;

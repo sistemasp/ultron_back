@@ -5,12 +5,12 @@ import { ServicioDto } from "./servicio-dto";
 import { Document } from "mongoose";
 
 export class CabinaDto extends Document {
-    readonly nombre: String;
+    readonly nombre: string;
     readonly cosmetologa: EmpleadoDto;
     readonly dermatologo: EmpleadoDto;
     readonly paciente: PacienteDto;
     readonly tipo_servicio: ServicioDto;
-    readonly servicio: String;
+    readonly servicio: string;
     readonly sucursal: SucursalDto;
-    readonly disponible: Boolean;
+    readonly disponible: boolean;
 }

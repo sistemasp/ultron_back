@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
 export interface LaboratorioI extends Document {
-    nombre : String;
+    nombre : string;
     is_active: Boolean;
 }

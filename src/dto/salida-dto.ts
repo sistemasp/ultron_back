@@ -9,12 +9,12 @@ import { PagoDermatologoDto } from "./pago-dermatologo-dto";
 export class SalidaDto extends Document {
     readonly create_date: Date;
     readonly hora_aplicacion: Date;
-    readonly turno: String;
+    readonly turno: string;
     readonly recepcionista: EmpleadoDto;
-    readonly concepto: String;
-    readonly descripcion: String;
-    readonly cantidad: String;
-    readonly retencion: String;
+    readonly concepto: string;
+    readonly descripcion: string;
+    readonly cantidad: string;
+    readonly retencion: string;
     readonly tipo_salida: TipoSalidaDto;
     readonly sucursal: SucursalDto;
     readonly forma_pago: FormaPagoDto;

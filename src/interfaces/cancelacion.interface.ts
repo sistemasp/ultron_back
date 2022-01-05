@@ -8,8 +8,8 @@ export interface CancelacionI extends Document {
     recepcionista: EmpleadoI;
     create_date: Date;
     tipo_servicio: ServicioI;
-    servicio: String;
-    hora_llegada: String;
-    hora_salida: String;
+    servicio: string;
+    hora_llegada: string;
+    hora_salida: string;
     status: StatusI;
 }

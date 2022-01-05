@@ -8,12 +8,12 @@ import { PagoDermatologoI } from "./pago-dermatologo.interface";
 export interface SalidaI extends Document {
     create_date: Date;
     hora_aplicacion: Date;
-    turno: String;
+    turno: string;
     recepcionista: EmpleadoI;
-    concepto: String;
-    descripcion: String;
-    cantidad: String;
-    retencion: String;
+    concepto: string;
+    descripcion: string;
+    cantidad: string;
+    retencion: string;
     tipo_salida: TipoSalidaI;
     sucursal: SucursalI;
     forma_pago: FormaPagoI;

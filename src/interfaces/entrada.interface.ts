@@ -7,10 +7,10 @@ import { Document } from "mongoose";
 export interface EntradaI extends Document {
     create_date: Date;
     hora_aplicacion: Date;
-    turno: String;
+    turno: string;
     recepcionista: EmpleadoI;
-    concepto: String;
-    cantidad: String;
+    concepto: string;
+    cantidad: string;
     tipo_entrada: TipoEntradaI;
     sucursal: SucursalI;
     forma_pago: FormaPagoI;

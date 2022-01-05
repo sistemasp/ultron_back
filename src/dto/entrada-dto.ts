@@ -7,10 +7,10 @@ import { Document } from "mongoose";
 export class EntradaDto extends Document {
     readonly create_date: Date;
     readonly hora_aplicacion: Date;
-    readonly turno: String;
+    readonly turno: string;
     readonly recepcionista: EmpleadoDto;
-    readonly concepto: String;
-    readonly cantidad: String;
+    readonly concepto: string;
+    readonly cantidad: string;
     readonly tipo_entrada: TipoEntradaDto;
     readonly sucursal: SucursalDto;
     readonly forma_pago: FormaPagoDto;

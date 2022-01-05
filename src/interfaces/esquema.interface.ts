@@ -1,14 +1,14 @@
 import { Document } from "mongoose";
 
 export interface EsquemaI extends Document {
-    nombre: String;
-    descripcion: String;
-    porcentaje_consulta: String;
-    porcentaje_consulta_privada: String;
-    porcentaje_cirugias: String;
-    porcentaje_dermocosmetica: String;
-    porcentaje_reconsulta: String;
-    porcentaje_laser: String;
+    nombre: string;
+    descripcion: string;
+    porcentaje_consulta: string;
+    porcentaje_consulta_privada: string;
+    porcentaje_cirugias: string;
+    porcentaje_dermocosmetica: string;
+    porcentaje_reconsulta: string;
+    porcentaje_laser: string;
     create_date: Date;
     is_active: Boolean;
 }

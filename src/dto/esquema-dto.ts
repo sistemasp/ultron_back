@@ -1,14 +1,14 @@
 import { Document } from "mongoose";
 
 export class EsquemaDto extends Document {
-    readonly nombre: String;
-    readonly descripcion: String;
-    readonly porcentaje_consulta: String;
-    readonly porcentaje_cirugias: String;
-    readonly porcentaje_consulta_privada: String;
-    readonly porcentaje_dermocosmetica: String;
-    readonly porcentaje_reconsulta: String;
-    readonly porcentaje_laser: String;
+    readonly nombre: string;
+    readonly descripcion: string;
+    readonly porcentaje_consulta: string;
+    readonly porcentaje_cirugias: string;
+    readonly porcentaje_consulta_privada: string;
+    readonly porcentaje_dermocosmetica: string;
+    readonly porcentaje_reconsulta: string;
+    readonly porcentaje_laser: string;
     readonly create_date: Date;
     readonly is_active: Boolean;
 }

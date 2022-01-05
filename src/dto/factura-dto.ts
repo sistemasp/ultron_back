@@ -12,9 +12,9 @@ export class FacturaDto extends Document {
     readonly razon_social : RazonSocialDto;
     readonly uso_cfdi : UsoCfdiDto;
     readonly forma_pago : FormaPagoDto;
-    readonly ultimos_4_digitos : String;
-    readonly cantidad : String;
+    readonly ultimos_4_digitos : string;
+    readonly cantidad : string;
     readonly sucursal : SucursalDto;
-    readonly tipo_servicio: String;
-    readonly servicio: String;
+    readonly tipo_servicio: string;
+    readonly servicio: string;
 }

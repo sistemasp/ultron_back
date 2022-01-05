@@ -1,9 +1,9 @@
 import { Document } from "mongoose";
 
 export class ServicioDto extends Document {
-    readonly nombre : String;
-    readonly clave : String;
-    readonly color : String;
+    readonly nombre : string;
+    readonly clave : string;
+    readonly color : string;
     readonly is_active : Boolean;
     readonly is_visible : Boolean;
 }

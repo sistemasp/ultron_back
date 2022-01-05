@@ -8,7 +8,7 @@ export class CorteDto extends Document {
     readonly create_date: Date;
     readonly hora_apertura: Date;
     readonly hora_cierre: Date;
-    readonly turno: String;
+    readonly turno: string;
     readonly entradas: EntradaDto[];
     readonly pagos_anticipados: EntradaDto[];
     readonly salidas: SalidaDto[];

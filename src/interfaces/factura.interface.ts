@@ -12,9 +12,9 @@ export interface FacturaI extends Document {
     razon_social: RazonSocialI;
     uso_cfdi: UsoCfdiI;
     forma_pago: FormaPagoI;
-    ultimos_4_digitos: String;
-    cantidad: String;
+    ultimos_4_digitos: string;
+    cantidad: string;
     sucursal : SucursalI;
-    tipo_servicio: String;
-    servicio: String;
+    tipo_servicio: string;
+    servicio: string;
 }
