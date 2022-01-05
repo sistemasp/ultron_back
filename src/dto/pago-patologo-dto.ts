@@ -7,8 +7,8 @@ export class PagoPatologoDto extends Document {
     readonly fecha_pago: Date;
     readonly patologo: EmpleadoDto;
     readonly biopsias: BiopsiaDto[];
-    readonly turno: String;
-    readonly retencion: String;
-    readonly total: String;
+    readonly turno: string;
+    readonly retencion: string;
+    readonly total: string;
     readonly pagado: Boolean;
 }

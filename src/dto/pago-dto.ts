@@ -17,23 +17,23 @@ export class PagoDto extends Document {
     readonly dermatologo: EmpleadoDto;
     readonly tratamientos: TratamientoDto[];
     readonly quien_recibe_pago: EmpleadoDto;
-    readonly cantidad: String;
-    readonly total: String;
+    readonly cantidad: string;
+    readonly total: string;
     readonly forma_pago: FormaPagoDto;
     readonly banco: BancoDto;
     readonly tipo_tarjeta: TipoTarjetaDto;
-    readonly digitos: String;
+    readonly digitos: string;
     readonly sucursal: SucursalDto;
     readonly factura: Boolean;
     readonly deposito_confirmado: Boolean;
-    readonly observaciones: String;
-    readonly porcentaje_descuento_clinica: String;
-    readonly descuento_clinica: String;
-    readonly descuento_dermatologo: String;
+    readonly observaciones: string;
+    readonly porcentaje_descuento_clinica: string;
+    readonly descuento_clinica: string;
+    readonly descuento_dermatologo: string;
     readonly tipo_servicio: ServicioDto;
-    readonly servicio: String;
+    readonly servicio: string;
     readonly pago_anticipado: Boolean;
     readonly entrada: EntradaDto;
-    readonly turno: String;
+    readonly turno: string;
 
 }

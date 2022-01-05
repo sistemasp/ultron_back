@@ -2,16 +2,16 @@ import { Document } from "mongoose";
 
 export interface RazonSocialI extends Document {
     create_date: Date;
-    rfc: String;
-    nombre_completo: String;
-    domicilio: String;
-    numero_exterior: String;
-    numero_interior: String;
-    colonia: String;
-    ciudad: String;
-    municipio: String;
-    estado: String;
-    codigo_postal: String;
-    telefono: String;
-    email: String;
+    rfc: string;
+    nombre_completo: string;
+    domicilio: string;
+    numero_exterior: string;
+    numero_interior: string;
+    colonia: string;
+    ciudad: string;
+    municipio: string;
+    estado: string;
+    codigo_postal: string;
+    telefono: string;
+    email: string;
 }

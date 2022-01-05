@@ -17,9 +17,9 @@ export class PagoAnticipadoDto extends Document {
     readonly tipo_cita: TipoCitaDto;
     readonly pagos: PagoDto[];
     readonly sesiones_anticipadas: SesionAnticipadaDto[];
-    readonly precio: String;
-    readonly total: String;
+    readonly precio: string;
+    readonly total: string;
     readonly factura: FacturaDto;
-    readonly observaciones: String;
+    readonly observaciones: string;
     readonly servicio: ServicioDto;
 }

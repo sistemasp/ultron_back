@@ -8,8 +8,8 @@ export class CancelacionDto extends Document {
     readonly recepcionista: EmpleadoDto;
     readonly create_date: Date;
     readonly tipo_servicio: ServicioDto;
-    readonly servicio: String;
-    readonly hora_llegada: String;
-    readonly hora_salida: String;
+    readonly servicio: string;
+    readonly hora_llegada: string;
+    readonly hora_salida: string;
     readonly status: StatusDto;
 }

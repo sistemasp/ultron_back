@@ -5,7 +5,7 @@ import { SucursalI } from "./sucursal.interface";
 
 export interface RecetaI extends Document {
     create_date: Date;
-    consultaId: String;
+    consultaId: string;
     paciente: PacienteI;
     dermatologo: EmpleadoI;
     sucursal: SucursalI;

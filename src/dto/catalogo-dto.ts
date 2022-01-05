@@ -1,7 +1,7 @@
 import { Document } from "mongoose";
 
 export class CatalogoDto extends Document {
-    readonly nombre: String;
-    readonly is_active: Boolean;
+    readonly nombre: string;
+    readonly is_active: boolean;
     readonly columns: [];
 }

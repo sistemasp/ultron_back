@@ -5,11 +5,11 @@ import { ServicioDto } from "./servicio-dto";
 import { Document } from "mongoose";
 
 export class SalaCirugiaDto extends Document {
-    readonly nombre: String;
+    readonly nombre: string;
     readonly dermatologo: EmpleadoDto;
     readonly paciente: PacienteDto;
     readonly tipo_servicio: ServicioDto;
-    readonly servicio: String;
+    readonly servicio: string;
     readonly sucursal: SucursalDto;
     readonly disponible: Boolean;
 }

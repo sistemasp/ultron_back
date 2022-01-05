@@ -1,8 +1,8 @@
 import { Document } from "mongoose";
 
 export interface StatusI extends Document {
-    nombre : String;
-    color : String;
+    nombre : string;
+    color : string;
     confirmacion: Boolean;
     visible: Boolean;
 }

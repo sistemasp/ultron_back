@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
 export interface MaterialI extends Document {
-    nombre : String;
+    nombre : string;
     iva : Boolean;
 }

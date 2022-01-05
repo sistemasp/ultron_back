@@ -51,7 +51,6 @@ import { TipoSalidaController } from './controllers/tipo-salida.controller';
 import { TipoEsteticaController } from './controllers/tipo-estetica.controller';
 import { TipoEntradaController } from './controllers/tipo-entrada.controller';
 import { TipoTarjetaController } from './controllers/tipo-tarjeta.controller';
-import { TratamientoPrecioController } from './controllers/tratamiento-precio.controller';
 import { TratamientoController } from './controllers/tratamiento.controller';
 import { UsoCfdiController } from './controllers/uso-cfdi.controller';
 import { EventsModule } from './events/events.module';
@@ -105,7 +104,6 @@ import { TipoSalidaSchema } from './schemas/tipo-salida.schema';
 import { TipoEsteticaSchema } from './schemas/tipo-estetica.schema';
 import { TipoEntradaSchema } from './schemas/tipo-entrada.schema';
 import { TipoTarjetaSchema } from './schemas/tipo-tarjeta.schema';
-import { TratamientoPrecioSchema } from './schemas/tratamiento-precio.schema';
 import { TratamientoSchema } from './schemas/tratamiento.schema';
 import { UsoCfdiSchema } from './schemas/uso-cfdi.schema';
 import { AcidoService } from './services/acido.service';
@@ -157,7 +155,6 @@ import { TipoSalidaService } from './services/tipo-salida.service';
 import { TipoEsteticaService } from './services/tipo-estetica.service';
 import { TipoEntradaService } from './services/tipo-entrada.service';
 import { TipoTarjetaService } from './services/tipo-tarjeta.service';
-import { TratamientoPrecioService } from './services/tratamiento-precio.service';
 import { TratamientoService } from './services/tratamiento.service';
 import { UsoCfdiService } from './services/uso-cfdi.service';
 import { EmpleadoController } from './controllers/empleado.controller';
@@ -244,7 +241,6 @@ import { CuracionService } from './services/curacion.service';
       { name: 'TipoEntrada', schema: TipoEntradaSchema },
       { name: 'TipoTarjeta', schema: TipoTarjetaSchema },
       { name: 'Tratamiento', schema: TratamientoSchema },
-      { name: 'TratamientoPrecio', schema: TratamientoPrecioSchema },
       { name: 'UsoCfdi', schema: UsoCfdiSchema },
     ])
   ],
@@ -304,7 +300,6 @@ import { CuracionService } from './services/curacion.service';
     TipoEntradaController,
     TipoTarjetaController,
     TratamientoController,
-    TratamientoPrecioController,
     UsoCfdiController,
   ],
   providers: [
@@ -364,7 +359,6 @@ import { CuracionService } from './services/curacion.service';
     TipoEntradaService,
     TipoTarjetaService,
     TratamientoService,
-    TratamientoPrecioService,
     UsoCfdiService,
     // WEB SOCKETS
     //AppGateway,

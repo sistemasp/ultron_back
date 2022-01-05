@@ -18,7 +18,7 @@ export interface BiopsiaI extends Document {
     quien_entrega: EmpleadoI;
     fecha_entrega_resultado: Date;
     quien_recibe: EmpleadoI;
-    diagnostico: String;
+    diagnostico: string;
     status: StatusI;
     a_quien_se_entrega: EmpleadoI;
     fecha_entrega: Date;

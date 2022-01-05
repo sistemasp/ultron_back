@@ -5,7 +5,7 @@ import { SucursalDto } from "./sucursal-dto";
 
 export class RecetaDto extends Document {
     readonly create_date: Date;
-    readonly consultaId: String;
+    readonly consultaId: string;
     readonly paciente: PacienteDto;
     readonly dermatologo: EmpleadoDto;
     readonly sucursal: SucursalDto;

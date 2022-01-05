@@ -17,9 +17,9 @@ export interface PagoAnticipadoI extends Document {
     tipo_cita: TipoCitaI;
     pagos: PagoI[];
     sesiones_anticipadas: SesionAnticipadaI[];
-    precio: String;
-    total: String;
+    precio: string;
+    total: string;
     factura: FacturaI;
-    observaciones: String;
+    observaciones: string;
     servicio: ServicioI;
 }

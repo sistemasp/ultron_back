@@ -2,7 +2,7 @@ import { Document } from "mongoose";
 import { LaboratorioI } from "./laboratorio.interface";
 
 export interface ProductoComercialI extends Document {
-    nombre: String;
+    nombre: string;
     laboratorio: LaboratorioI;
     is_active: Boolean;
 }

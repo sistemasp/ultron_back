@@ -5,12 +5,12 @@ import { ServicioI } from "./servicio.interface";
 import { Document } from "mongoose";
 
 export interface CabinaI extends Document {
-    nombre: String;
+    nombre: string;
     cosmetologa: EmpleadoI;
     dermatologo: EmpleadoI;
     paciente: PacienteI;
     tipo_servicio: ServicioI;
-    servicio: String;
+    servicio: string;
     sucursal: SucursalI;
     disponible: Boolean;
 }

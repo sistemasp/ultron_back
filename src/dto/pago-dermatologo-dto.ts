@@ -17,8 +17,8 @@ export class PagoDermatologoDto extends Document {
     readonly dermapens: DermapenDto[];
     readonly aparatologias: AparatologiaDto[];
     readonly esteticas: EsteticaDto[];
-    readonly turno: String;
-    readonly retencion: String;
-    readonly total: String;
+    readonly turno: string;
+    readonly retencion: string;
+    readonly total: string;
     readonly pagado: Boolean;
 }
