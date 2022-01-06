@@ -36,7 +36,7 @@ export interface ConsultaI extends Document {
     observaciones: string;
     sucursal: SucursalI;
     promovendedor: EmpleadoI;
-    pagado: Boolean;
+    pagado: boolean;
     factura: FacturaI;
     pagos: PagoI[];
     consecutivo: Number;
@@ -44,7 +44,7 @@ export interface ConsultaI extends Document {
     servicio: ServicioI;
     producto: ProductoI;
     porcentaje_descuento_clinica: string;
-    has_descuento_dermatologo: Boolean;
+    has_descuento_dermatologo: boolean;
     descuento_clinica: string;
     descuento_dermatologo: string;
     forma_pago: FormaPagoI;

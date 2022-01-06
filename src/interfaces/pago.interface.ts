@@ -24,15 +24,15 @@ export interface PagoI extends Document {
     tipo_tarjeta: TipoTarjetaI;
     digitos: string;
     sucursal: SucursalI;
-    factura: Boolean;
-    deposito_confirmado: Boolean;
+    factura: boolean;
+    deposito_confirmado: boolean;
     observaciones: string;
     porcentaje_descuento_clinica: string;
     descuento_clinica: string;
     descuento_dermatologo: string;
     tipo_servicio: ServicioI;
     servicio: string;
-    pago_anticipado: Boolean;
+    pago_anticipado: boolean;
     entrada: EntradaI;
     turno: string;
 }

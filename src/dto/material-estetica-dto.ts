@@ -7,6 +7,6 @@ export class MaterialEsteticaDto extends Document {
     readonly precio : string;
     readonly tipo_estetica : TipoEsteticaDto;
     readonly producto: ProductoDto;
-    readonly iva : Boolean;
-    readonly is_active: Boolean;
+    readonly iva : boolean;
+    readonly is_active: boolean;
 }

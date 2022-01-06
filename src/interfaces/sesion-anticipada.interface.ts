@@ -24,7 +24,7 @@ export interface SesionAnticipadaI extends Document {
     porcentaje_descuento_clinica: string;
     total: string;
     observaciones: string;
-    pagado: Boolean;
+    pagado: boolean;
     numero_sesion: string;
     factura: FacturaI;
     pagos: PagoI[];

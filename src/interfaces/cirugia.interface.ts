@@ -28,7 +28,7 @@ export interface CirugiaI extends Document {
     status: StatusI;
     sucursal: SucursalI;
     consecutivo: Number;
-    pagado: Boolean;
+    pagado: boolean;
     precio: string;
     pago_dermatologo: string;
     pago_patologo: string;
@@ -36,7 +36,7 @@ export interface CirugiaI extends Document {
     total_aplicacion: string;
     materiales: [];
     biopsias: BiopsiaI[];
-    hasBiopsia: Boolean;
+    hasBiopsia: boolean;
     costo_biopsias: string;
     servicio: ServicioI;
     factura: FacturaI;
@@ -47,7 +47,7 @@ export interface CirugiaI extends Document {
     producto: ProductoI;
     frecuencia: FrecuenciaI;
     porcentaje_descuento_clinica: string;
-    has_descuento_dermatologo: Boolean;
+    has_descuento_dermatologo: boolean;
     descuento_clinica: string;
     descuento_dermatologo: string;
     forma_pago: FormaPagoI;

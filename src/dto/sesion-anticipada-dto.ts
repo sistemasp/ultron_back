@@ -24,7 +24,7 @@ export class SesionAnticipadaDto extends Document {
     readonly porcentaje_descuento_clinica: string;
     readonly total: string;
     readonly observaciones: string;
-    readonly pagado: Boolean;
+    readonly pagado: boolean;
     readonly numero_sesion: string;
     readonly factura: FacturaDto;
     readonly pagos: PagoDto[];

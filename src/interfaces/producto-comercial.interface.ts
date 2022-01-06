@@ -4,5 +4,5 @@ import { LaboratorioI } from "./laboratorio.interface";
 export interface ProductoComercialI extends Document {
     nombre: string;
     laboratorio: LaboratorioI;
-    is_active: Boolean;
+    is_active: boolean;
 }

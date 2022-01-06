@@ -36,7 +36,7 @@ export class ConsultaDto extends Document {
     readonly observaciones: string;
     readonly sucursal: SucursalDto;
     readonly promovendedor: EmpleadoDto;
-    readonly pagado: Boolean;
+    readonly pagado: boolean;
     readonly factura: FacturaDto;
     readonly pagos: PagoDto[];
     readonly consecutivo: Number;
@@ -44,7 +44,7 @@ export class ConsultaDto extends Document {
     readonly servicio: ServicioDto;
     readonly producto: ProductoDto;
     readonly porcentaje_descuento_clinica: string;
-    readonly has_descuento_dermatologo: Boolean;
+    readonly has_descuento_dermatologo: boolean;
     readonly descuento_clinica: string;
     readonly descuento_dermatologo: string;
     readonly forma_pago: FormaPagoDto;

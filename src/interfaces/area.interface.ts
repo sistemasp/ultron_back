@@ -20,5 +20,5 @@ export interface AreaI extends Document {
     comision_derivado_rd: string;
     comision_revisado_rd: string;
     comision_realizado_rd: string;
-    iva : Boolean;
+    iva : boolean;
 }

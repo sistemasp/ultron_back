@@ -20,5 +20,5 @@ export class PagoDermatologoDto extends Document {
     readonly turno: string;
     readonly retencion: string;
     readonly total: string;
-    readonly pagado: Boolean;
+    readonly pagado: boolean;
 }

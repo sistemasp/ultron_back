@@ -40,7 +40,7 @@ export class DermapenDto extends Document {
     readonly hora_llegada: string;
     readonly hora_atencion: string;
     readonly hora_salida: string;
-    readonly pagado: Boolean;
+    readonly pagado: boolean;
     readonly factura: FacturaDto;
     readonly pagos: PagoDto[];
     readonly consecutivo: Number;
@@ -49,7 +49,7 @@ export class DermapenDto extends Document {
     readonly producto: ProductoDto;
     readonly total_aplicacion: string;
     readonly porcentaje_descuento_clinica: string;
-    readonly has_descuento_dermatologo: Boolean;
+    readonly has_descuento_dermatologo: boolean;
     readonly descuento_clinica: string;
     readonly descuento_dermatologo: string;
     readonly forma_pago: FormaPagoDto;

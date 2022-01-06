@@ -10,5 +10,5 @@ export interface EsquemaI extends Document {
     porcentaje_reconsulta: string;
     porcentaje_laser: string;
     create_date: Date;
-    is_active: Boolean;
+    is_active: boolean;
 }

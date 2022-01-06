@@ -40,7 +40,7 @@ export interface DermapenI extends Document {
     hora_llegada: string;
     hora_atencion: string;
     hora_salida: string;
-    pagado: Boolean;
+    pagado: boolean;
     factura: FacturaI;
     pagos: PagoI[];
     materiales: [];
@@ -49,7 +49,7 @@ export interface DermapenI extends Document {
     frecuencia: FrecuenciaI;
     total_aplicacion: string;
     porcentaje_descuento_clinica: string;
-    has_descuento_dermatologo: Boolean;
+    has_descuento_dermatologo: boolean;
     descuento_clinica: string;
     descuento_dermatologo: string;
     forma_pago: FormaPagoI;

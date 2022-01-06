@@ -13,7 +13,7 @@ export interface BiopsiaI extends Document {
     paciente: PacienteI;
     sucursal: SucursalI;
     patologo: EmpleadoI;
-    con_pago: Boolean;
+    con_pago: boolean;
     fecha_entrega_patologo: Date;
     quien_entrega: EmpleadoI;
     fecha_entrega_resultado: Date;

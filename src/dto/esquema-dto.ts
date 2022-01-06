@@ -10,5 +10,5 @@ export class EsquemaDto extends Document {
     readonly porcentaje_reconsulta: string;
     readonly porcentaje_laser: string;
     readonly create_date: Date;
-    readonly is_active: Boolean;
+    readonly is_active: boolean;
 }

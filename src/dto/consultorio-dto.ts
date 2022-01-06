@@ -11,6 +11,6 @@ export class ConsultorioDto extends Document {
     readonly tipo_servicio: ServicioDto;
     readonly servicio: string;
     readonly sucursal: SucursalDto;
-    readonly disponible: Boolean;
+    readonly disponible: boolean;
     readonly consultaId: string;
 }

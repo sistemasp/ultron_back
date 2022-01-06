@@ -3,21 +3,21 @@ import { EsquemaDto } from "./esquema-dto";
 import { RolDto } from "./rol-dto";
 
 export class EmpleadoDto extends Document {
-    readonly nombre: String;
-    readonly numero_empleado: String;
-    readonly telefono: String;
-    readonly password: String;
+    readonly nombre: string;
+    readonly numero_empleado: string;
+    readonly telefono: string;
+    readonly password: string;
     readonly rol: RolDto;
-    readonly color: String;
-    readonly cedula: String;
+    readonly color: string;
+    readonly cedula: string;
     readonly fecha_entrada: Date;
     readonly fecha_baja: Date;
-    readonly disponible: Boolean;
-    readonly pago_completo: Boolean;
-    readonly porcentaje: String;
-    readonly porcentaje_estetica: String;
-    readonly porcentaje_reconsulta: String;
+    readonly disponible: boolean;
+    readonly pago_completo: boolean;
+    readonly porcentaje: string;
+    readonly porcentaje_estetica: string;
+    readonly porcentaje_reconsulta: string;
     readonly esquema: EsquemaDto;
-    readonly is_active: Boolean;
-    readonly super_admin: Boolean;
+    readonly is_active: boolean;
+    readonly super_admin: boolean;
 }

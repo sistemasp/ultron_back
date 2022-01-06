@@ -43,7 +43,7 @@ export interface AparatologiaI extends Document {
     hora_llegada: string;
     hora_atencion: string;
     hora_salida: string;
-    pagado: Boolean;
+    pagado: boolean;
     factura: FacturaI;
     pagos: PagoI[];
     consecutivo: Number;
@@ -51,7 +51,7 @@ export interface AparatologiaI extends Document {
     producto: ProductoI;
     frecuencia: FrecuenciaI;
     porcentaje_descuento_clinica: string;
-    has_descuento_dermatologo: Boolean;
+    has_descuento_dermatologo: boolean;
     descuento_clinica: string;
     descuento_dermatologo: string;
     forma_pago: FormaPagoI;

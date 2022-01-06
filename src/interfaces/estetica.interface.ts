@@ -28,7 +28,7 @@ export interface EsteticaI extends Document {
     pago_dermatologo: string;
     sucursal: SucursalI;
     consecutivo: Number;
-    pagado: Boolean;
+    pagado: boolean;
     precio: string;
     total: string;
     materiales: [];
@@ -45,7 +45,7 @@ export interface EsteticaI extends Document {
     frecuencia: FrecuenciaI;
     total_aplicacion: string;
     porcentaje_descuento_clinica: string;
-    has_descuento_dermatologo: Boolean;
+    has_descuento_dermatologo: boolean;
     descuento_clinica: string;
     descuento_dermatologo: string;
     forma_pago: FormaPagoI;

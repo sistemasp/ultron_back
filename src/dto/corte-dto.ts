@@ -14,5 +14,5 @@ export class CorteDto extends Document {
     readonly salidas: SalidaDto[];
     readonly recepcionista: EmpleadoDto;
     readonly sucursal: SucursalDto;
-    readonly generado: Boolean;
+    readonly generado: boolean;
 }

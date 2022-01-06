@@ -14,5 +14,5 @@ export interface CorteI extends Document {
     salidas: SalidaI[];
     recepcionista: EmpleadoI;
     sucursal: SucursalI;
-    generado: Boolean;
+    generado: boolean;
 }

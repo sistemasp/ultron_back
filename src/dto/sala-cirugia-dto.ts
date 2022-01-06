@@ -11,5 +11,5 @@ export class SalaCirugiaDto extends Document {
     readonly tipo_servicio: ServicioDto;
     readonly servicio: string;
     readonly sucursal: SucursalDto;
-    readonly disponible: Boolean;
+    readonly disponible: boolean;
 }

@@ -18,7 +18,7 @@ export class CuracionDto extends Document {
     readonly create_date: Date;
     readonly hora_aplicacion: Date;
     readonly fecha_hora: Date;
-    readonly pagado: Boolean;
+    readonly pagado: boolean;
     readonly status: StatusDto;
     readonly consultaId: string;
     readonly paciente: PacienteDto;
@@ -36,7 +36,7 @@ export class CuracionDto extends Document {
     readonly total_aplicacion: string;
     readonly materiales: [];
     readonly biopsias: BiopsiaDto[];
-    readonly hasBiopsia: Boolean;
+    readonly hasBiopsia: boolean;
     readonly costo_biopsias: string;
     readonly servicio: ServicioDto;
     readonly pagos : PagoDto[];
@@ -47,7 +47,7 @@ export class CuracionDto extends Document {
     readonly producto: ProductoDto;
     readonly frecuencia: FrecuenciaDto;
     readonly porcentaje_descuento_clinica: string;
-    readonly has_descuento_dermatologo: Boolean;
+    readonly has_descuento_dermatologo: boolean;
     readonly descuento_clinica: string;
     readonly descuento_dermatologo: string;
     readonly forma_pago: FormaPagoDto;

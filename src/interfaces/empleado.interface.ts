@@ -3,21 +3,21 @@ import { EsquemaI } from "./esquema.interface";
 import { RolI } from "./rol.interface";
 
 export interface EmpleadoI extends Document {
-    nombre: String;
-    numero_empleado: String;
-    telefono: String;
-    password: String;
+    nombre: string;
+    numero_empleado: string;
+    telefono: string;
+    password: string;
     rol: RolI;
-    color: String;
-    cedula: String;
+    color: string;
+    cedula: string;
     fecha_entrada: Date;
     fecha_baja: Date;
-    disponible: Boolean;
-    pago_completo: Boolean;
-    porcentaje: String;
-    porcentaje_estetica: String;
-    porcentaje_reconsulta: String;
+    disponible: boolean;
+    pago_completo: boolean;
+    porcentaje: string;
+    porcentaje_estetica: string;
+    porcentaje_reconsulta: string;
     esquema: EsquemaI;
-    is_active: Boolean;
-    super_admin: Boolean;
+    is_active: boolean;
+    super_admin: boolean;
 }

@@ -17,7 +17,7 @@ export class EsteticaDto extends Document {
     readonly create_date: Date;
     readonly hora_aplicacion: Date;
     readonly fecha_hora: Date;
-    readonly pagado: Boolean;
+    readonly pagado: boolean;
     readonly consultaId: string;
     readonly paciente: PacienteDto;
     readonly dermatologo: EmpleadoDto;
@@ -45,7 +45,7 @@ export class EsteticaDto extends Document {
     readonly frecuencia: FrecuenciaDto;
     readonly total_aplicacion: string;
     readonly porcentaje_descuento_clinica: string;
-    readonly has_descuento_dermatologo: Boolean;
+    readonly has_descuento_dermatologo: boolean;
     readonly descuento_clinica: string;
     readonly descuento_dermatologo: string;
     readonly forma_pago: FormaPagoDto;

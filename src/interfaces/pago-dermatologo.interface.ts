@@ -20,5 +20,5 @@ export interface PagoDermatologoI extends Document {
     turno: string;
     retencion: string;
     total: string;
-    pagado: Boolean;
+    pagado: boolean;
 }

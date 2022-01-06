@@ -14,5 +14,5 @@ export interface EntradaI extends Document {
     tipo_entrada: TipoEntradaI;
     sucursal: SucursalI;
     forma_pago: FormaPagoI;
-    pago_anticipado: Boolean;
+    pago_anticipado: boolean;
 }

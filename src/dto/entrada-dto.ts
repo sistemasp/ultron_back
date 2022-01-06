@@ -14,5 +14,5 @@ export class EntradaDto extends Document {
     readonly tipo_entrada: TipoEntradaDto;
     readonly sucursal: SucursalDto;
     readonly forma_pago: FormaPagoDto;
-    readonly pago_anticipado: Boolean;
+    readonly pago_anticipado: boolean;
 }

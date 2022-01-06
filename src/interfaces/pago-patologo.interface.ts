@@ -10,5 +10,5 @@ export interface PagoPatologoI extends Document {
     turno: string;
     retencion: string;
     total: string;
-    pagado: Boolean;
+    pagado: boolean;
 }

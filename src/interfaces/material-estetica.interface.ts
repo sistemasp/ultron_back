@@ -7,6 +7,6 @@ export interface MaterialEsteticaI extends Document {
     precio : string;
     tipo_estetica : TipoEsteticaI;
     producto: ProductoI;
-    iva : Boolean;
-    is_active: Boolean;
+    iva : boolean;
+    is_active: boolean;
 }

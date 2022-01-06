@@ -24,15 +24,15 @@ export class PagoDto extends Document {
     readonly tipo_tarjeta: TipoTarjetaDto;
     readonly digitos: string;
     readonly sucursal: SucursalDto;
-    readonly factura: Boolean;
-    readonly deposito_confirmado: Boolean;
+    readonly factura: boolean;
+    readonly deposito_confirmado: boolean;
     readonly observaciones: string;
     readonly porcentaje_descuento_clinica: string;
     readonly descuento_clinica: string;
     readonly descuento_dermatologo: string;
     readonly tipo_servicio: ServicioDto;
     readonly servicio: string;
-    readonly pago_anticipado: Boolean;
+    readonly pago_anticipado: boolean;
     readonly entrada: EntradaDto;
     readonly turno: string;
 

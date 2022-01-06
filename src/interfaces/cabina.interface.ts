@@ -12,5 +12,5 @@ export interface CabinaI extends Document {
     tipo_servicio: ServicioI;
     servicio: string;
     sucursal: SucursalI;
-    disponible: Boolean;
+    disponible: boolean;
 }
