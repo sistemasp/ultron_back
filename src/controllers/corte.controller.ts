@@ -17,9 +17,9 @@ export class CorteController {
     }
 
     @Get(':id')
-    findCorteById(@Param('id') idCorte: string): Promise<CorteI> {
+    findCorteById(@Param('id') corteId: string): Promise<CorteI> {
         console.log(new Date(), this.TAG, "findCorteById");
-        return this.corteService.findCorteById(idCorte);
+        return this.corteService.findCorteById(corteId);
     }
 
     @Get('sucursal/:sucursalId/turnoactual')
@@ -56,15 +56,21 @@ export class CorteController {
     }
 
     @Put(':id')
-    updateCorte(@Param('id') idCorte: string, @Body() corteDto: CorteDto): Promise<CorteI> {
+    updateCorte(@Param('id') corteId: string, @Body() corteDto: CorteDto): Promise<CorteI> {
         console.log(new Date(), this.TAG, "updateCorte");
-        return this.corteService.updateCorte(idCorte, corteDto);
+        return this.corteService.updateCorte(corteId, corteDto);
+    }
+
+    @Put('abrircorte/:corteId')
+    openCorte(@Param('corteId') corteId: string): Promise<CorteI> {
+        console.log(new Date(), this.TAG, "openCorte");
+        return this.corteService.openCorte(corteId);
     }
 
     @Delete(':id')
-    deleteCorte(@Param('id') idCorte: string): Promise<CorteI> {
+    deleteCorte(@Param('id') corteId: string): Promise<CorteI> {
         console.log(new Date(), this.TAG, "deleteCorte");
-        return this.corteService.deleteCorte(idCorte);
+        return this.corteService.deleteCorte(corteId);
     }
 
 }

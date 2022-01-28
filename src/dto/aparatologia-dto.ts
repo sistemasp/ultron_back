@@ -14,7 +14,7 @@ import { FacturaDto } from "./factura-dto";
 import { Document } from "mongoose";
 import { FormaPagoDto } from "./forma-pago-dto";
 
-export class AparatologiaDto extends Document {
+export class AparatologiaDto {
     readonly create_date: Date;
     readonly hora_aplicacion: Date;
     readonly fecha_hora: Date;

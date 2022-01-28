@@ -22,10 +22,10 @@ export class CorteService {
 
     /**
      * Busca solo un corte mediante su ID en la BD
-     * @param idCorte s
+     * @param corteId s
      */
-    async findCorteById(idCorte: string): Promise<CorteI> {
-        return await this.corteModel.findOne({ _id: idCorte });
+    async findCorteById(corteId: string): Promise<CorteI> {
+        return await this.corteModel.findOne({ _id: corteId });
     }
 
     /**
@@ -55,7 +55,7 @@ export class CorteService {
     /**
      * Muestra todos los cortes del turno de la BD
      */
-     async showCorteByDateSucursalAndTurno(sucursalId, anio, mes, dia, turno): Promise<CorteI> {
+    async showCorteByDateSucursalAndTurno(sucursalId, anio, mes, dia, turno): Promise<CorteI> {
         let startDate = new Date(anio, mes, dia);
         startDate.setHours(0);
         startDate.setMinutes(0);
@@ -92,28 +92,44 @@ export class CorteService {
             create_date: { $gte: startDate, $lte: endDate },
             sucursal: sucursalId
         })
-        .sort('create_date')
-        .populate('entradas')
-        .populate('salidas')
-        .populate('sucursal')
-        .populate('recepcionista');
+            .sort('create_date')
+            .populate('entradas')
+            .populate('salidas')
+            .populate('sucursal')
+            .populate('recepcionista');
     }
-    
+
     /**
      * Muestra el turno actual de una sucursal
      */
-     async findTurnoActualBySucursal(sucursalId): Promise<CorteI> {
+    async findTurnoActualBySucursal(sucursalId): Promise<CorteI> {
         const corte = await this.corteModel.find({
             sucursal: sucursalId
         })
-        .sort('create_date');
+            .sort('create_date');
         const corteActual = corte.pop();
         return corteActual;
     }
 
     /**
+     * Abrir un corte despues de haberlo cerrado
+     */
+    async openCorte(corteId): Promise<any> {
+        // return await this.cabinaModel.updateOne({ _id: cabinaId }, {$unset: {dermatologo: undefined}});
+        const corte = await this.corteModel.updateOne(
+            {
+                _id: corteId
+            },
+            {
+                $set: { generado: false },
+                $unset: {hora_cierre: undefined}
+            });
+        return corte;
+    }
+
+    /**
      * Busca solo un corte mediante su numero de empleado en la BD
-     * @param idCorte 
+     * @param corteId 
      */
     async findCorteByEmployeeNumber(employeeNumber: string): Promise<CorteI> {
         return await this.corteModel.findOne({ numero_empleado: employeeNumber });
@@ -130,19 +146,19 @@ export class CorteService {
 
     /**
      * Busca un corte por su Id para poder actualizarlo
-     * @param idCorte 
+     * @param corteId 
      * @param corte 
      */
-    async updateCorte(idCorte: string, corte): Promise<any> {
-        return await this.corteModel.updateOne({ _id: idCorte }, corte);
+    async updateCorte(corteId: string, corte): Promise<any> {
+        return await this.corteModel.updateOne({ _id: corteId }, corte);
     }
 
     /**
      * Busca un corte por su ID y lo elimina de la BD
-     * @param idCorte 
+     * @param corteId 
      */
-    async deleteCorte(idCorte: string): Promise<CorteI> {
-        return await this.corteModel.findOneAndDelete({ _id: idCorte });
+    async deleteCorte(corteId: string): Promise<CorteI> {
+        return await this.corteModel.findOneAndDelete({ _id: corteId });
     }
 
 }

@@ -14,7 +14,7 @@ import { FacturaI } from "./factura.interface";
 import { Document } from "mongoose";
 import { FormaPagoI } from "./forma-pago.interface";
 
-export interface AparatologiaI extends Document {
+export interface AparatologiaI {
     create_date: Date;
     hora_aplicacion: Date;
     fecha_hora: Date;
