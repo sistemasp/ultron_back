@@ -173,8 +173,20 @@ import { PagoAnticipadoSchema } from './schemas/pago-anticipado.schema';
 import { PagoAnticipadoController } from './controllers/pago-anticipado.controller';
 import { PagoAnticipadoService } from './services/pago-anticipado.service';
 import { CuracionSchema } from './schemas/curacion.schema';
+import { CuracionAreaSchema } from './schemas/curacion-area.schema';
+import { CuracionNombreSchema } from './schemas/curacion-nombre.schema';
+import { CuracionMotivoSchema } from './schemas/curacion-motivo.schema';
+import { CuracionTipoSchema } from './schemas/curacion-tipo.schema';
 import { CuracionController } from './controllers/curacion.controller';
+import { CuracionAreaController } from './controllers/curacion-area.controller';
+import { CuracionNombreController } from './controllers/curacion-nombre.controller';
+import { CuracionMotivoController } from './controllers/curacion-motivo.controller';
+import { CuracionTipoController } from './controllers/curacion-tipo.controller';
 import { CuracionService } from './services/curacion.service';
+import { CuracionAreaService } from './services/curacion-area.service';
+import { CuracionNombreService } from './services/curacion-nombre.service';
+import { CuracionMotivoService } from './services/curacion-motivo.service';
+import { CuracionTipoService } from './services/curacion-tipo.service';
 
 @Module({
   imports: [
@@ -202,6 +214,10 @@ import { CuracionService } from './services/curacion.service';
       { name: 'Consultorio', schema: ConsultorioSchema },
       { name: 'Corte', schema: CorteSchema },
       { name: 'Curacion', schema: CuracionSchema },
+      { name: 'CuracionArea', schema: CuracionAreaSchema },
+      { name: 'CuracionNombre', schema: CuracionNombreSchema },
+      { name: 'CuracionMotivo', schema: CuracionMotivoSchema },
+      { name: 'CuracionTipo', schema: CuracionTipoSchema },
       { name: 'Dermapen', schema: DermapenSchema },
       { name: 'Empleado', schema: EmpleadoSchema },
       { name: 'Entrada', schema: EntradaSchema },
@@ -261,6 +277,10 @@ import { CuracionService } from './services/curacion.service';
     ConsultorioController,
     CorteController,
     CuracionController,
+    CuracionAreaController,
+    CuracionNombreController,
+    CuracionMotivoController,
+    CuracionTipoController,
     DermapenController,
     EmpleadoController,
     EntradaController,
@@ -320,6 +340,10 @@ import { CuracionService } from './services/curacion.service';
     ConsultorioService,
     CorteService,
     CuracionService,
+    CuracionAreaService,
+    CuracionNombreService,
+    CuracionMotivoService,
+    CuracionTipoService,
     DermapenService,
     EmpleadoService,
     EntradaService,

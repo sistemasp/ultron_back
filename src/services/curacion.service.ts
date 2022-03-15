@@ -7,7 +7,7 @@ import { InjectModel } from '@nestjs/mongoose';
 export class CuracionService {
 
     constructor(
-        @InjectModel('Curacion') private readonly curacionModel: Model<CuracionI> ) { }
+        @InjectModel('Curacion') private readonly curacionModel: Model<CuracionI>) { }
 
     /**
      * Muestra todos los curacions de la BD
@@ -53,6 +53,10 @@ export class CuracionService {
             }).sort('consecutivo')
             .populate('paciente')
             .populate('sucursal')
+            .populate('curacion_motivo')
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area')
             .populate('quien_agenda')
             .populate('promovendedor')
             .populate('forma_pago')
@@ -180,6 +184,10 @@ export class CuracionService {
         return await this.curacionModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
             .populate('paciente')
             .populate('sucursal')
+            .populate('curacion_motivo')
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area')
             .populate('dermatologo')
             .populate('frecuencia')
             .populate('quien_agenda')
@@ -244,6 +252,10 @@ export class CuracionService {
             .populate('a_quien_se_entrega')
             .populate('quien_lo_entrega')
             .populate('dermatologo')
+            .populate('curacion_motivo')
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area')
             .populate('pagos')
             .populate('status');
     }
@@ -266,6 +278,10 @@ export class CuracionService {
             .populate('sucursal')
             .populate('tipo_cita')
             .populate('forma_pago')
+            .populate('curacion_motivo')
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area')
             .populate('producto')
             .populate(
                 {
@@ -291,6 +307,10 @@ export class CuracionService {
                 status: canceladoCPId,
             }).sort('consecutivo')
             .populate('paciente')
+            .populate('curacion_motivo')
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area')
             .populate('sucursal')
             .populate('tipo_cita')
             .populate('forma_pago')
@@ -314,6 +334,10 @@ export class CuracionService {
             }).sort('consecutivo')
             .populate('paciente')
             .populate('sucursal')
+            .populate('curacion_motivo')
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area')
             .populate('tipo_cita')
             .populate('dermatologo')
             .populate('pagos');

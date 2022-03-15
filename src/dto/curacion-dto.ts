@@ -13,6 +13,10 @@ import { FacturaDto } from "./factura-dto";
 import { Document } from "mongoose";
 import { FormaPagoDto } from "./forma-pago-dto";
 import { MedioDto } from "./medio-dto";
+import { CuracionMotivoDto } from "./curacion-motivo-dto";
+import { CuracionNombreDto } from "./curacion-nombre-dto";
+import { CuracionTipoDto } from "./curacion-tipo-dto";
+import { CuracionAreaDto } from "./curacion-area-dto";
 
 export class CuracionDto extends Document {
     readonly create_date: Date;
@@ -26,7 +30,7 @@ export class CuracionDto extends Document {
     readonly patologo: EmpleadoDto;
     readonly sucursal: SucursalDto;
     readonly consecutivo: Number;
-    readonly quien_agenda : EmpleadoDto;
+    readonly quien_agenda: EmpleadoDto;
     readonly quien_confirma: EmpleadoDto;
     readonly tipo_cita: TipoCitaDto;
     readonly precio: string;
@@ -39,11 +43,11 @@ export class CuracionDto extends Document {
     readonly hasBiopsia: boolean;
     readonly costo_biopsias: string;
     readonly servicio: ServicioDto;
-    readonly pagos : PagoDto[];
+    readonly pagos: PagoDto[];
     readonly factura: FacturaDto;
-    readonly hora_llegada : string;
-    readonly hora_atencion : string;
-    readonly hora_salida : string;
+    readonly hora_llegada: string;
+    readonly hora_atencion: string;
+    readonly hora_salida: string;
     readonly producto: ProductoDto;
     readonly frecuencia: FrecuenciaDto;
     readonly porcentaje_descuento_clinica: string;
@@ -53,5 +57,9 @@ export class CuracionDto extends Document {
     readonly forma_pago: FormaPagoDto;
     readonly medio: MedioDto;
     readonly turno: string;
+    readonly curacion_motivo: CuracionMotivoDto;
+    readonly curacion_nombre: CuracionNombreDto;
+    readonly curacion_tipo: CuracionTipoDto;
+    readonly curacion_area: CuracionAreaDto;
     readonly observaciones: string;
 }

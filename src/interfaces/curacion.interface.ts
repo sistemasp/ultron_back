@@ -13,6 +13,10 @@ import { FacturaI } from "./factura.interface";
 import { Document } from "mongoose";
 import { FormaPagoI } from "./forma-pago.interface";
 import { MedioI } from "./medio.interface";
+import { CuracionMotivoI } from "./curacion-motivo.interface";
+import { CuracionNombreI } from "./curacion-nombre.interface";
+import { CuracionTipoI } from "./curacion-tipo.interface";
+import { CuracionAreaI } from "./curacion-area.interface";
 
 export interface CuracionI extends Document {
     create_date: Date;
@@ -53,5 +57,9 @@ export interface CuracionI extends Document {
     forma_pago: FormaPagoI;
     medio: MedioI;
     turno: string;
+    curacion_motivo: CuracionMotivoI;
+    curacion_nombre: CuracionNombreI;
+    curacion_tipo: CuracionTipoI;
+    curacion_area: CuracionAreaI;
     observaciones: string;
 }

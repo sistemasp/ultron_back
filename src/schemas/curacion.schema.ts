@@ -42,5 +42,9 @@ export const CuracionSchema = new Schema({
     forma_pago: { type: constMongoose.ObjectId, ref: 'FormaPago' },
     medio: { type: constMongoose.ObjectId, ref: 'Medio' },
     turno: { type: String },
+    curacion_motivo: { type: constMongoose.ObjectId, ref: 'CuracionMotivo' },
+    curacion_nombre: { type: constMongoose.ObjectId, ref: 'CuracionNombre' },
+    curacion_tipo: { type: constMongoose.ObjectId, ref: 'CuracionTipo' },
+    curacion_area: { type: constMongoose.ObjectId, ref: 'CuracionArea' },
     observaciones: { type: String },
 });
