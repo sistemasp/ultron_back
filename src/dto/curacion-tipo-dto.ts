@@ -3,6 +3,6 @@ import { CuracionNombreDto } from "./curacion-nombre-dto";
 
 export class CuracionTipoDto extends Document {
     readonly nombre : string;
-    readonly curacionNombre : CuracionNombreDto;
+    readonly curacion_nombre : CuracionNombreDto;
     readonly is_active: boolean;
 }
