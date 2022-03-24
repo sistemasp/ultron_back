@@ -22,7 +22,10 @@ export class CuracionService {
      * @param idCuracion 
      */
     async findCuracionById(idCuracion: string): Promise<CuracionI> {
-        return await this.curacionModel.findOne({ _id: idCuracion });
+        return await this.curacionModel.findOne({ _id: idCuracion })
+            .populate('curacion_nombre')
+            .populate('curacion_tipo')
+            .populate('curacion_area');
     }
 
     /**
@@ -53,7 +56,6 @@ export class CuracionService {
             }).sort('consecutivo')
             .populate('paciente')
             .populate('sucursal')
-            .populate('curacion_motivo')
             .populate('curacion_nombre')
             .populate('curacion_tipo')
             .populate('curacion_area')
