@@ -187,6 +187,15 @@ import { CuracionAreaService } from './services/curacion-area.service';
 import { CuracionNombreService } from './services/curacion-nombre.service';
 import { CuracionMotivoService } from './services/curacion-motivo.service';
 import { CuracionTipoService } from './services/curacion-tipo.service';
+import { TipoMedicamentoSchema } from './schemas/tipo-medicamento.schema';
+import { TipoMedicamentoController } from './controllers/tipo-medicamento.controller';
+import { TipoMedicamentoService } from './services/tipo-medicamento.service';
+import { AnalisisMedicoSchema } from './schemas/analisis-medico.schema';
+import { AnalisisMedicoController } from './controllers/analisis-medico.controller';
+import { AnalisisMedicoService } from './services/analisis-medico.service';
+import { GrupoAnalisisMedicosSchema } from './schemas/grupo-analisis-medicos.schema';
+import { GrupoAnalisisMedicosController } from './controllers/grupo-analisis-medico.controller';
+import { GrupoAnalisisMedicosService } from './services/grupo-analisis-medicos.service';
 
 @Module({
   imports: [
@@ -199,6 +208,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
     MongooseModule.forRoot('mongodb://localhost/ultron', { useNewUrlParser: true }),
     MongooseModule.forFeature([
       { name: 'Acido', schema: AcidoSchema },
+      { name: 'AnalisisMedico', schema: AnalisisMedicoSchema },
       { name: 'Aparatologia', schema: AparatologiaSchema },
       { name: 'Area', schema: AreaSchema },
       { name: 'Banco', schema: BancoSchema },
@@ -228,6 +238,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
       { name: 'Factura', schema: FacturaSchema },
       { name: 'FormaPago', schema: FormaPagoSchema },
       { name: 'Frecuencia', schema: FrecuenciaSchema },
+      { name: 'GrupoAnalisisMedicos', schema: GrupoAnalisisMedicosSchema },
       { name: 'Horario', schema: HorarioSchema },
       { name: 'Laboratorio', schema: LaboratorioSchema },
       { name: 'MaterialEstetica', schema: MaterialEsteticaSchema },
@@ -252,6 +263,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
       { name: 'Status', schema: StatusSchema },
       { name: 'Sucursal', schema: SucursalSchema },
       { name: 'TipoCita', schema: TipoCitaSchema },
+      { name: 'TipoMedicamento', schema: TipoMedicamentoSchema },
       { name: 'TipoSalida', schema: TipoSalidaSchema },
       { name: 'TipoEstetica', schema: TipoEsteticaSchema },
       { name: 'TipoEntrada', schema: TipoEntradaSchema },
@@ -262,6 +274,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
   ],
   controllers: [
     AcidoController,
+    AnalisisMedicoController,
     AparatologiaController,
     AreaController,
     BancoController,
@@ -291,6 +304,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
     FacturaController,
     FormaPagoController,
     FrecuenciaController,
+    GrupoAnalisisMedicosController,
     HorarioController,
     LaboratorioController,
     MaterialEsteticaController,
@@ -315,6 +329,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
     StatusController,
     SucursalController,
     TipoCitaController,
+    TipoMedicamentoController,
     TipoSalidaController,
     TipoEsteticaController,
     TipoEntradaController,
@@ -325,6 +340,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
   providers: [
     // SERVICIOS
     AcidoService,
+    AnalisisMedicoService,
     AparatologiaService,
     AreaService,
     BancoService,
@@ -354,6 +370,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
     FacturaService,
     FormaPagoService,
     FrecuenciaService,
+    GrupoAnalisisMedicosService,
     HorarioService,
     LaboratorioService,
     MaterialEsteticaService,
@@ -378,6 +395,7 @@ import { CuracionTipoService } from './services/curacion-tipo.service';
     StatusService,
     SucursalService,
     TipoCitaService,
+    TipoMedicamentoService,
     TipoSalidaService,
     TipoEsteticaService,
     TipoEntradaService,

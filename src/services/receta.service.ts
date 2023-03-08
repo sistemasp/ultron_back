@@ -30,7 +30,8 @@ export class RecetaService {
      async findRecetaByConsultaId(consultaId: string, ): Promise<RecetaI> {
         return await this.recetaModel.findOne( { 
             consultaId: consultaId,
-        } );
+        } )
+        .populate('dermatologo');
     }
 
     /**
@@ -67,4 +68,32 @@ export class RecetaService {
         return await this.recetaModel.findOneAndDelete({ _id: idReceta });
     }
 
+    async findRecetaByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<RecetaI[]> {
+        let startDate = new Date(anioi, mesi, diai);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(aniof, mesf, diaf);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        const recetas = await this.recetaModel.find({ create_date: { $gte: startDate, $lte: endDate }, sucursal: sucursalId })
+            .populate('paciente')
+            .populate('dermatologo')
+            /*.populate(
+                {
+                    path: "productos",
+                    populate: {
+                        path: "laboratorio"
+                    }
+                },
+                {
+                    path: "productos",
+                    populate: {
+                        path: "producto"
+                    }
+                })*/;
+
+        return recetas;
+    }
 }

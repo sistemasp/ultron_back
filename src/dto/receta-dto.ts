@@ -5,9 +5,11 @@ import { SucursalDto } from "./sucursal-dto";
 
 export class RecetaDto extends Document {
     readonly create_date: Date;
+    readonly folio: string;
     readonly consultaId: string;
     readonly paciente: PacienteDto;
     readonly dermatologo: EmpleadoDto;
     readonly sucursal: SucursalDto;
     readonly productos: [];
+    readonly fecha_proxima_consulta: string;
 }
