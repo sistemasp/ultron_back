@@ -9,7 +9,9 @@ export interface EmpleadoI extends Document {
     password: string;
     rol: RolI;
     color: string;
-    cedula: string;
+    dgp: string;
+    ae: string;
+    dpej: string;
     fecha_entrada: Date;
     fecha_baja: Date;
     disponible: boolean;

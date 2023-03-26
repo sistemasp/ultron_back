@@ -196,6 +196,9 @@ import { AnalisisMedicoService } from './services/analisis-medico.service';
 import { GrupoAnalisisMedicosSchema } from './schemas/grupo-analisis-medicos.schema';
 import { GrupoAnalisisMedicosController } from './controllers/grupo-analisis-medico.controller';
 import { GrupoAnalisisMedicosService } from './services/grupo-analisis-medicos.service';
+import { EstudioSchema } from './schemas/estudio.schema';
+import { EstudioController } from './controllers/estudio.controller';
+import { EstudioService } from './services/estudio.service';
 
 @Module({
   imports: [
@@ -234,6 +237,7 @@ import { GrupoAnalisisMedicosService } from './services/grupo-analisis-medicos.s
       { name: 'Especialidad', schema: EspecialidadSchema },
       { name: 'Esquema', schema: EsquemaSchema },
       { name: 'Estetica', schema: EsteticaSchema },
+      { name: 'Estudio', schema: EstudioSchema },
       { name: 'Facial', schema: FacialSchema },
       { name: 'Factura', schema: FacturaSchema },
       { name: 'FormaPago', schema: FormaPagoSchema },
@@ -300,6 +304,7 @@ import { GrupoAnalisisMedicosService } from './services/grupo-analisis-medicos.s
     EspecialidadController,
     EsquemaController,
     EsteticaController,
+    EstudioController,
     FacialController,
     FacturaController,
     FormaPagoController,
@@ -366,6 +371,7 @@ import { GrupoAnalisisMedicosService } from './services/grupo-analisis-medicos.s
     EspecialidadService,
     EsquemaService,
     EsteticaService,
+    EstudioService,
     FacialService,
     FacturaService,
     FormaPagoService,

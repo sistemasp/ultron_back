@@ -9,7 +9,9 @@ export class EmpleadoDto extends Document {
     readonly password: string;
     readonly rol: RolDto;
     readonly color: string;
-    readonly cedula: string;
+    readonly dgp: string;
+    readonly ae: string;
+    readonly dpej: string;
     readonly fecha_entrada: Date;
     readonly fecha_baja: Date;
     readonly disponible: boolean;
