@@ -29,9 +29,21 @@ export class RecetaService {
      */
      async findRecetaByConsultaId(consultaId: string, ): Promise<RecetaI> {
         return await this.recetaModel.findOne( { 
-            consultaId: consultaId,
+            consultaId: consultaId
         } )
         .populate('dermatologo');
+    }
+
+    /**
+     * Buscar recetas de un paciente
+     * @param idReceta 
+     */
+    async findRecetaByPacienteId(pacienteId): Promise<RecetaI[]> {
+        return await this.recetaModel.find( { 
+            paciente: pacienteId
+        } )
+        .populate('dermatologo')
+        .populate('sucursal');
     }
 
     /**

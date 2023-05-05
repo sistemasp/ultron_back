@@ -28,6 +28,12 @@ export class RecetaController {
         return this.recetaService.findRecetaByConsultaId(consultaId);
     }
 
+    @Get('paciente/:pacienteId')
+    findRecetaByPacienteId(@Param('pacienteId') pacienteId: string): Promise<RecetaI[]> {
+        console.log(new Date(), this.TAG, "findRecetaByPacienteId");
+        return this.recetaService.findRecetaByPacienteId(pacienteId);
+    }
+
     @Post()
     createReceta(@Body() recetaDto: RecetaDto): Promise<RecetaI> {
         console.log(new Date(), this.TAG, "createReceta");
