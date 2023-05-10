@@ -23,4 +23,5 @@ export const EmpleadoSchema = new Schema({
     esquema: { type: constMongoose.ObjectId, ref: 'Esquema' },
     is_active: { type: Boolean, default: true },
     super_admin: { type: Boolean, default: false },
+    has_receta: { type: Boolean, default: false },
 });

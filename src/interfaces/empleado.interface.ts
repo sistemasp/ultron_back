@@ -22,4 +22,5 @@ export interface EmpleadoI extends Document {
     esquema: EsquemaI;
     is_active: boolean;
     super_admin: boolean;
+    has_receta: boolean;
 }

@@ -22,4 +22,5 @@ export class EmpleadoDto extends Document {
     readonly esquema: EsquemaDto;
     readonly is_active: boolean;
     readonly super_admin: boolean;
+    readonly has_receta: boolean;
 }
