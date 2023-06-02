@@ -176,7 +176,13 @@ export class DermapenService {
         endDate.setMinutes(59);
         endDate.setSeconds(59);
         return await this.dermapenModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('fecha_hora')
-            .populate('paciente')
+            .populate(
+            {
+                path: "paciente",
+                populate: {
+                    path: "sexo"
+                }
+            })
             .populate('servicio')
             .populate('areas')
             .populate('sucursal')

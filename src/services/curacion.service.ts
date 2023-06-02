@@ -184,8 +184,13 @@ export class CuracionService {
         endDate.setMinutes(59);
         endDate.setSeconds(59);
         return await this.curacionModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
-            .populate('paciente')
-            .populate('sucursal')
+            .populate(
+            {
+                path: "paciente",
+                populate: {
+                    path: "sexo"
+                }
+            })            .populate('sucursal')
             .populate('curacion_motivo')
             .populate('curacion_nombre')
             .populate('curacion_tipo')

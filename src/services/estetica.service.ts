@@ -116,7 +116,13 @@ export class EsteticaService {
         endDate.setMinutes(59);
         endDate.setSeconds(59);
         return await this.esteticaModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
-            .populate('paciente')
+            .populate(
+            {
+                path: "paciente",
+                populate: {
+                    path: "sexo"
+                }
+            })
             .populate('sucursal')
             .populate('servicio')
             .populate('frecuencia')

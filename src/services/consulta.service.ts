@@ -339,7 +339,13 @@ export class ConsultaService {
         endDate.setMinutes(59);
         endDate.setSeconds(59);
         const consultas = await this.consultaModel.find({ fecha_hora: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
-            .populate('paciente')
+            .populate(
+            {
+                path: "paciente",
+                populate: {
+                    path: "sexo"
+                }
+            })
             .populate('sucursal')
             .populate('quien_agenda')
             .populate('promovendedor')
